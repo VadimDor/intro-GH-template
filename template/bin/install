@@ -1,11 +1,57 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -ueo pipefail
+shopt -s dotglob
 
-current_script_path=${BASH_SOURCE[0]}
-plugin_dir=$(dirname "$(dirname "$current_script_path")")
+# shellcheck source=SCRIPTDIR/../lib/utils.bash
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/utils.bash"
 
-# shellcheck source=../lib/utils.bash
-source "${plugin_dir}/lib/utils.bash"
+asdf_<YOUR TOOL LC>_init "install"
+asdf_<YOUR TOOL LC>_init_traps
 
-install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
+# Install <YOUR TOOL ULC>, building from source if necessary.
+# The installation will be placed in ASDF_INSTALL_PATH when complete.
+asdf_<YOUR TOOL LC>_install() {
+  if [ "$ASDF_<YOUR TOOL UC>_DEBUG" = "yes" ]; then
+    set -x
+  fi
+
+  if [ "$(asdf_<YOUR TOOL LC>_needs_download)" = "yes" ]; then
+    die "No <YOUR TOOL LC> source to build or archive to install."
+    return 1
+  fi
+
+  asdf_<YOUR TOOL LC>_build
+  section_start "III. Install (${ASDF_<YOUR TOOL UC>_INSTALL_PATH//${HOME}/\~})"
+
+  step_start "cp to ${ASDF_<YOUR TOOL UC>_INSTALL_PATH//${HOME}/\~}"
+  rm -rf "$ASDF_<YOUR TOOL UC>_INSTALL_PATH"
+  cp -R "$ASDF_DOWNLOAD_PATH" "$ASDF_<YOUR TOOL UC>_INSTALL_PATH"
+  step_end "✓"
+
+  # Finalize installation
+  step_start "mv to ${ASDF_INSTALL_PATH//${HOME}/\~}"
+  rm -rf "$ASDF_INSTALL_PATH"
+  mv -v "$ASDF_<YOUR TOOL UC>_INSTALL_PATH" "$ASDF_INSTALL_PATH"
+  step_end "✓"
+
+  step_start "👑 installed <YOUR TOOL ULC> ${ASDF_INSTALL_VERSION}$(asdf_<YOUR TOOL LC>_time)"
+  step_end "✓"
+
+  if [ "$ASDF_<YOUR TOOL UC>_DEBUG" = "yes" ]; then
+    set +x
+  fi
+}
+
+# No exec {fd} redirection with bash 3
+# shellcheck disable=SC2001
+BASH_MAJOR_VERSION="$(echo "$BASH_VERSION" | sed 's/\..*//')"
+if [ "$BASH_MAJOR_VERSION" -ge 4 ]; then
+  exec {ASDF_<YOUR TOOL UC>_STDOUT}<&1 {ASDF_<YOUR TOOL UC>_STDERR}<&2
+  {
+    asdf_<YOUR TOOL LC>_install
+  } 1>>"$(asdf_<YOUR TOOL LC>_log)" 2>>"$(asdf_<YOUR TOOL LC>_log)"
+else
+  touch "$(asdf_<YOUR TOOL LC>_log)"
+  asdf_<YOUR TOOL LC>_install
+fi

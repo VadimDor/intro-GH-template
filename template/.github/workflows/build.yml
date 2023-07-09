@@ -1,22 +1,205 @@
-name: Build
+# yamllint disable rule:line-length
 
+name: build
+
+# yamllint disable rule:truthy
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    branches: ['*']
+    paths:
+      - .github/workflows/build.yml # changes to this file
+      - bin/** # changes to asdf entrypoint scripts
+      - lib/** # changes to library functions
+      - share/** # changes to data files
+      - shims/** # changes to shim scripts
+      - test/** # changes to tests
+      - package*.json # bats upgrade
+  push:
+    branches: ['main']
+    tags: ['*']
+    paths:
+      - .github/workflows/build.yml # changes to this file
+      - bin/** # changes to asdf entrypoint scripts
+      - lib/** # changes to library functions
+      - share/** # changes to data files
+      - shims/** # changes to shim scripts
+      - test/** # changes to tests
+      - package*.json # bats upgrade
+# yamllint enable rule:truthy
 
 jobs:
-  plugin_test:
-    name: asdf plugin test
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
+  # Run tests with bats
+  bats_tests:
+    name: Bats tests
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
-      - name: asdf_plugin_test
-        uses: asdf-vm/actions/plugin-test@v2
+      - name: Checkout plugin
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
         with:
-          command: <TOOL CHECK>
+          node-version: '15'
+
+      - name: Run tests
+        run: |
+          npm install --include=dev
+          [ -n "$(which bats)" ] || npm link bats
+          npm run test -- --jobs 4
+
+  plugin_test_x86:
+    name: 👑${{ matrix.<YOUR TOOL LC>-version }}/${{ matrix.platform }}/x86_64
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Stable binary
+          - os: ubuntu-latest
+            <YOUR TOOL LC>-version: 'latest:1.6'
+            platform: linux-glibc
+
+          # Stable binary
+          - os: ubuntu-latest
+            <YOUR TOOL LC>-version: 'latest:1.4'
+            platform: linux-glibc
+
+          # Unstable binary
+          - os: ubuntu-latest
+            <YOUR TOOL LC>-version: 'ref:version-1-6'
+            platform: linux-glibc
+
+          # Unstable binary
+          - os: macos-latest
+            <YOUR TOOL LC>-version: 'ref:devel'
+            platform: macOS
+
+          # Build from source
+          - os: ubuntu-latest
+            <YOUR TOOL LC>-version: 'ref:HEAD'
+            platform: linux-glibc
+
+          # Build from source
+          - os: macos-latest
+            <YOUR TOOL LC>-version: 'latest:1.4'
+            platform: macOS
+
+    steps:
+      # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
+      - name: Restore cache
+        if: matrix.<YOUR TOOL LC>-version != 'ref:HEAD' && matrix.<YOUR TOOL LC>-version != 'latest'
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache
+          key: cache-${{ matrix.os }}-${{ matrix.<YOUR TOOL LC>-version }}
+
+      - name: Upgrade bash
+        if: runner.os == 'macOS'
+        run: brew install bash parallel
+
+      - name: Install asdf
+        uses: asdf-vm/actions/setup@v1
+
+      - name: Checkout plugin
+        uses: actions/checkout@v3
+
+      - name: Install asdf-<YOUR TOOL LC> & test
+        shell: bash
+        run: |
+          set -ueo pipefail
+          asdf plugin test <YOUR TOOL LC> . \
+            --asdf-tool-version \
+            "${{ matrix.<YOUR TOOL LC>-version }}" \
+            --asdf-plugin-gitref \
+            "${GITHUB_SHA}" \
+            <YOUR TOOL LC> -v
+
+  # Test musl installation
+  plugin_test_x86_musl:
+    name: 👑1.6.8/linux-musl/x86_64
+    runs-on: ubuntu-latest
+    container: alpine:latest
+
+    steps:
+      # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache
+          key: cache-ubuntu-latest-${{ matrix.<YOUR TOOL LC>-version }}
+
+      - name: Install dependencies
+        run: apk add --update --no-cache --upgrade bash git curl coreutils tar xz grep build-base
+
+      - name: Test plugin
+        uses: asdf-vm/actions/plugin-test@v1
+        with:
+          command: <YOUR TOOL LC> -v
+          version: 'latest:1.6'
+
+  # Test installation for a few non-x86 architectures
+  plugin_test_non_x86:
+    name: 👑${{ matrix.<YOUR TOOL LC>-version }}/linux-glibc/${{ matrix.arch }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Unstable binary
+          - runs-on: ubuntu-latest
+            <YOUR TOOL LC>-version: 'ref:version-1-6'
+            arch: aarch64
+
+          # Unstable binary
+          - runs-on: ubuntu-latest
+            <YOUR TOOL LC>-version: 'ref:version-1-4'
+            arch: armv7
+
+    steps:
+      # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache
+          key: cache-${{ matrix.arch }}-${{ matrix.<YOUR TOOL LC>-version }}
+
+      - name: Checkout plugin
+        uses: actions/checkout@v3
+
+      # Install & run tests on non-x86
+      - uses: uraimo/run-on-arch-action@v2
+        name: Install <YOUR TOOL ULC> & run tests
+        with:
+          arch: ${{ matrix.arch }}
+          distro: buster
+
+          dockerRunArgs: |
+            --volume "${HOME}/.cache:/root/.cache"
+
+          setup: mkdir -p "${HOME}/.cache"
+
+          shell: /usr/bin/env bash
+
+          install: |
+            apt-get update -q -y
+            apt-get -qq install -y curl git xz-utils build-essential
+            git clone https://github.com/asdf-vm/asdf.git "${HOME}/.asdf"
+
+          env: |
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          run: |
+            set -exo pipefail
+            set +u
+            . "${HOME}/.asdf/asdf.sh"
+            asdf plugin test <YOUR TOOL LC> . \
+              --asdf-tool-version \
+              "${{ matrix.<YOUR TOOL LC>-version }}" \
+              --asdf-plugin-gitref \
+              "${GITHUB_SHA}" \
+              <YOUR TOOL LC> -v

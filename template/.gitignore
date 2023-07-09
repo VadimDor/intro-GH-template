@@ -1,0 +1,7 @@
+/.vscode
+test<YOUR TOOL LC>*
+/node_modules
+/.tool-versions
+package-lock.json
+/.tmp
+/<YOUR TOOL LC>deps

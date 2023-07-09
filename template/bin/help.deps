@@ -6,4 +6,6 @@ shopt -s dotglob
 # shellcheck source=SCRIPTDIR/../lib/utils.bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/utils.bash"
 
-asdf_<YOUR TOOL LC>_list_all_versions | xargs printf '%s ' | sed 's/ $/\n/'
+echo "asdf-<YOUR TOOL LC> depends on the following packages:"
+asdf_<YOUR TOOL LC>_list_deps
+echo

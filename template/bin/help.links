@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL LC>"
+echo
