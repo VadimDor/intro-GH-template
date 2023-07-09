@@ -113,7 +113,7 @@ set_placeholder() {
 }
 
 setup_github() {
-	local cwd out tool_name tool_repo check_command author_name github_username tool_homepage ok primary_branch
+	local cwd out tool_name tool_repo check_command author_name github_username tool_homepage ok primary_branch bats_tests
 
 	cwd="$PWD"
 	out="$cwd/out"
@@ -130,6 +130,7 @@ setup_github() {
 	tool_homepage="${6:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_repo")}"
 	license_keyword="${7:-$(ask_license)}"
 	license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
+	bats_tests="${8:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests." "yes" "no")}"
 
 	primary_branch="main"
 
@@ -149,7 +150,7 @@ setup_github() {
 		template using the above information. Please ensure all seems correct.
 	EOF
 
-	ok="${8:-$(ask_for "Type \`yes\` if you want to continue.")}"
+	ok="${9:-$(ask_for "Type \`yes\` if you want to continue.")}"
 	if [ "yes" != "$ok" ]; then
 		printf "Nothing done.\n"
 	else
@@ -192,8 +193,23 @@ setup_github() {
 			# rename GitHub specific files to final filenames
 			git mv "$out/README-github.md" "$out/README.md"
 			git mv "$out/contributing-github.md" "$out/contributing.md"
-			git commit -m "Generate asdf-$tool_name plugin from template."
 
+	        if [ "yes" == "$bats_tests" ]; then
+		    	printf "Adding BATS submodules for tests.\n"
+				git submodule add https://github.com/bats-core/bats-core.git "test/bats"
+ 				git submodule add https://github.com/bats-core/bats-support.git "test/test_helper/bats-support"
+				git submodule add https://github.com/bats-core/bats-assert.git "test/test_helper/bats-assert"			
+
+			else
+				#cat <<-EOF >> ./template/.gitignore
+  				#	Dockerfile
+				#	docker-compose.yml
+				#	test/*
+				#EOF
+				# remove GitLab specific files
+				git rm -rf "$out/test/" "$out/test/*" "$out/Dockerfile" "$out/docker-compose.yml" 
+			fi
+			git commit -m "Generate asdf-$tool_name plugin from template."			
 			cd "$cwd"
 			git branch -M out "$primary_branch"
 			git worktree remove -f out
@@ -210,7 +226,7 @@ setup_github() {
 }
 
 setup_gitlab() {
-	local cwd out tool_name tool_repo check_command author_name github_username gitlab_username tool_homepage ok primary_branch
+	local cwd out tool_name tool_repo check_command author_name github_username gitlab_username tool_homepage ok primary_branch bats_tests
 
 	cwd="$PWD"
 	out="$cwd/out"
@@ -228,6 +244,7 @@ setup_gitlab() {
 	tool_homepage="${6:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_repo")}"
 	license_keyword="${7:-$(ask_license)}"
 	license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
+	bats_tests="${8:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests." "yes" "no")}"
 
 	primary_branch="main"
 
@@ -247,7 +264,7 @@ setup_gitlab() {
 		template using the above information. Please ensure all seems correct.
 	EOF
 
-	ok="${8:-$(ask_for "Type \`yes\` if you want to continue.")}"
+	ok="${9:-$(ask_for "Type \`yes\` if you want to continue.")}"
 	if [ "yes" != "$ok" ]; then
 		printf "Nothing done.\n"
 	else
@@ -290,8 +307,20 @@ setup_gitlab() {
 			# rename GitLab specific files to final filenames
 			git mv "$out/README-gitlab.md" "$out/README.md"
 			git mv "$out/contributing-gitlab.md" "$out/contributing.md"
-			git commit -m "Generate asdf-$tool_name plugin from template."
+			git submodule add https://github.com/bats-core/bats-core.git "test/bats"
+ 			git submodule add https://github.com/bats-core/bats-support.git "test/test_helper/bats-support"
+			git submodule add https://github.com/bats-core/bats-assert.git "test/test_helper/bats-assert"
 
+	        if [ "yes" == "$bats_tests" ]; then
+		    	printf "Adding BATS submodules for tests.\n"
+				git submodule add https://github.com/bats-core/bats-core.git "test/bats"
+ 				git submodule add https://github.com/bats-core/bats-support.git "test/test_helper/bats-support"
+				git submodule add https://github.com/bats-core/bats-assert.git "test/test_helper/bats-assert"			
+			else
+				git rm -rf "$out/test/" "$out/test/*" "$out/Dockerfile" "$out/docker-compose.yml" 
+			fi
+
+			git commit -m "Generate asdf-$tool_name plugin from template."		
 			cd "$cwd"
 			git branch -M out "$primary_branch"
 			git worktree remove -f out
