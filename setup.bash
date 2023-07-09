@@ -173,9 +173,9 @@ setup_github() {
 			sed -i '1s;^;TODO: INSERT YOUR NAME & COPYRIGHT YEAR (if applicable to your license)\n;g' "$out/LICENSE"
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
-			tool_name_uc=$($ echo "$tool" | tr '[:lower:]' '[:upper:]')
+			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
 			set_placeholder "<YOUR TOOL UC>" "$tool_name_uc" "$out"
-			tool_name_lc=$($ echo "$tool" | tr '[:upper:]' '[:lower:]')			
+			tool_name_lc=$(echo "$tool_name" | tr '[:upper:]' '[:lower:]')			
 			set_placeholder "<YOUR TOOL LC>" "$tool_name_lc" "$out"
 			tool_name_ulc="$(tr '[:lower:]' '[:upper:]' <<< ${tool_name:0:1})${tool_name:1}"		
 			set_placeholder "<YOUR TOOL ULC>" "$tool_name_ulc" "$out"
@@ -270,9 +270,9 @@ setup_gitlab() {
 			download_license "$license_keyword" "$out/LICENSE"
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
-			tool_name_uc=$($ echo "$tool" | tr '[:lower:]' '[:upper:]')
+			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
 			set_placeholder "<YOUR TOOL UC>" "$tool_name_uc" "$out"
-			tool_name_lc=$($ echo "$tool" | tr '[:upper:]' '[:lower:]')			
+			tool_name_lc=$(echo "$tool_name" | tr '[:upper:]' '[:lower:]')			
 			set_placeholder "<YOUR TOOL LC>" "$tool_name_lc" "$out"
 			tool_name_ulc="$(tr '[:lower:]' '[:upper:]' <<< ${tool_name:0:1})${tool_name:1}"		
 			set_placeholder "<YOUR TOOL ULC>" "$tool_name_ulc" "$out"
