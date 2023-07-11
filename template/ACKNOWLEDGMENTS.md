@@ -18,7 +18,9 @@ The attached notices are provided for information only.
 
 - [LightDM][lightdm-hook]
 - [Web Greeter][web-greeter-hook]
-
+[Title](https://github.com/Lissy93/dashy)
+[Title](https://github.com/TheWisker/Shikai)
+[Title](https://github.com/open-policy-agent)
 
 ## LightDM [[↑][index]]
 
