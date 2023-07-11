@@ -220,7 +220,7 @@ setup_github() {
 			user_email=$(git config --list|grep 'user.email='| cut -d\=   -f2)
 			set_placeholder "<USER EMAIL>" "$user_email" "$out"
 			set_placeholder "<PEXT>" "$pext" "$out"
-			project_name="<PROJECT NAME>"
+			project_name="$tool_name plugin"
 			set_placeholder "<PROJECT NAME>" "$project_name" "$out"
 			set_placeholder "<START DATE>" "$project_name" "$(date +%D)"
 
@@ -230,7 +230,7 @@ setup_github() {
 			# rename GitHub specific files to final filenames
 			git mv "$out/README-github.md" "$out/README.md"
 			git mv "$out/contributing-github.md" "$out/contributing.md"
-
+			# special files like README/CHANGELOG/LICENSE/README/CHANGELOG/LICENSE/AUTHORS
 	        if [ "yes" == "$bats_tests" ]; then
 		    	printf "Adding BATS submodules for tests.\n"
 				git submodule add https://github.com/bats-core/bats-core.git "test/bats"
