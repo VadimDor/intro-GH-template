@@ -4,9 +4,9 @@
       "type": "Organization",
       "name": "Dify.ai",
       "login": "dify.ai",
-      "description": "可视化创造和持续运营你的原生 AI 应用",
+      "description": "desc5",
       "avatarUrl": "../../../docs/assets/langgenius-logo.jpg?v=3",
-      "linkUrl": "https://dify.ai/?utm_source=pay&utm_medium=immersive-translate"
+      "linkUrl": "https://dify.ai/?utm_source=pay&utm_medium=22222"
     },
     "monthlyDollars": 50,
     "privacyLevel": "PUBLIC",
@@ -19,9 +19,9 @@
       "type": "Organization",
       "name": "Apifox",
       "login": "apifox",
-      "description": "API 设计、开发、测试一体化协作平台",
+      "description": "Desc4",
       "avatarUrl": "../../../docs/assets/apifox-logo-128.png",
-      "linkUrl": "https://www.apifox.com/?utm_source=pay&utm_medium=owenyoung"
+      "linkUrl": "https://www.apifox.com/?utm_source=pay&utm_medium=11111"
     },
     "monthlyDollars": 50,
     "privacyLevel": "PUBLIC",
@@ -33,9 +33,9 @@
   {
     "sponsor": {
       "type": "User",
-      "name": "发明者量化-张超",
-      "login": "fmz.com",
-      "description": "交易策略开发、量化学习资源、策略出租出售、在线交流社区",
+      "name": "Test3",
+      "login": "aaa.com",
+      "description": "Desc3",
       "avatarUrl": "../../../docs/assets/fmz-logo.svg",
       "linkUrl": "https://www.fmz.com/"
     },
@@ -49,8 +49,8 @@
   {
     "sponsor": {
       "type": "User",
-      "name": "产品沉思录",
-      "description": "一个关于产品的知识库，也是一个 Newsletter （邮件组），始于 2017 年",
+      "name": "Test2",
+      "description": "desc2",
       "login": "pmthinking",
       "avatarUrl": "../../../docs/assets/pmthinking.png",
       "linkUrl": "https://xiaobot.net/p/pmthinking2023?refer=bd3e6e4e-70c4-48e6-a6a5-21fdc75184d5"
@@ -64,9 +64,9 @@
   {
     "sponsor": {
       "type": "Organization",
-      "name": "匿名科技",
+      "name": "Test1",
       "login": "anonymoustechnology",
-      "description": "匿名科技，提供网站定制，网站开发，App开发，电报小飞机bot机器人定制，以及顶尖后台系统支持。",
+      "description": "desc1",
       "avatarUrl": "../../../docs/assets/niming.png",
       "linkUrl": "https://t.me/+gL2yylZ1Q0A3ZGY1"
     },
