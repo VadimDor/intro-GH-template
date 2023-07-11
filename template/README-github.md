@@ -1,17 +1,49 @@
 <div align="center">
-
-# asdf-<YOUR TOOL> [![Build](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/build.yml/badge.svg)](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/build.yml) [![Lint](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/lint.yml/badge.svg)](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/lint.yml)[![Join the chat at https://gitter.im/asdf-<YOUR TOOL LC>/community](https://badges.gitter.im/asdf-<YOUR TOOL LC>/community.svg)](https://gitter.im/asdf-<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# asdf-<YOUR TOOL> [![Build](<TOOL REPO>/actions/workflows/build.yml/badge.svg)](<TOOL REPO>/actions/workflows/build.yml) [![Lint](<TOOL REPO>/actions/workflows/lint.yml/badge.svg)](<TOOL REPO>/actions/workflows/lint.yml)
 
 [<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
-
 </div>
 
-# Contents
+[![Build Status](<TOOL REPO>/workflows/Post%20Merge/badge.svg?branch=main)](<TOOL REPO>/actions) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/99999999/badge)](https://bestpractices.coreinfrastructure.org/projects/99999999) [![Join the chat at https://gitter.im/asdf-<YOUR TOOL LC>/community](https://badges.gitter.im/asdf-<YOUR TOOL LC>/community.svg)](https://gitter.im/asdf-<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+# 介绍
+
+# Contents
+<h2 align="center">Index</h2>
+<div align="center">
+  [Description][description]
+  [Dependencies][dependencies]
+  [Discussions][discussions]
+  [Contributions][contributions]❤️
+  [Metrics][metrics]
+  [License][license]
+  [Code of Conduct][coc]
+  [Author][author]
+</div>
+# Summary
+
+[Readme](../README.md)
+
+- [安装](installation.md)
+- [如何使用](usage.md)
+- [截图/使用案例](usecase.md)
+- [高级自定义配置](advanced.md)
+- [Communities](communities.md)
+- [Change log](CHANGELOG.md)
+- [用户评价](review.md)
+- [FAQ](faq.md)
+- [Donate](donate.md)
+- [Thanks 🙏](thanks.md)
+- [Privacy](PRIVACY.md)
+- [Terms](TERMS.md)
 - [Dependencies](#dependencies)
 - [Install](#install)
 - [Contributing](#contributing)
 - [License](#license)
+
+<h2 align="center">Description [<a href="<TOOL REPO>#index">↑</a>]</h2>
+   This is plugin for asdf tool
+
 
 # Dependencies
 
@@ -300,10 +332,30 @@ This project uses [lintball](https://github.com/elijahr/lintball) to auto-format
 git config --local core.hooksPath .githooks
 ```
 
+## Want to get support for "<PROJECT NAME>"?
+
+- Check out the [Discussions](<TOOL REPO>/discussions) to ask questions.
+
+## Want to learn more about OPA?
+
+- Go to [project homepage](<TOOL HOMEPAGE>) to get started with documentation and tutorials, for news about it, community, policy and roadmaps.
+- Check out the [ADOPTERS.md](./ADOPTERS.md) file for a list of production adopters. Does your organization use "<PROJECT NAME>" in production? Support it by submitting a PR to add your organization to the list with a short description of your use cases (or at list star this repository :) )!
 
 ## Contributing
+First and foremost, all contributions  and pull requests are welcome!
+* The **steps** involved when making a contribution are **explained** in the [Contributing Guide][contributing]
+to learn how to make your first contribution.
+* File a [GitHub Issue](<TOOL REPO>/issues) to request features or report bugs.
+We look forward to your contributions!
+* The **contributors** list is located [here][contributors].
 
-Contributions of any kind and pull requests welcome! See the [contributing guide](contributing.md).
+## Keep in touch
+
+- [Subscribe via email](https://<YOUR GIT USERNAME>.substack.com/) Get the latest updates and (benefits) in a timely manner.
+- [Follow our Twitter](https://twitter.com/<YOUR GIT USERNAME>)
+- [Join Telegram channel](https://t.me/<YOUR GIT USERNAME>) Receive the latest news
+- [Question feedback](<TOLL REPO>/issues/)
+
 
 Fork this repo, then run:
 
@@ -314,8 +366,67 @@ git clone git@github.com:<your-username>/asdf-<YOUR TOOL LC>.git ~/.asdf/plugins
 
 [Thanks goes to these contributors](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/graphs/contributors)!
 
-# License
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT USERNAME>/<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT USERNAME>/<YOUR TOOL LC>&Date)
+
+<h2 align="center">Discussions [<a href="<TOOL REPO>#index">↑</a>]</h2>
+
+Feel free to give any **ideas** for future **improvements** [here][discussion-ideas],
+ask any **questions** you have [here][discussion-questions]
+
+## Reporting Security Vulnerabilities
+
+Please report vulnerabilities by any channel.We will send a confirmation message 
+to acknowledge that we have received the report and then we will send additional
+messages to follow up once the issue has been investigated.
+
+<h2 align="center">Metrics [<a href="<TOOL REPO>#index">↑</a>]</h2>
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/base.svg"/>
+  </picture>
+</div>
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/languages.svg"/>
+  </picture>
+</div>
+
+
+
+
+<div align="center">
+  <picture>
+    <img src="./assets/metrics/licenses.svg"/>
+  </picture>
+</div>
+
+<h2 align="center">Code of Conduct [<a href="<TOOL REPO>#index">↑</a>]</h2>
+
+<p align="center"> This project follows the <a href="./.github/CODE_OF_CONDUCT.md"><b>Contributor Covenant Code of Conduct</b></a>.</p>
+
+<h2 align="center">License [<a href="<TOOL REPO>#index">↑</a>]</h2>
 
 See [LICENSE](LICENSE) © [<YOUR NAME>](https://github.com/<YOUR GITHUB USERNAME>/)
 
 **TODO: adapt these sections above**
+
+
+[description]: <TOOL REPO>#description-
+[installation]: <TOOL REPO>#installation-
+[dependencies]: <TOOL REPO>#dependencies-
+[discussions]: <TOOL REPO>#discussions-
+[contributions]: <TOOL REPO>#contributions-
+[metrics]: <TOOL REPO>#metrics-
+[license]: <TOOL REPO>#license-
+[coc]: <TOOL REPO>#code-of-conduct-
+[author]: <TOOL REPO>#author-
+[releases]: <TOOL REPO>/releases/
+[discussion-ideas]: <TOOL REPO>/discussions/categories/ideas
+[discussion-questions]: <TOOL REPO>/discussions/categories/q-a
+[contributing]: ./CONTRIBUTING.md
+[contributors]: ./CONTRIBUTORS.md
+[pull-request]: <TOOL REPO>/pulls
