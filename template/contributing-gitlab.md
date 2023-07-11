@@ -1,8 +1,6 @@
-<h1 align="center">asdf <YOUR TOOL UC> plugin</h1>
+<h2 align="center">Contributing</h2>
+<!--  TODO: review and adopt the content -->
 
-## TODO: review and adopt Contributing
-
-# Contributing
 It is great to have you here. Here are a few ways you can help make this project better!
 
 Testing Locally:
@@ -11,7 +9,7 @@ Testing Locally:
 asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
 
 # TODO: adapt this
-asdf plugin test <YOUR TOOL> https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>.git "<TOOL CHECK>"
+asdf plugin test <YOUR TOOL> <TOOL REPO>.git "<TOOL CHECK>"
 ```
 
 Tests are automatically run in GitLab CI on push and merge request.

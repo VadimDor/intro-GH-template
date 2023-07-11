@@ -1,4 +1,4 @@
-<h1 align="center">asdf <YOUR TOOL UC> plugin</h1>
+<h1 align="center"><PROJECT NAME></h1>
 
 ## TODO: review and adopt Contributing
 
@@ -10,7 +10,7 @@ Testing Locally:
 asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
 
 # TODO: adapt this
-asdf plugin test <YOUR TOOL> https://github.com/<YOUR GIT USERNAME>/asdf-<YOUR TOOL>.git "<TOOL CHECK>"
+asdf plugin test <YOUR TOOL> <TOOL REPO>.git "<TOOL CHECK>"
 ```
 
 Tests are automatically run in GitHub Actions on push and PR.

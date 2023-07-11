@@ -1,6 +1,5 @@
 <h2 align="center">Terms and Conditions</h2>
 <!--  TODO: review and adopt Terms and Conditions -->
-
 Last updated: <START DATE>
 
 Please read these terms and conditions before using Our Software.

@@ -1,5 +1,4 @@
 <h2 align="center">TODOs</h2>
-
 <!--  TODO: review  following TODO:s -->
 
 - [FixISsues](<TOOL REPO>/issues)

@@ -10,9 +10,9 @@ ASDF_INSTALL_BIN_PATH=$(dirname "$("${ASDF_BIN}/asdf" which <YOUR TOOL LC>)")
 regenerate() {
   # After a <YOUR TOOL LC> operation, regenerate <YOUR TOOL LC> shims to find new package binaries
   if "${ASDF_BIN}/asdf" reshim <YOUR TOOL LC>; then
-    echo "  asdf-<YOUR TOOL LC>: regenerated shims"
+    echo "  <YOUR TOOL LC>: regenerated shims"
   else
-    echo "  asdf-<YOUR TOOL LC>: failed to regenerate shims"
+    echo "  <YOUR TOOL LC>: failed to regenerate shims"
     exit 1
   fi
   echo

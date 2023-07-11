@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        # 'asdf <YOUR TOOL UC> plugin' Feature Request
+        # '<PROJECT NAME>' Feature Request
         Thanks for taking the time to fill out this feature request!
   - type: textarea
     id: explanation

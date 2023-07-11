@@ -6,6 +6,6 @@ shopt -s dotglob
 # shellcheck source=SCRIPTDIR/../lib/utils.bash
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/utils.bash"
 
-echo "asdf-<YOUR TOOL LC> depends on the following packages:"
+echo "<YOUR TOOL LC> depends on the following packages:"
 asdf_<YOUR TOOL LC>_list_deps
 echo

@@ -44,4 +44,4 @@ jobs:
                    --or -e "<TOOL REPO>" \
                    --or -e "<TOOL CHECK>" \
                    --or -e "<YOUR NAME>" \
-                   --or -e"<YOUR GITHUB USERNAME>"
+                   --or -e"<YOUR GIT USERNAME>"

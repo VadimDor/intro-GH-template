@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-<YOUR TOOL> ![Build Status](https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>/badges/<PRIMARY BRANCH>/pipeline.svg)[![Join the chat at https://gitter.im/asdf-<YOUR TOOL LC>/community](https://badges.gitter.im/asdf-<YOUR TOOL LC>/community.svg)](https://gitter.im/asdf-<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# <YOUR TOOL> ![Build Status](<TOOL REPO>/badges/<PRIMARY BRANCH>/pipeline.svg)[![Join the chat at https://gitter.im/<YOUR TOOL LC>/community](https://badges.gitter.im/<YOUR TOOL LC>/community.svg)](https://gitter.im/<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -28,9 +28,9 @@ Plugin:
 
 
 ```sh
-asdf plugin add <YOUR TOOL LC> # install the asdf-<YOUR TOOL LC> plugin
+asdf plugin add <YOUR TOOL LC> # install the <YOUR TOOL LC> plugin
 # or
-asdf plugin add https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>.git
+asdf plugin add <TOOL REPO>.git
 
 asdf <YOUR TOOL LC> install-deps  # install system-specific dependencies for downloading & building <YOUR TOOL ULC>
 ```
@@ -97,11 +97,11 @@ Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on ho
 install & manage versions.
 
 
-# asdf-<YOUR TOOL LC>
+# <YOUR TOOL LC>
 
-asdf-<YOUR TOOL LC> allows you to quickly install any version of [<YOUR TOOL ULC>](https://<YOUR TOOL LC>-lang.org).
+<YOUR TOOL LC> allows you to quickly install any version of [<YOUR TOOL ULC>](https://<YOUR TOOL LC>-lang.org).
 
-asdf-<YOUR TOOL LC> is intended for end-users and continuous integration. Whether macOS or Linux, x86 or ARM - all you'll need to install <YOUR TOOL ULC> is bash.
+<YOUR TOOL LC> is intended for end-users and continuous integration. Whether macOS or Linux, x86 or ARM - all you'll need to install <YOUR TOOL ULC> is bash.
 
 
 
@@ -230,9 +230,9 @@ jobs:
             set -uexo pipefail
             . "${HOME}/.asdf/asdf.sh"
 
-            # Install asdf-<YOUR TOOL LC> and dependencies
-            git clone https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL LC>.git ~/asdf-<YOUR TOOL LC> --branch main --depth 1
-            asdf plugin add <YOUR TOOL LC> ~/asdf-<YOUR TOOL LC>
+            # Install <YOUR TOOL LC> and dependencies
+            git clone <TOOL REPO>.git ~/<YOUR TOOL LC> --branch main --depth 1
+            asdf plugin add <YOUR TOOL LC> ~/<YOUR TOOL LC>
             asdf <YOUR TOOL LC> install-deps -y
 
             # Install <YOUR TOOL ULC>
@@ -269,7 +269,7 @@ macOS:
 
 - `x86_64`
 
-## Updating asdf and asdf-<YOUR TOOL LC>
+## Updating asdf and <YOUR TOOL LC>
 
 ```sh
 asdf update
@@ -309,14 +309,14 @@ Fork this repo, then run:
 
 ```sh
 rm -rf ~/.asdf/plugins/<YOUR TOOL LC>
-git clone git@gitlab.com:<your-username>/asdf-<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
+git clone git@gitlab.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
 ```
 
-[Thanks goes to these contributors](https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>/-/graphs/<PRIMARY BRANCH>)!
+[Thanks goes to these contributors](<TOOL REPO>/graphs/<PRIMARY BRANCH>)!
 
 # License
 
-See [LICENSE](LICENSE) © [<YOUR NAME>](https://gitlab.com/<YOUR GITLAB USERNAME>/)
+See [LICENSE](LICENSE) © [<YOUR NAME>](https://gitlab.com/<YOUR GIT USERNAME>/)
 
 
 **TODO: adapt these sections above**

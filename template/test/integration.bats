@@ -14,7 +14,7 @@ setup_file() {
   cd "$PROJECT_DIR"
   clear_lock git
 
-  ASDF_DIR="$(mktemp -t asdf-<YOUR TOOL LC>-integration-tests.XXXX -d)"
+  ASDF_DIR="$(mktemp -t <YOUR TOOL LC>-integration-tests.XXXX -d)"
   export ASDF_DIR
 
   get_lock git
@@ -32,7 +32,7 @@ teardown_file() {
 }
 
 setup() {
-  ASDF_<YOUR TOOL UC>_TEST_TEMP="$(mktemp -t asdf-<YOUR TOOL LC>-integration-tests.XXXX -d)"
+  ASDF_<YOUR TOOL UC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-integration-tests.XXXX -d)"
   export ASDF_<YOUR TOOL UC>_TEST_TEMP
   ASDF_DATA_DIR="${ASDF_<YOUR TOOL UC>_TEST_TEMP}/asdf"
   export ASDF_DATA_DIR

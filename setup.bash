@@ -137,10 +137,10 @@ setup_github() {
 	primary_branch="main"
 
 	cat <<-EOF
-		Setting up plugin: asdf-$tool_name
+		Setting up plugin: $tool_name
 
 		author:        $author_name
-		plugin repo:   https://github.com/$github_username/asdf-$tool_name
+		plugin repo:   https://github.com/$github_username/$tool_name
 		license:       https://choosealicense.com/licenses/$license_keyword/
 
 
@@ -220,7 +220,7 @@ setup_github() {
 			user_email=$(git config --list|grep 'user.email='| cut -d\=   -f2)
 			set_placeholder "<USER EMAIL>" "$user_email" "$out"
 			set_placeholder "<PEXT>" "$pext" "$out"
-			project_name="asdf <YOUR TOOL UC> plugin"
+			project_name="<PROJECT NAME>"
 			set_placeholder "<PROJECT NAME>" "$project_name" "$out"
 			set_placeholder "<START DATE>" "$project_name" "$(date +%D)"
 
@@ -287,10 +287,10 @@ setup_gitlab() {
 	primary_branch="main"
 
 	cat <<-EOF
-		Setting up plugin: asdf-$tool_name
+		Setting up plugin: $tool_name
 
 		author:        $author_name
-		plugin repo:   https://gitlab.com/$gitlab_username/asdf-$tool_name
+		plugin repo:   https://gitlab.com/$gitlab_username/$tool_name
 		license:       https://choosealicense.com/licenses/$license_keyword/
 
 
@@ -366,7 +366,7 @@ setup_gitlab() {
 				git rm -rf "$out/test/" "$out/test/*" "$out/Dockerfile" "$out/docker-compose.yml" 
 			fi
 
-			git commit -m "Generate asdf-$tool_name plugin from template."		
+			git commit -m "Generate $tool_name plugin from template."		
 			cd "$cwd"
 			git branch -M out "$primary_branch"
 			git worktree remove -f out

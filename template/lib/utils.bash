@@ -35,7 +35,7 @@ asdf_<YOUR TOOL LC>_init() {
 
   # Configuration options
   export ASDF_<YOUR TOOL UC>_REMOVE_TEMP
-  ASDF_<YOUR TOOL UC>_REMOVE_TEMP="${ASDF_<YOUR TOOL UC>_REMOVE_TEMP:-yes}" # If no, asdf-<YOUR TOOL LC>'s temporary directory won't be deleted on exit
+  ASDF_<YOUR TOOL UC>_REMOVE_TEMP="${ASDF_<YOUR TOOL UC>_REMOVE_TEMP:-yes}" # If no, <YOUR TOOL LC>'s temporary directory won't be deleted on exit
   export ASDF_<YOUR TOOL UC>_DEBUG
   ASDF_<YOUR TOOL UC>_DEBUG="${ASDF_<YOUR TOOL UC>_DEBUG:-no}" # If yes, extra information will be logged to the console and every command executed will be logged to the logfile.
   export ASDF_<YOUR TOOL UC>_STDOUT
@@ -43,7 +43,7 @@ asdf_<YOUR TOOL LC>_init() {
   export ASDF_<YOUR TOOL UC>_STDERR
   ASDF_<YOUR TOOL UC>_STDERR="${ASDF_<YOUR TOOL UC>_STDERR:-2}" # The file descriptor where the script's standard error output should be directed.
   export ASDF_<YOUR TOOL UC>_SILENT
-  ASDF_<YOUR TOOL UC>_SILENT="${ASDF_<YOUR TOOL UC>_SILENT:-no}" # If yes, asdf-<YOUR TOOL LC> will not echo build steps to stdout.
+  ASDF_<YOUR TOOL UC>_SILENT="${ASDF_<YOUR TOOL UC>_SILENT:-no}" # If yes, <YOUR TOOL LC> will not echo build steps to stdout.
   # End configuration options
 
   # Ensure ASDF_DATA_DIR has a value
@@ -359,12 +359,12 @@ asdf_<YOUR TOOL LC>_install_deps() {
   local input
   input=""
   echo
-  echo "[asdf-<YOUR TOOL LC>:install-deps] additional packages are required: ${deps}"
+  echo "[<YOUR TOOL LC>:install-deps] additional packages are required: ${deps}"
   echo
   if [ "${ASDF_<YOUR TOOL UC>_INSTALL_DEPS_ACCEPT:-no}" = "no" ]; then
-    read -r -p "[asdf-<YOUR TOOL LC>:install-deps] Install them now? [Y/n] " input
+    read -r -p "[<YOUR TOOL LC>:install-deps] Install them now? [Y/n] " input
   else
-    echo "[asdf-<YOUR TOOL LC>:install-deps] --yes passed, installing…"
+    echo "[<YOUR TOOL LC>:install-deps] --yes passed, installing…"
     input="yes"
   fi
   echo
@@ -375,19 +375,19 @@ asdf_<YOUR TOOL LC>_install_deps() {
       cmds="$(asdf_<YOUR TOOL LC>_install_deps_cmds)"
       if [ -z "$cmds" ]; then
         echo
-        echo "[asdf-<YOUR TOOL LC>:install-deps] no package managers recognized, install the packages manually."
+        echo "[<YOUR TOOL LC>:install-deps] no package managers recognized, install the packages manually."
         echo
         return 1
       else
         eval "$cmds"
         echo
-        echo "[asdf-<YOUR TOOL LC>:install-deps] installed: ${deps}"
+        echo "[<YOUR TOOL LC>:install-deps] installed: ${deps}"
         echo
       fi
       ;;
     *)
       echo
-      echo "[asdf-<YOUR TOOL LC>:install-deps] plugin will not function without: ${deps}"
+      echo "[<YOUR TOOL LC>:install-deps] plugin will not function without: ${deps}"
       echo
       return 1
       ;;

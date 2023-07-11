@@ -1,5 +1,4 @@
 <h2 align="center"> <PROJECT NAME> Community Guidelines v1.0</h2>
-
 <!--  TODO: review and adopt the Policy -->
 Effective date: <START DATE>
 

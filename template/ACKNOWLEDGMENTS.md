@@ -1,20 +1,18 @@
-<h1 align="center">asdf <YOUR TOOL UC> plugin</h1>
+<h2 align="center">ACKNOWLEDGMENTS</h2>
+<!--  TODO: review and adopt the content -->
 
 
-## TODO: review and adopt ACKNOWLEDGMENTS 
-
-
-"asdf <YOUR TOOL UC> plugin" may use third-party libraries or other resources that may be distributed under licenses different from "asdf <YOUR TOOL UC> plugin"  itself. This project may use small parts of code from other projects, or may be inspired and influenced by them.
+"<PROJECT NAME>" may use third-party libraries or other resources that may be distributed under licenses different from "<PROJECT NAME>"  itself. This project may use small parts of code from other projects, or may be inspired and influenced by them.
 
 In the event that we accidentally failed to list a required notice, please bring it to our attention by opening an issue or pull request.
 
 The attached notices are provided for information only.
 
-## asdf <YOUR TOOL UC> plugin
+## <PROJECT NAME>
 
 <h2 align="center">Acknowledgments</h2>
 
-<p align= "center">This page gives credit to the underlying projects in which <b>asdf <YOUR TOOL UC> plugin</b> is based upon. This project uses or derives material from the following sources:</p>
+<p align= "center">This page gives credit to the underlying projects in which <b><PROJECT NAME></b> is based upon. This project uses or derives material from the following sources:</p>
 
 ## Acknowledgment Index
 
@@ -25,11 +23,11 @@ The attached notices are provided for information only.
 ## LightDM [[↑][index]]
 
 
-**asdf <YOUR TOOL UC> plugin** is based on skeleton, layout and  underlying code of for **[LightDM][lightdm]** so we give our acknowledgments.
+**<PROJECT NAME>** is based on skeleton, layout and  underlying code of for **[LightDM][lightdm]** so we give our acknowledgments.
 
  [sqlite-wasm](https://github.com/mandel59/sqlite-wasm)
 
- Distributions of "asdf <YOUR TOOL UC> plugin" include [ltex-ls](https://github.com/valentjn/ltex-ls) under the terms of the [Mozilla Public License, version 2.0](https://github.com/valentjn/ltex-ls/blob/release/LICENSE.md). For information on dependencies of ltex-ls, please see [ltex-ls/ACKNOWLEDGMENTS.md](https://github.com/valentjn/ltex-ls/blob/release/ACKNOWLEDGMENTS.md).
+ Distributions of "<PROJECT NAME>" include [ltex-ls](https://github.com/valentjn/ltex-ls) under the terms of the [Mozilla Public License, version 2.0](https://github.com/valentjn/ltex-ls/blob/release/LICENSE.md). For information on dependencies of ltex-ls, please see [ltex-ls/ACKNOWLEDGMENTS.md](https://github.com/valentjn/ltex-ls/blob/release/ACKNOWLEDGMENTS.md).
 
 Copyright 2017 Ryusei Yamaguchi
 
@@ -52,7 +50,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Web Greeter [[↑][index]]
 
-**asdf <YOUR TOOL UC> plugin** is based on **[Web Greeter][web-greeter]** so we give our acknowledgments.
+**<PROJECT NAME>** is based on **[Web Greeter][web-greeter]** so we give our acknowledgments.
 
 
 ## Pull Request submitters

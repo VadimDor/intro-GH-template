@@ -1,5 +1,4 @@
 <h2 align="center">Adopters</h2>
-
 <!--  TODO: review and adopt Adopters  :) -->
 
 <!-- Hello! If you are using "<PROJECT NAME>" and contributing to this file, thank you! -->

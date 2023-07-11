@@ -8,7 +8,7 @@ TOOL_NAME="<YOUR TOOL>"
 TOOL_TEST="<TOOL CHECK>"
 
 fail() {
-	echo -e "asdf-$TOOL_NAME: $*"
+	echo -e "$TOOL_NAME: $*"
 	exit 1
 }
 

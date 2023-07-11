@@ -8,9 +8,9 @@ assignees: <YOUR GIT USERNAME>
 ---
 <!--- Provide a general summary of your changes in the Title above -->
 
-# 'asdf <YOUR TOOL UC> plugin' Pull Request
+# '<PROJECT NAME>' Pull Request
 
-This is a **template** for a **bug fix** pull request for **asdf <YOUR TOOL UC> plugin**.
+This is a **template** for a **bug fix** pull request for **<PROJECT NAME>**.
 
 ## Explanation
 <!--- Describe your changes in detail -->

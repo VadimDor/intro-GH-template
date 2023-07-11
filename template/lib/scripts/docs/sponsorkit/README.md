@@ -1,4 +1,5 @@
-# SponsorKit
+<h2 align="center">SponsorKit</h2>
+<!--  TODO: review and adopt the content -->
 
 [![NPM version](https://img.shields.io/npm/v/sponsorkit?color=a1b858&label=)](https://www.npmjs.com/package/sponsorkit)
 

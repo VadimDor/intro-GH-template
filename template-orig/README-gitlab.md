@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-<YOUR TOOL> ![Build Status](https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>/badges/<PRIMARY BRANCH>/pipeline.svg)
+# <YOUR TOOL> ![Build Status](<TOOL REPO>/badges/<PRIMARY BRANCH>/pipeline.svg)
 
 [<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -27,7 +27,7 @@ Plugin:
 ```shell
 asdf plugin add <YOUR TOOL>
 # or
-asdf plugin add https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>.git
+asdf plugin add <TOOL REPO>.git
 ```
 
 <YOUR TOOL>:
@@ -53,8 +53,8 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>/-/graphs/<PRIMARY BRANCH>)!
+[Thanks goes to these contributors](<TOOL REPO>/graphs/<PRIMARY BRANCH>)!
 
 # License
 
-See [LICENSE](LICENSE) © [<YOUR NAME>](https://gitlab.com/<YOUR GITLAB USERNAME>/)
+See [LICENSE](LICENSE) © [<YOUR NAME>](https://gitlab.com/<YOUR GIT USERNAME>/)

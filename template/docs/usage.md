@@ -1,4 +1,4 @@
-# 如何使用？<h2 align="center">Usage</h2>
+<h2 align="center">Usage</h2>
 <!--  TODO: review and adopt the content -->
 
 Usage goes here

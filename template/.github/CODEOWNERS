@@ -3,9 +3,9 @@
 # Specifies the owner of each file in this branch using a structure similar to .gitignore files
 
 # This owner will be the default owner for everything in the repo. 
-# Unless a later match takes precedence, @<YOUR GITHUB USERNAME> will be requested for review when someone opens a pull request.
+# Unless a later match takes precedence, @<YOUR GIT USERNAME> will be requested for review when someone opens a pull request.
 
-* @<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL LC>
+* @<YOUR GIT USERNAME>/<YOUR TOOL LC>
 
 # Sample file:
 /test/integration.bats @HarryPotter

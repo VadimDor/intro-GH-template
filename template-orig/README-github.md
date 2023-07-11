@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-<YOUR TOOL> [![Build](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/build.yml/badge.svg)](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/build.yml) [![Lint](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/lint.yml/badge.svg)](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/actions/workflows/lint.yml)
+# <YOUR TOOL> [![Build](<TOOL REPO>/actions/workflows/build.yml/badge.svg)](<TOOL REPO>/actions/workflows/build.yml) [![Lint](<TOOL REPO>/actions/workflows/lint.yml/badge.svg)](<TOOL REPO>/actions/workflows/lint.yml)
 
 [<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -27,7 +27,7 @@ Plugin:
 ```shell
 asdf plugin add <YOUR TOOL>
 # or
-asdf plugin add <YOUR TOOL> https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>.git
+asdf plugin add <YOUR TOOL> <TOOL REPO>.git
 ```
 
 <YOUR TOOL>:
@@ -53,8 +53,8 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>/graphs/contributors)!
+[Thanks goes to these contributors](<TOOL REPO>/graphs/contributors)!
 
 # License
 
-See [LICENSE](LICENSE) © [<YOUR NAME>](https://github.com/<YOUR GITHUB USERNAME>/)
+See [LICENSE](LICENSE) © [<YOUR NAME>](https://github.com/<YOUR GIT USERNAME>/)

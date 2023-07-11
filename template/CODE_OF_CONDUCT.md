@@ -1,5 +1,4 @@
 <h2 align="center">Contributor Covenant Code of Conduct</h2>
-
 <!--  TODO: review and adopt following rules -->
 Effective date: <START DATE>
 

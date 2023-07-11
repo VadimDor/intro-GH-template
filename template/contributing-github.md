@@ -1,8 +1,5 @@
-<h1 align="center">asdf <YOUR TOOL UC> plugin</h1>
-
-## TODO: review and adopt Contributing
-
-# Contributing
+<h2 align="center">Contributing</h2>
+<!--  TODO: review and adopt the content -->
 
 Testing Locally:
 
@@ -10,14 +7,14 @@ Testing Locally:
 asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
 
 # TODO: adapt this
-asdf plugin test <YOUR TOOL> https://github.com/<YOUR GITHUB USERNAME>/asdf-<YOUR TOOL>.git "<TOOL CHECK>"
+asdf plugin test <YOUR TOOL> <TOOL REPO>.git "<TOOL CHECK>"
 ```
 
 Tests are automatically run in GitHub Actions on push and PR.
 
 ## Team Members
 
-- Owner: [<YOUR GITLAB USERNAME>](<TOOL REPO>)
+- Owner: [<YOUR GIT USERNAME>](<TOOL REPO>)
 
 ## Contributing Index
 
@@ -42,7 +39,7 @@ Here are the **steps** involved when making a contribution:
  * @license <YOUR TOOL>
  * filename.ext
  *
- * Copyright (c) <START DATE>, <YOUR GITLAB USERNAME>.
+ * Copyright (c) <START DATE>, <YOUR GIT USERNAME>.
  *
  * This source code is licensed under the GNU license found in the
  * LICENSE file in the root directory of this source tree.

@@ -26,7 +26,7 @@ setup_test() {
   ASDF_<YOUR TOOL UC>_SILENT="yes"
   export ASDF_<YOUR TOOL UC>_SILENT
 
-  ASDF_<YOUR TOOL UC>_TEST_TEMP="$(mktemp -t asdf-<YOUR TOOL LC>-utils-tests.XXXX -d)"
+  ASDF_<YOUR TOOL UC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-utils-tests.XXXX -d)"
   export ASDF_<YOUR TOOL UC>_TEST_TEMP
 
   # Mock ASDF vars
