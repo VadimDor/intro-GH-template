@@ -6,6 +6,8 @@ load ../node_modules/bats-support/load.bash
 load ../node_modules/bats-assert/load.bash
 load ./lib/test_utils
 
+# TODO: check tests below you really adopt
+
 setup_file() {
   PROJECT_DIR="$(realpath "$(dirname "$BATS_TEST_DIRNAME")")"
   export PROJECT_DIR

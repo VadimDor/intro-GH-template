@@ -113,7 +113,8 @@ set_placeholder() {
 }
 
 setup_github() {
-	local cwd out tool_name tool_repo check_command author_name github_username tool_homepage ok primary_branch bats_tests
+	local cwd out tool_name tool_repo check_command author_name github_username tool_homepage ok primary_branch \
+	  bats_tests user_email user_profile pext
 
 	cwd="$PWD"
 	out="$cwd/out"
@@ -127,6 +128,7 @@ setup_github() {
 	author_name="${4:-$(ask_for "Your name" "$(git config user.name 2>/dev/null)")}"
 
 	tool_repo="${5:-$(ask_for "$HELP_TOOL_REPO" "https://github.com/$github_username/$tool_name")}"
+	user_profile="https://github.com/$github_username"
 	tool_homepage="${6:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_repo")}"
 	license_keyword="${7:-$(ask_license)}"
 	license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
@@ -170,8 +172,36 @@ setup_github() {
 			git rm -rf "$out" >/dev/null
 			git read-tree --prefix="" -u template:template/
 
+
+			local user_avatar=curl $user_profile|grep -o "https://avatars.githubusercontent.com[^\"]*[^\"]"|grep '\?'|head -n 1
+			# LC_ALL=C grep -obUaP "^\xFF\xD8" 111.jpg
+			if [ -z $user_avatar ]; then
+			 curl "$user_avatar" --output avatar
+			 [ -z $(LC_ALL=C grep -obUaP "^\xFF\xD8\xFF") ] &&  ( pext="jpg";mv -f avatar "$out"/assets/profile."$pext" )
+			 [ -z $(LC_ALL=C grep -obUaP "^\x89\x50\x4E") ] &&  ( pext="png";mv -f avatar "$out"/assets/profile."$pext" )
+			 [ -z $(LC_ALL=C grep -obUaP "^\x42\x4D\xB6") ] &&  ( pext="bmp";mv -f avatar "$out"/assets/profile."$pext"	)
+			 [ -z $(LC_ALL=C grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
+			fi
+			if [ -z "$pext"] ; then
+			 echo "Not recognized users avatar format. OSI avatar will be used in md files."
+			 pext="png"
+			 mv profile-osi.png "$out"/assets/profile."$pext"
+			else
+			 rm -f profile-osi.png
+			fi
+			# curl $user_avatar --output "$out/assets/profile.png"
+			# curl $(curl https://github.com/VadimDor|grep -o "https://avatars.githubusercontent.com[^\"]*[^\"]"|grep '\?'|head -n 1) --output test3.png
+
+
+
 			download_license "$license_keyword" "$out/LICENSE"
-			sed -i '1s;^;TODO: INSERT YOUR NAME & COPYRIGHT YEAR (if applicable to your license)\n;g' "$out/LICENSE"
+			#sed -i '1s;^;TODO: INSERT YOUR NAME & COPYRIGHT YEAR (if applicable to your license)\n;g' "$out/LICENSE"
+			sed -i "s/\[yyyy]/$(date +%Y)/g" "$out/LICENSE"
+			sed -i "s/\[fullname]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/\[name of copyright owner]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/\<year\>/$(date +%Y)/g" "$out/LICENSE"
+			sed -i "s/\<name of author\>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/\<program\>/$('asf-$tool_name plugin')/g" "$out/LICENSE"			
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
@@ -185,7 +215,14 @@ setup_github() {
 			set_placeholder "<TOOL CHECK>" "$check_command" "$out"
 			set_placeholder "<YOUR NAME>" "$author_name" "$out"
 			set_placeholder "<YOUR GITHUB USERNAME>" "$github_username" "$out"
+			set_placeholder "<YOUR GIT USERNAME>" "$github_username" "$out"			
 			set_placeholder "<PRIMARY BRANCH>" "$primary_branch" "$out"
+			user_email=$(git config --list|grep 'user.email='| cut -d\=   -f2)
+			set_placeholder "<USER EMAIL>" "$user_email" "$out"
+			set_placeholder "<PEXT>" "$pext" "$out"
+			project_name="asdf <YOUR TOOL UC> plugin"
+			set_placeholder "<PROJECT NAME>" "$project_name" "$out"
+			set_placeholder "<START DATE>" "$project_name" "$(date +%D)"
 
 			git add "$out"
 			# remove GitLab specific files
@@ -226,7 +263,8 @@ setup_github() {
 }
 
 setup_gitlab() {
-	local cwd out tool_name tool_repo check_command author_name github_username gitlab_username tool_homepage ok primary_branch bats_tests
+	local cwd out tool_name tool_repo check_command author_name github_username gitlab_username tool_homepage ok primary_branch \
+	  bats_tests user_email
 
 	cwd="$PWD"
 	out="$cwd/out"
@@ -285,6 +323,12 @@ setup_gitlab() {
 			git read-tree --prefix=/ -u template:template/
 
 			download_license "$license_keyword" "$out/LICENSE"
+			sed -i "s/\[yyyy]/$(date +%Y)/g" "$out/LICENSE"
+			sed -i "s/\[fullname]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/\[name of copyright owner]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/\<year\>/$(date +%Y)/g" "$out/LICENSE"
+			sed -i "s/\<name of author\>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/\<program\>/$('asf-$tool_name plugin')/g" "$out/LICENSE"				
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
@@ -297,9 +341,11 @@ setup_gitlab() {
 			set_placeholder "<TOOL REPO>" "$tool_repo" "$out"
 			set_placeholder "<TOOL CHECK>" "$check_command" "$out"
 			set_placeholder "<YOUR NAME>" "$author_name" "$out"
-			set_placeholder "<YOUR GITHUB USERNAME>" "$github_username" "$out"
 			set_placeholder "<YOUR GITLAB USERNAME>" "$gitlab_username" "$out"
+			set_placeholder "<YOUR GIT USERNAME>" "$gitlab_username" "$out"
 			set_placeholder "<PRIMARY BRANCH>" "$primary_branch" "$out"
+			user_email=$(git config --list|grep 'user.email='| cut -d\=   -f2)
+			set_placeholder "<USER EMAIL>" "$user_email" "$out"
 
 			git add "$out"
 			# remove GitHub specific files

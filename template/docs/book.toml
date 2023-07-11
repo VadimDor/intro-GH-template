@@ -1,0 +1,10 @@
+[book]
+title = "<PROJECT NAME>>"
+description = "<PROJECT NAME> Homepage>"
+src = "./docs"
+
+[output.html]
+git-repository-url = "<TOOL REPO>/"
+edit-url-template = "<TOOL REPO>/edit/<PRIMARY BRANCH>/{path}"
+additional-css = ["custom.css"]
+theme = "./docs/theme"

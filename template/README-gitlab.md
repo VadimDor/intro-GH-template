@@ -309,7 +309,7 @@ Fork this repo, then run:
 
 ```sh
 rm -rf ~/.asdf/plugins/<YOUR TOOL LC>
-git clone git@github.com:<your-username>/asdf-<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
+git clone git@gitlab.com:<your-username>/asdf-<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
 ```
 
 [Thanks goes to these contributors](https://gitlab.com/<YOUR GITLAB USERNAME>/asdf-<YOUR TOOL>/-/graphs/<PRIMARY BRANCH>)!

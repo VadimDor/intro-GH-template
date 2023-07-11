@@ -1,104 +1,62 @@
-# Changelog
+<h2 align="center">Changelog</h2>
+<!--  TODO: Review real changes below -->
 
 All notable changes to this project will be documented in this file.
 
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-=========   Entries below this line are only good pracrice samples ============
 
-## v2.0.1 - 2022-11-28
-
+****   Entries below this line are only good pracrice samples ***
+ 
+## [1.0.4] - 2023-05-05
+This release focuses on bug fixes, but also includes some improvements.
 - fix: sorting for `asdf list-all <YOUR TOOL LC>`
 
-## v2.0.0 - 2022-11-08
+### Changed
+- No changes
 
-- add: nightly unstable binary support (ire4ever1190)
+### Fixed
+- Fixed some bugs!
+
+## [1.0.3] - 2023-03-03
+
+### Added
+- add: nightly unstable binary support  
 - add: docker-compose config for Linux development
 - improve: linting (yaml, markdown, update shellcheck/shfmt)
 - remove: unofficial binaries from <YOUR TOOL LC>-builds
-- remove: hub dependency
-- remove: untested windows support (does asdf even support mingw bash?)
-- fix: fixed ASDF_INSTALL_PATH empty when version is ref:HEAD (joxcat)
 
-## v1.4.0 - 2022-05-10
+### Changed
+- No changes
 
-- add: binaries for <YOUR TOOL ULC> 1.2.18, 1.6.4, 1.6.6
+### Fixed
+- Fixed some bugs!
 
-### v1.3.2 - 2021-12-27
+## [1.0.2] - 2023-02-02
+ 
+Scripts and fixes 
+ 
+### Added
+- Added install scripts!
+ 
+### Changed
+- No changes
 
-- fix: #14 ASDF_DATA_DIR default not sensible
+### Fixed
+- Fixed some bugs!
 
-### v1.3.1 - 2021-12-24
+## [1.0.0] - 2023-01-01
+ 
+**First** oficial version of **Shikai**.
+ 
+### Added
 
-- add: binaries for <YOUR TOOL ULC> 1.2.16 and 1.6.2
-
-### v1.3.0 - 2021-11-30
-
-- fix: don't override XDG_CONFIG_HOME and APPDATA
-
-### v1.2.3 - 2021-11-22
-
-- fix: workaround for M1 `DYLD_LIBRARY_PATH`
-
-### v1.2.1 - 2021-10-12
-
-- fix: `asdf_<YOUR TOOL LC>_is_musl ` check
-
-### v1.2.0 - 2021-10-09
-
-- fix: missing `tools` directory
-- deprecate: remove `ASDF_<YOUR TOOL UC>_REQUIRE_BINARY` option
-
-### v1.1.6 - 2021-10-08
-
-- fix: CI: plugin test on Alpine Linux failed due to busybox grep missing -quiet
-- fix: ASDF_INSTALL_PATH should not be assumed as set due to `list-all`
-
-- ### v1.1.5 - 2021-7-11
-
-- fix: Support for <YOUR TOOL LC>deps directory (#7)
-
-### v1.1.4 - 2021-03-27
-
-- fix: bats issues
-
-### v1.1.3 - 2021-03-04
-
-- feat: allow <YOUR TOOL LC> shim to work in elvish shell
-
-### v1.1.2 - 2021-01-30
-
-- feat: support for Apple Silicon / M1
-
-### v1.1.1 - 2021-01-24
-
-- update: lintball 1.1.3
-
-### v1.1.0 - 2021-01-18
-
-- feat: support for bash 3
-- fix: remove hard dependency on gcc for determining ARM version
-- fix: build issues on GitHub Actions
-- feat: reformat code with [lintball](https://github.com/elijahr/lintball)
-
-### v1.0.0 - 2021-01-06
-
-- feat: refactor
-- fix: issues with <YOUR TOOL LC> shim
-- feat: add unit & integration tests
-
-### v0.2.1 - 2021-01-02
-
-- fix: issue with tarball name generation causing unnecessary building from source.
-
-### v0.2.0 - 2021-01-02
-
-- fix: armv7 could not curl even with update-ca-certificates. Bundle latest cacert.pem.
-- fix: perms issue where asdf cleanup handler would block on rm of fusion/.git/\* files
-- workaround: CI: disable TCP offloading so can run macOS tests again
-- feat: add pre-commit git hooks for shfmt and prettier
-- feat: test on CI: Alpine / musl
-
-### v0.1.0 - 2021-01-01
-
-- feat: initial release
+- All !
+- New !
+ 
+### Changed
+- No changes
+ 
+### Fixed
+- No fixes
