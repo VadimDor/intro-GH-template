@@ -40,6 +40,13 @@
 </p>
 <br />
 </div>
+![AllInOne](TOOL REPO>/workflows/AllInOne/badge.svg)
+[![GitHub license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<TOOL NAME LC>?style=plastic)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
+
+## Build History
+
+[![Build history](https://buildstats.info/github/chart/<YOUR GIT USERNAME>/<TOOL NAME LC>?branch=<PRIMARY BRANCH>)](<TOOL REPO>/actions)
+
 
 # 介绍
 
