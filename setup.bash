@@ -272,7 +272,7 @@ setup_git() {
 			# rename GitHub specific files to final filenames
 			### git mv "$out/README-github.md" "$out/README.md"
 			### git mv "$out/contributing-github.md" "$out/contributing.md"
-			# special files like README/CHANGELOG/LICENSE/README/CHANGELOG/LICENSE/AUTHORS
+			# special files like README/CHANGELOG/LICENSE/README/LICENSE/AUTHORS
 	              if [ "$bats_tests" == "yes" ]; then
 		    	printf "Adding BATS submodules for tests.\n"
 				git submodule add https://github.com/bats-core/bats-core.git "test/bats"

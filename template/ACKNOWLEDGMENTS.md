@@ -18,41 +18,20 @@ The attached notices are provided for information only.
 
 - [LightDM][lightdm-hook]
 - [Web Greeter][web-greeter-hook]
-[Title](https://github.com/Lissy93/dashy)
-[Title](https://github.com/TheWisker/Shikai)
-[Title](https://github.com/open-policy-agent)
+- [skeleton of asdf plugin][skeleton-of-asdf-plugun-hook]
+- [many useful Github workflows][useful-Github-workflows-hook]
+- [special files like README/CHANGELOG/LICENSE/README/LICENSE/AUTHORS][special-files-hook] 
+- [some  Github workflows][Github-workflows-hook]
 
-## LightDM [[↑][index]]
+## Skeleton of asdf plugin [[↑][index]]
 
 
-**<PROJECT NAME>** is based on skeleton, layout and  underlying code of for **[LightDM][lightdm]** so we give our acknowledgments.
+**<PROJECT NAME>** is based on skeleton, layout and  underlying code of for **[skeleton of asdf plugin][skeleton-of-asdf-plugun]** so we give our acknowledgments.
+# TODO: add reference on license
 
- [sqlite-wasm](https://github.com/mandel59/sqlite-wasm)
+## Useful Github workflows [[↑][index]]
 
- Distributions of "<PROJECT NAME>" include [ltex-ls](https://github.com/valentjn/ltex-ls) under the terms of the [Mozilla Public License, version 2.0](https://github.com/valentjn/ltex-ls/blob/release/LICENSE.md). For information on dependencies of ltex-ls, please see [ltex-ls/ACKNOWLEDGMENTS.md](https://github.com/valentjn/ltex-ls/blob/release/ACKNOWLEDGMENTS.md).
-
-Copyright 2017 Ryusei Yamaguchi
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Web Greeter [[↑][index]]
-
-**<PROJECT NAME>** is based on **[Web Greeter][web-greeter]** so we give our acknowledgments.
+**<PROJECT NAME>** uses **[many useful Github workflows][useful-Github-workflows]** so we give our acknowledgments.
 
 
 ## Pull Request submitters
@@ -62,9 +41,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 [index]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#acknowledgment-index
 [lightdm-hook]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#lightdm-
 [web-greeter-hook]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#web-greeter-
+[skeleton-of-asdf-plugin-hook]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#skeleton-of-asdf-plugin-
+[useful-Github-workflows-hook]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#useful-Github-workflows-
+[special-files-hook]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#special-files-
+[Github-workflows-hook]: <TOOL REPO>/blob/<PRIMARY BRANCH>/ACKNOWLEDGMENTS.md#Github-workflows-
 
 [lightdm]: https://github.com/canonical/lightdm
 [web-greeter]: https://github.com/JezerM/web-greeter
+
+
+
+[skeleton-of-asdf-plugin]: https://github.com/asdf-community/asdf-nim
+[useful-Github-workflows]: https://github.com/Lissy93/dashy
+[special-files]: https://github.com/TheWisker/Shikai
+[Github-workflows]: https://github.com/open-policy-agent
 
 
 
