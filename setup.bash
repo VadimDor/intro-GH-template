@@ -271,7 +271,7 @@ setup_git() {
   			 git rm -rf "$out/.github" "$out/README-github.md" "$out/contributing-github.md"
 			fi 
 			# rename GitHub specific files to final filenames
-			### git mv "$out/README-github.md" "$out/README.md"
+		 	git mv "$out/README-github.md" "$out/README.md"
 			### git mv "$out/contributing-github.md" "$out/contributing.md"
 			# special files like README/CHANGELOG/LICENSE/README/LICENSE/AUTHORS
 	              if [ "$bats_tests" == "yes" ]; then

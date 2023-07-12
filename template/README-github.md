@@ -2,6 +2,7 @@
 <div align="center">
 # <YOUR TOOL> [![Build](<TOOL REPO>/actions/workflows/build.yml/badge.svg)](<TOOL REPO>/actions/workflows/build.yml) [![Lint](<TOOL REPO>/actions/workflows/lint.yml/badge.svg)](<TOOL REPO>/actions/workflows/lint.yml)
 
+
 [<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 </div>
 
@@ -483,7 +484,7 @@ Fork this repo, then run:
 
 ```sh
 rm -rf ~/.asdf/plugins/<YOUR TOOL LC>
-git clone git@github.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
+git clone git@<GIT TYPE>.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
 ```
 
 [Thanks goes to these contributors](<TOOL REPO>/graphs/contributors)!
@@ -539,7 +540,7 @@ messages to follow up once the issue has been investigated.
 
 <h2 align="center">License [<a href="<TOOL REPO>#index">↑</a>]</h2>
 
-See [LICENSE](LICENSE)📜 © [<YOUR NAME>](https://github.com/<YOUR GIT USERNAME>/)
+See [LICENSE](LICENSE)📜 © [<YOUR NAME>](https://<GIT TYPE>.com/<YOUR GIT USERNAME>/)
 
 
 **TDLR;** _You can do whatever you like with this: use it in private or commercial settings,_

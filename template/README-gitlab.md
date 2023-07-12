@@ -309,14 +309,14 @@ Fork this repo, then run:
 
 ```sh
 rm -rf ~/.asdf/plugins/<YOUR TOOL LC>
-git clone git@gitlab.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
+git clone git@<GIT TYPE>.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
 ```
 
 [Thanks goes to these contributors](<TOOL REPO>/graphs/<PRIMARY BRANCH>)!
 
 # License
 
-See [LICENSE](LICENSE) © [<YOUR NAME>](https://gitlab.com/<YOUR GIT USERNAME>/)
+See [LICENSE](LICENSE) © [<YOUR NAME>](https://<GIT TYPE>.com/<YOUR GIT USERNAME>/)
 
 
 **TODO: adapt these sections above**
