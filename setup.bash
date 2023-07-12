@@ -220,8 +220,9 @@ setup_git() {
 			local tmp=$(mktemp)   # Create a temporary file
 			# gets removed under a reasonable collection of signals (HUP, INT, QUIT, PIPE and TERM):
 			trap "rm -f $tmp; exit 1" 0 1 2 3 13 15 
-			
-			for j in $out/*.haha; do
+
+			shopt -s globstar
+			for j in $out/*.md $out/**/*.md ; do
  			  cat "$out/header.html" "$j" >"$tmp"
  			  mv -f "$tmp" "$j"
  			  cat "$out/footer.html" >> "$j"
