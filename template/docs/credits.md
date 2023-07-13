@@ -34,9 +34,9 @@
 
 ## Newest Stargazers
 
-[![Recent Star Gazers](https://reporoster.com/stars/dark/<YOUR GIT USERNAME>/<TOOL NAME LC>)](<TOOL REPO>/stargazers)
+[![Recent Star Gazers](https://reporoster.com/stars/dark/<YOUR GIT USERNAME>/<YOUR TOOL LC>)](<TOOL REPO>/stargazers)
 
-[![Recent Forkers](https://reporoster.com/forks/dark/<YOUR GIT USERNAME>/<TOOL NAME LC>)](<TOOL REPO>/network/members)
+[![Recent Forkers](https://reporoster.com/forks/dark/<YOUR GIT USERNAME>/<YOUR TOOL LC>)](<TOOL REPO>/network/members)
 
 ---
 

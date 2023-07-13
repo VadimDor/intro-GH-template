@@ -7,8 +7,8 @@
 </div>
 
 [![Build Status](<TOOL REPO>/workflows/Post%20Merge/badge.svg?branch=main)](<TOOL REPO>/actions) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/99999999/badge)](https://bestpractices.coreinfrastructure.org/projects/99999999) [![Join the chat at https://gitter.im/<YOUR TOOL LC>/community](https://badges.gitter.im/<YOUR TOOL LC>/community.svg)](https://gitter.im/<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![<TOOL NAME US> downloads][badge-dl]][downloads] [![<TOOL NAME US> docs][badge-docs]][docs] [![<YOUR GIT USERNAME> on Slack][badge-slack]][slack] [![<TOOL NAME LC> on Twitter][badge-twitter]][twitter] [![<TOOL NAME LC> on YouTube][badge-yt]][youtube]  [![<TOOL NAME LC> Gate][badge-gate]][gate] [![License][badge-license]](#license)
-[![Build status: AppVeyor](https://ci.appveyor.com/api/projects/status/a6551f723231bjly?svg=true)](https://ci.appveyor.com/project/<YOUR GIT USERNAME>/<TOOL NAME LC>)
+[![<YOUR TOOL UC> downloads][badge-dl]][downloads] [![<YOUR TOOL UC> docs][badge-docs]][docs] [![<YOUR GIT USERNAME> on Slack][badge-slack]][slack] [![<YOUR TOOL LC> on Twitter][badge-twitter]][twitter] [![<YOUR TOOL LC> on YouTube][badge-yt]][youtube]  [![<YOUR TOOL LC> Gate][badge-gate]][gate] [![License][badge-license]](#license)
+[![Build status: AppVeyor](https://ci.appveyor.com/api/projects/status/a6551f723231bjly?svg=true)](https://ci.appveyor.com/project/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
 
 
  <a href="https://github.com/awesome-selfhosted/awesome-selfhosted#personal-dashboards">
@@ -18,35 +18,35 @@
     <img src="https://img.shields.io/badge/License-MIT-0aa8d2?logo=opensourceinitiative&logoColor=fff" alt="License MIT">
   </a>
   <a href="./.github/CHANGELOG.md">
-    <img src="https://img.shields.io/github/package-json/v/<YOUR GIT USERNAME>/<TOOL NAME LC>?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
+    <img src="https://img.shields.io/github/package-json/v/<YOUR GIT USERNAME>/<YOUR TOOL LC>?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
   </a>
-  <a href="https://hub.docker.com/r/<YOUR GIT USERNAME>/<TOOL NAME LC>">
-    <img src="https://img.shields.io/docker/pulls/<YOUR GIT USERNAME>/<TOOL NAME LC>?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
+  <a href="https://hub.docker.com/r/<YOUR GIT USERNAME>/<YOUR TOOL LC>">
+    <img src="https://img.shields.io/docker/pulls/<YOUR GIT USERNAME>/<YOUR TOOL LC>?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
   </a>
   <a href="http://as93.link/<YOUR GIT USERNAME>-build-status">
-   <img src="https://badgen.net/github/status/<YOUR GIT USERNAME>/<TOOL NAME LC>?icon=github" alt="GitHub Status">
+   <img src="https://badgen.net/github/status/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github" alt="GitHub Status">
   </a>
-  <a href="https://snyk.io/test/github/<YOUR GIT USERNAME>/<TOOL NAME LC>">
-    <img src="https://snyk.io/test/github/<YOUR GIT USERNAME>/<TOOL NAME LC>/badge.svg" alt="Known Vulnerabilities">
+  <a href="https://snyk.io/test/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>">
+    <img src="https://snyk.io/test/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/badge.svg" alt="Known Vulnerabilities">
   </a>
 
 <div align="center">
 # ◐ &nbsp; Development &nbsp; ◑
 <p>
-<a href="https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/commits"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/<YOUR GIT USERNAME>/<TOOL NAME LC>" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/<YOUR GIT USERNAME>/<TOOL NAME LC>" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/<YOUR GIT USERNAME>/<TOOL NAME LC>" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/blob/main/LICENSE"><img alt="Github License" src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/<YOUR GIT USERNAME>/<TOOL NAME LC>?style=social" /></a>
+<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/commits"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/blob/main/LICENSE"><img alt="Github License" src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
+<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=social" /></a>
 </p>
 <br />
 </div>
 ![AllInOne](TOOL REPO>/workflows/AllInOne/badge.svg)
-[![GitHub license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<TOOL NAME LC>?style=plastic)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=plastic)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
 
 ## Build History
 
-[![Build history](https://buildstats.info/github/chart/<YOUR GIT USERNAME>/<TOOL NAME LC>?branch=<PRIMARY BRANCH>)](<TOOL REPO>/actions)
+[![Build history](https://buildstats.info/github/chart/<YOUR GIT USERNAME>/<YOUR TOOL LC>?branch=<PRIMARY BRANCH>)](<TOOL REPO>/actions)
 
 
 # 介绍
@@ -68,9 +68,9 @@
 ## Features 🌈
 - 🆓 100% free and open-source
 - 🚀 Easy to setup with Docker
-- [<img src="https://i.ibb.co/HVWVYF7/docker.png" width="18"/>**Tested in Docker**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/master/docker-compose.yml)
+- [<img src="https://i.ibb.co/HVWVYF7/docker.png" width="18"/>**Tested in Docker**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/master/docker-compose.yml)
 
-[![<TOOL NAME> on Docker🐳 Hub](https://dockeri.co/image/<YOUR GIT NAME>/<TOOL NAME LC>)](https://hub.docker.com/r/<YOUR GIT NAME>/<TOOL NAME LC>)
+[![<YOUR TOOL LC> on Docker🐳 Hub](https://dockeri.co/image/<YOUR GIT NAME>/<YOUR TOOL LC>)](https://hub.docker.com/r/<YOUR GIT NAME>/<YOUR TOOL LC>)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -134,10 +134,10 @@ Huge thanks to the sponsors helping to support🙋‍♀️ <PROJECT NAME>'s dev
    This is plugin for asdf tool
 
 #### Contributors
-[![Auto-generated contributors](https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/<PRIMARY BRANCH>/docs/assets/CONTRIBUTORS.svg)](./docs/credits.md)
+[![Auto-generated contributors](https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/<PRIMARY BRANCH>/docs/assets/CONTRIBUTORS.svg)](./docs/credits.md)
 
 #### Stats
-[![Stats](https://repobeats.axiom.co/api/embed/48546e3c768d38c450ba136e32c0992bcf58ad73.svg "Repobeats analytics image")](https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/blob/<PRIMARY BRANCH>/docs/credits.md)
+[![Stats](https://repobeats.axiom.co/api/embed/48546e3c768d38c450ba136e32c0992bcf58ad73.svg "Repobeats analytics image")](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/blob/<PRIMARY BRANCH>/docs/credits.md)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -147,21 +147,21 @@ Huge thanks to the sponsors helping to support🙋‍♀️ <PROJECT NAME>'s dev
 
 > For full development documentation, see: [**Developing**](./docs/developing.md)
 
-[![Open Project in VS Code](https://img.shields.io/badge/Open_in-VS_Code-863cfc?style=flat-square&logo=visualstudiocode)](https://open.vscode.dev/<YOUR GIT USERNAME>/<TOOL NAME LC>)
-[![Open in GitPod](https://img.shields.io/badge/Open_in-GitPod-ffae33?style=flat-square&logo=gitpod)](https://gitpod.io/#github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>)
-[![Open in GitHub Code Spaces](https://img.shields.io/badge/Open_in-Code%20Spaces-131313?style=flat-square&logo=github)](https://github.dev/<YOUR GIT USERNAME>/<TOOL NAME LC>)
+[![Open Project in VS Code](https://img.shields.io/badge/Open_in-VS_Code-863cfc?style=flat-square&logo=visualstudiocode)](https://open.vscode.dev/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+[![Open in GitPod](https://img.shields.io/badge/Open_in-GitPod-ffae33?style=flat-square&logo=gitpod)](https://gitpod.io/#github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+[![Open in GitHub Code Spaces](https://img.shields.io/badge/Open_in-Code%20Spaces-131313?style=flat-square&logo=github)](https://github.dev/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
 
 Before getting started, you'll need [Git](https://git-scm.com/downloads) installed.
 
 To set up the development environment get Code: 
- `git clone <TOOL REPO>.git`  and `cd <TOOL NAME LC>`
+ `git clone <TOOL REPO>.git`  and `cd <YOUR TOOL LC>`
 
 **Repo Status**:
-[![Open PRs](https://flat.badgen.net/github/open-prs/lissy93/dashy?icon=github)](https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/pulls)
-[![Total PRs](https://flat.badgen.net/github/prs/<YOUR GIT USERNAME>/<TOOL NAME LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/pulls?q=)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/<YOUR GIT USERNAME>/<TOOL NAME LC>?style=flat-square)](https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/commits/<PRIMARY BRANCH>)
-[![Last Commit](https://flat.badgen.net/github/last-commit/<YOUR GIT USERNAME>/<TOOL NAME LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/commits/<PRIMARY BRANCH>)
-[![Contributors](https://flat.badgen.net/github/contributors/<YOUR GIT USERNAME>/<TOOL NAME LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<TOOL NAME LC>/graphs/contributors)
+[![Open PRs](https://flat.badgen.net/github/open-prs/lissy93/dashy?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/pulls)
+[![Total PRs](https://flat.badgen.net/github/prs/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/pulls?q=)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=flat-square)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/commits/<PRIMARY BRANCH>)
+[![Last Commit](https://flat.badgen.net/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/commits/<PRIMARY BRANCH>)
+[![Contributors](https://flat.badgen.net/github/contributors/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/graphs/contributors)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -549,7 +549,7 @@ _There is no warranty that this app will work as expected, and the author cannot
 _liable for anything that goes wrong._
 For more info, see TLDR Legal's [Explanation of MIT](https://tldrlegal.com/license/mit-license)
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2F<TOOL NAME LC>.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2F<TOOL NAME LC>?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2F<YOUR TOOL LC>.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2F<YOUR TOOL LC>?ref=badge_large)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -595,7 +595,7 @@ For more info, see TLDR Legal's [Explanation of MIT](https://tldrlegal.com/licen
 [badge-gate]: <TOOL REPO>/actions/workflows/main.yml/badge.svg
 [badge-license]: https://img.shields.io/badge/license-GPLv2+CE-green
 [badge-slack]: https://img.shields.io/badge/Slack-join-active?logo=slack
-[badge-twitter]: https://img.shields.io/badge/Twitter-@<TOOL NAME LC>-active?logo=twitter
+[badge-twitter]: https://img.shields.io/badge/Twitter-@<YOUR TOOL LC>-active?logo=twitter
 [docs]: <TOOL HOMEPAGE>/docs/
 [downloads]: <TOOL HOMEPAGE>/downloads/
 [gate]: <TOOL REPO>/actions/workflows/main.yml

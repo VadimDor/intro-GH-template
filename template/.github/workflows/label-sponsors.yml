@@ -1,4 +1,4 @@
-# Adds a label to any issues raised by a sponsor of <YOUR GIT NAME>/<TOOL NAME>
+# Adds a label to any issues raised by a sponsor of <YOUR GIT NAME>/<YOUR TOOL>
 # In order to allow their request can be prioritized
 name: 🎯 Label sponsors
 on:

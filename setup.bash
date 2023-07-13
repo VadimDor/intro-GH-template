@@ -244,7 +244,7 @@ setup_git() {
 			sed -i "s/\[name of copyright owner]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
 			sed -i "s/\<year\>/$(date +%Y)/g" "$out/LICENSE"
 			sed -i "s/\<name of author\>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
-			sed -i "s/\<program\>/$(<TOOL NAME>)/g" "$out/LICENSE"			
+			sed -i "s/\<program\>/$(<YOUR TOOL>)/g" "$out/LICENSE"			
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
@@ -298,7 +298,7 @@ setup_git() {
 			fi
 
 
-			git branch gh-pages
+			#git branch gh-pages
 
 			git commit -m "Generate $tool_name plugin from template."	2>/dev/null		
 			cd "$cwd"
@@ -312,6 +312,17 @@ setup_git() {
 			# Gitlab??:  printf "You might want to push using \`--force-with-lease\` to origin/%s\n" "$primary_branch"
 			
 			git push --force-with-lease
+
+			git branch gh-pages
+			git checkout gh-pages
+			echo "Hello World" > index.html
+
+			git add --all #docs
+			git commit -m "Initial commit"
+			git push -u origin gh-pages
+			# git push origin :gh-pages && 
+			# git subtree push --prefix docs origin gh-page
+			
 			
 			printf "Showing pending TODO tags that you might want to review\n"
 			git grep -P -n -C 3 "TODO"

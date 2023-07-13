@@ -1,4 +1,4 @@
-# Uses the contents of the ./docs directory for <TOOL NAME LC>'s GH Wiki page
+# Uses the contents of the ./docs directory for <YOUR TOOL LC>'s GH Wiki page
 name: 📊 Wiki Sync
 on:
   workflow_dispatch: # Manual dispatch
@@ -17,7 +17,7 @@ jobs:
         ACTION_MAIL: <USER EMAIL>
         ACTION_NAME: liss-bot
         OWNER: <YOUR GIT NAME>
-        REPO_NAME: <TOOL NAME LC>
+        REPO_NAME: <YOUR TOOL LC>
         MD_FOLDER: docs/
 #     - name: Sync Wiki
 #       uses: joeizzard/action-wiki-sync@master

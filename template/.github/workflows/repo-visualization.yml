@@ -52,7 +52,7 @@ jobs:
         filename: docs/assets/repo-metrics.*
         template: classic
         user: <YOUR GIT NAME>
-        repo: <TOOL NAME LC>
+        repo: <YOUR TOOL LC>
         delay: 5 
 
     - name: Generate License Metrics
@@ -65,7 +65,7 @@ jobs:
         filename: docs/assets/license-metrics.*
         template: repository
         user: <YOUR GIT NAME>
-        repo: <TOOL NAME LC>
+        repo: <YOUR TOOL LC>
         delay: 5
         plugin_licenses: yes
         plugin_licenses_setup: yarn build
@@ -81,7 +81,7 @@ jobs:
         committer_message: ':purple_heart: Adds contributor metrics'
         filename: docs/assets/controbutor-metrics.*
         user: <YOUR GIT NAME>
-        repo: <TOOL NAME LC>
+        repo: <YOUR TOOL LC>
         delay: 5
         plugin_contributors: yes
         plugin_contributors_base: ""
