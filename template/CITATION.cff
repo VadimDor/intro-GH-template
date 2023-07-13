@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software in your work, or make a fork of it, please cite it using the following metadata."
 authors:
-- given-names: "<YOUR GIT USERNAME>"
+- family-names: "<YOUR NAME> (<YOUR GIT USERNAME>@<GIT TYPE>.com)"
 title: "<PROJECT NAME>"
 version: 1.0.0
-date-released: 2023-01-01
+date-released: <START DATE>
 url: "<TOOL REPO>"

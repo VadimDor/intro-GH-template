@@ -43,7 +43,7 @@ HELP_TOOL_HOMEPAGE="The tool's documentation homepage if necessary."
 
 camel_case() {
  local word="$1"	
- echo ="$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}"
+ echo "$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}"
 }
 
 ask_for() {
@@ -132,23 +132,28 @@ setup_git() {
 	# ask for arguments not given via CLI
 	tool_name="${2:-$(ask_for "$HELP_PLUGIN_NAME")}"
 
-	tool_name="${tool_name/asdf-/}"
+	#tool_name="${tool_name/asdf-/}"
 
-	check_command="${3:-$(ask_for "$HELP_TOOL_CHECK" "$tool_name --help")}"
-
-	git_username="${4:-$(ask_for "Your $(camel_case $git) username")}"
+	check_command="${3:-$(ask_for "$HELP_TOOL_CHECK" "${tool_name/asdf-/} --version")}"
+    
+	url=$(git config --list| grep "remote.origin.url=")  
+	t="${url#*$1.com/}"
+	org="${t%%/*}"
+    git_usernamer=$(printf '%s\n' "$org")
+	git_username="${4:-$(ask_for "Your $(camel_case $git) username" "$git_usernamer")}"
 
 	author_name="${5:-$(ask_for "Your name" "$(git config user.name 2>/dev/null)")}"
 
 	tool_repo="${6:-$(ask_for "$HELP_TOOL_REPO" "https://$1.com/$git_username/$tool_name")}"
 
-	tool_homepage="${7:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_repo")}"
+	tool_homepage="https://$git_username.$1.io/$tool_name"
+	tool_homepage="${7:-$(ask_for "$HELP_TOOL_HOMEPAGE" "$tool_homepage")}"
 
 	license_keyword="${8:-$(ask_license)}"
 	license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
 
-	bats_tests="${9:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests." "yes" "no")}"
-	bats_tests=$(echo "$bats_tests" | tr '[:upper:]' '[:lower:]')"
+	bats_tests="${9:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests." "yes")}"
+	bats_tests=$(echo "$bats_tests" | tr '[:upper:]' '[:lower:]')
 	[[ $bats_tests == "tests" ]] && bats_tests="yes"
 
 	user_profile="https://$git.com/$git_username"
@@ -188,28 +193,31 @@ setup_git() {
 			cd "$out"
 			git checkout --orphan out
 			git rm -rf "$out" >/dev/null
-			git read-tree --prefix="$([[ $git == 'github' ]] && ''||'/')" -u template:template/
+			git read-tree --prefix="$([[ $git == 'github' ]] && echo '' || echo '/')" -u template:template/
 
 			if [ $git == 'github' ]; then
-			 user_avatar=curl $user_profile|grep -o "https://avatars.githubusercontent.com[^\"]*[^\"]"|grep '\?'|head -n 1
+			  user_avatar=$(curl "$user_profile"|grep -o "https://avatars.githubusercontent.com[^\"]*[^\"]"|grep '\?'|head -n 1)
 			else
-			  user_avatar=curl $user_profile|grep -o "https://gitlab.com/uploads/-/system/user/avatar/[^\"]*[^\"]"|head -n 1
-			  if [ ! -z user_avatar ]; then
-			    user_avatar=curl $user_profile|grep -o "https://gitlab.com/secure.gravatar.com/avatar/[^\"]*[^\"]"|head -n 1
+			  user_avatar=$(curl "$user_profile"|grep -o "https://gitlab.com/uploads/-/system/user/avatar/[^\"]*[^\"]"|head -n 1)
+			  if [ -z user_avatar ]; then
+			    user_avatar=$(curl "$user_profile"|grep -o "https://gitlab.com/secure.gravatar.com/avatar/[^\"]*[^\"]"|head -n 1)
 			  fi
 			fi 
 			# LC_ALL=C grep -obUaP "^\xFF\xD8" 111.jpg
-			if [ ! -z $user_avatar ]; then
+			pext=""
+			if [ ! -z "$user_avatar" ]; then
 			 curl "$user_avatar" --output avatar
-			 [ -z $(LC_ALL=C grep -obUaP "^\xFF\xD8\xFF") ] &&  ( pext="jpg";mv -f avatar "$out"/assets/profile."$pext" )
-			 [ -z $(LC_ALL=C grep -obUaP "^\x89\x50\x4E") ] &&  ( pext="png";mv -f avatar "$out"/assets/profile."$pext" )
-			 [ -z $(LC_ALL=C grep -obUaP "^\x42\x4D\xB6") ] &&  ( pext="bmp";mv -f avatar "$out"/assets/profile."$pext"	)
-			 [ -z $(LC_ALL=C grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
+			 ls avatar
+			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\xFF\xD8\xFF") ] &&  ( pext="jpg";mv -f avatar "$out"/assets/profile."$pext" )
+			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x89\x50\x4E") ] &&  ( pext="png";mv -f avatar "$out"/assets/profile."$pext" )
+			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x42\x4D\xB6") ] &&  ( pext="bmp";mv -f avatar "$out"/assets/profile."$pext"	)
+			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
 			fi
 			if [ -z "$pext"] ; then
 			 echo "Not recognized users avatar format. OSI avatar will be used in md files."
 			 pext="png"
-			 mv profile-osi.png "$out"/assets/profile."$pext"
+			 rm -f avatar
+			 mv "assets/profile-osi.png" "$out"/assets/profile."$pext"
 			else
 			 rm -f profile-osi.png
 			fi
@@ -236,7 +244,7 @@ setup_git() {
 			sed -i "s/\[name of copyright owner]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
 			sed -i "s/\<year\>/$(date +%Y)/g" "$out/LICENSE"
 			sed -i "s/\<name of author\>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
-			sed -i "s/\<program\>/$('asf-$tool_name plugin')/g" "$out/LICENSE"			
+			sed -i "s/\<program\>/$(<TOOL NAME>)/g" "$out/LICENSE"			
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
@@ -258,12 +266,12 @@ setup_git() {
 			set_placeholder "<PEXT>" "$pext" "$out"
 			project_name="$tool_name plugin"
 			set_placeholder "<PROJECT NAME>" "$project_name" "$out"
-			set_placeholder "<START DATE>" "$project_name" "$(date +%D)"
+			set_placeholder "<START DATE>" "$project_name" "$(date +%d-%m-%Y)"
 			set_placeholder "<GIT TYPE>" "$git" "$out"
 			set_placeholder "<USER PROFILE>" "$user_profile" "$out"
 		
 
-			git add "$out"
+			git add "$out" 2>/dev/null	
 			# remove GitLab or GitHub specific files
 			if [ $git == 'github' ]; then
 			 git rm -rf "$out/.gitlab" "$out/.gitlab-ci.yml" "$out/README-gitlab.md" 
@@ -276,9 +284,9 @@ setup_git() {
 			# special files like README/CHANGELOG/LICENSE/README/LICENSE/AUTHORS
 	              if [ "$bats_tests" == "yes" ]; then
 		    	printf "Adding BATS submodules for tests.\n"
-				git submodule add https://github.com/bats-core/bats-core.git "test/bats"
- 				git submodule add https://github.com/bats-core/bats-support.git "test/test_helper/bats-support"
-				git submodule add https://github.com/bats-core/bats-assert.git "test/test_helper/bats-assert"			
+				git submodule add https://github.com/bats-core/bats-core.git	"test/test_helper/bats"         2>/dev/null
+ 				git submodule add https://github.com/bats-core/bats-support.git "test/test_helper/bats-support" 2>/dev/null
+				git submodule add https://github.com/bats-core/bats-assert.git  "test/test_helper/bats-assert"	2>/dev/null		
 
 			else
 				#cat <<-EOF >> ./template/.gitignore
@@ -290,9 +298,9 @@ setup_git() {
 			fi
 
 
+			git branch gh-pages
 
-
-			git commit -m "Generate $tool_name plugin from template."			
+			git commit -m "Generate $tool_name plugin from template."	2>/dev/null		
 			cd "$cwd"
 			git branch -M out "$primary_branch"
 			git worktree remove -f out
@@ -302,6 +310,9 @@ setup_git() {
 			printf "Your %s branch has been reset to an initial commit.\n" "$primary_branch"
 			printf "Push to origin/%s with \`git push --force-with-lease\`\n" "$primary_branch"
 			# Gitlab??:  printf "You might want to push using \`--force-with-lease\` to origin/%s\n" "$primary_branch"
+			
+			git push --force-with-lease
+			
 			printf "Showing pending TODO tags that you might want to review\n"
 			git grep -P -n -C 3 "TODO"
 		) || cd "$cwd"
