@@ -16,7 +16,7 @@ jobs:
         GH_PAT: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         ACTION_MAIL: <USER EMAIL>
         ACTION_NAME: liss-bot
-        OWNER: <YOUR GIT NAME>
+        OWNER: <YOUR GIT USERNAME>
         REPO_NAME: <YOUR TOOL LC>
         MD_FOLDER: docs/
 #     - name: Sync Wiki

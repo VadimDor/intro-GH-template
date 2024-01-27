@@ -33,14 +33,84 @@
 <div align="center">
 # ◐ &nbsp; Development &nbsp; ◑
 <p>
-<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/commits"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/blob/main/LICENSE"><img alt="Github License" src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
-<a href="https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=social" /></a>
+<a href="<TOOL REPO>/commits"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="<TOOL REPO>/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="<TOOL REPO>/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE"><img alt="Github License" src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
+<a href="<TOOL REPO>"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=social" /></a>
 </p>
 <br />
 </div>
+
+[![Twitter Badge](https://img.shields.io/badge/Twitter-Profile-informational?style=flat&logo=twitter&color=1CA2F1)](https://twitter.com/<YOUR GIT USERNAME>)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&color=0D76A8)](https://www.linkedin.com/in/<YOUR GIT USERNAME>/)
+[![Visitors](https://visitor-badge.glitch.me/badge?page_id=<YOUR GIT USERNAME>.<YOUR TOOL LC>)](<TOOL HOMEPAGE>)
+
+![](https://img.shields.io/badge/Tools-Git-informational?style=flat&logo=Git&color=F05032)
+![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
+
+
+<p align="center">Get dynamically generated GitHub stats on your READMEs!</p>
+</p>
+  <p align="center">
+    <a href="https://github.com/anuraghazra/github-readme-stats/actions">
+      <img alt="Tests Passing" src="https://github.com/anuraghazra/github-readme-stats/workflows/Test/badge.svg" />
+    </a>
+    <a href="https://github.com/anuraghazra/github-readme-stats/graphs/contributors">
+      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/anuraghazra/github-readme-stats" />
+    </a>
+    <a href="https://codecov.io/gh/anuraghazra/github-readme-stats">
+      <img alt="Tests Coverage" src="https://codecov.io/gh/anuraghazra/github-readme-stats/branch/master/graph/badge.svg" />
+    </a>
+    <a href="https://github.com/anuraghazra/github-readme-stats/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/anuraghazra/github-readme-stats?color=0088ff" />
+    </a>
+    <a href="https://github.com/anuraghazra/github-readme-stats/pulls">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/anuraghazra/github-readme-stats?color=0088ff" />
+    </a>
+    <a href="https://securityscorecards.dev/viewer/?uri=github.com/anuraghazra/github-readme-stats">
+      <img alt="OpenSSF Scorecard" src="https://api.securityscorecards.dev/projects/github.com/anuraghazra/github-readme-stats/badge" />
+    </a>
+    <br />
+    <br />
+    <a href="https://a.paddle.com/v2/click/16413/119403?link=1227">
+      <img src="https://img.shields.io/badge/Supported%20by-VSCode%20Power%20User%20%E2%86%92-gray.svg?colorA=655BE1&colorB=4F44D6&style=for-the-badge"/>
+    </a>
+    <a href="https://a.paddle.com/v2/click/16413/119403?link=2345">
+      <img src="https://img.shields.io/badge/Supported%20by-Node%20Cli.com%20%E2%86%92-gray.svg?colorA=61c265&colorB=4CAF50&style=for-the-badge"/>
+    </a>
+  </p>
+
+  
+<div align="center">
+  <img width="400" alt="GitHub Actions for deploying to GitHub Pages with Static Site Generators" src="./images/ogp.svg">
+
+[![license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
+[![release](https://img.shields.io/github/release/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/releases/latest)
+[![GitHub release date](https://img.shields.io/github/release-date/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/releases)
+![Test](<TOOL REPO>/workflows/Test/badge.svg?branch=main&event=push)
+![Code Scanning](<TOOL REPO>/workflows/Code%20Scanning/badge.svg?event=push)
+[![CodeFactor](https://www.codefactor.io/repository/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/badge)](https://www.codefactor.io/repository/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+
+</div>
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/faaed58a577d4c3099cf8d6d4d572fb8)](https://www.codacy.com/manual/<YOUR GIT USERNAME>-nunes/<YOUR TOOL LC>?utm_source=github.com&utm_medium=referral&utm_content=<YOUR GIT USERNAME>/<YOUR TOOL LC>&utm_campaign=Badge_Grade) [![License](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE) [![Donate](https://img.shields.io/badge/donate-%E2%99%A5%20-E91E63.svg)](https://www.paypal.me/<YOUR GIT USERNAME>nunes/)
+
+[![Code Coverage](https://codecov.io/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/branch/<PRIMARY BRANCH>/graph/badge.svg?token=I6E0KUANUO)](https://codecov.io/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>) 
+[![ReadTheDocs Status](https://readthedocs.org/projects/<YOUR GIT USERNAME>/badge/?version=latest)](https://<YOUR GIT USERNAME>.readthedocs.io/en/latest/?badge=latest)
+
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#allcontributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+
+*Note: if you like this project, feel free to buy me a swimming chance:*
+
+[![badges](./assets/paypal.svg)](http://paypal.me/<YOUR GIT USERNAME>) [![badges](./assets/patreon.svg)](https://www.patreon.com/<YOUR GIT USERNAME>) [![badges](./assets/buymeacoffee.svg)](https://www.buymeacoffee.com/<YOUR GIT USERNAME>)
+
+
+***
+
 ![AllInOne](TOOL REPO>/workflows/AllInOne/badge.svg)
 [![GitHub license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=plastic)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
 
@@ -68,9 +138,9 @@
 ## Features 🌈
 - 🆓 100% free and open-source
 - 🚀 Easy to setup with Docker
-- [<img src="https://i.ibb.co/HVWVYF7/docker.png" width="18"/>**Tested in Docker**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/master/docker-compose.yml)
+- [<img src="https://i.ibb.co/HVWVYF7/docker.png" width="18"/>**Tested in Docker**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/<PRIMARY BRANCH>/docker-compose.yml)
 
-[![<YOUR TOOL LC> on Docker🐳 Hub](https://dockeri.co/image/<YOUR GIT NAME>/<YOUR TOOL LC>)](https://hub.docker.com/r/<YOUR GIT NAME>/<YOUR TOOL LC>)
+[![<YOUR TOOL LC> on Docker🐳 Hub](https://dockeri.co/image/<YOUR GIT USERNAME>/<YOUR TOOL LC>)](https://hub.docker.com/r/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -136,8 +206,30 @@ Huge thanks to the sponsors helping to support🙋‍♀️ <PROJECT NAME>'s dev
 #### Contributors
 [![Auto-generated contributors](https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/<PRIMARY BRANCH>/docs/assets/CONTRIBUTORS.svg)](./docs/credits.md)
 
+
+## AllContributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://gist.github.com/<YOUR GIT USERNAME>/7e40a0e13c066a57577d8200b1afc6a3"><img src="https://avatars.githubusercontent.com/u/65933340?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sean P. Myrick V19.1.7.2</b></sub></a><br /><a href="<TOOL REPO>/commits?author=<YOUR GIT USERNAME>" title="Code">💻</a> <a href="<TOOL REPO>/commits?author=<YOUR GIT USERNAME>" title="Documentation">📖</a> <a href="#projectManagement-<YOUR GIT USERNAME>" title="Project Management">📆</a> <a href="#security-<YOUR GIT USERNAME>" title="Security">🛡️</a> <a href="#data-<YOUR GIT USERNAME>" title="Data">🔣</a> <a href="#content-<YOUR GIT USERNAME>" title="Content">🖋</a> <a href="#design-<YOUR GIT USERNAME>" title="Design">🎨</a> <a href="#maintenance-<YOUR GIT USERNAME>" title="Maintenance">🚧</a> <a href="#ideas-<YOUR GIT USERNAME>" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://allcontributors.org"><img src="https://avatars.githubusercontent.com/u/46410174?v=4?s=100" width="100px;" alt=""/><br /><sub><b>All Contributors</b></sub></a><br /><a href="<TOOL REPO>/commits?author=all-contributors" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 #### Stats
-[![Stats](https://repobeats.axiom.co/api/embed/48546e3c768d38c450ba136e32c0992bcf58ad73.svg "Repobeats analytics image")](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/blob/<PRIMARY BRANCH>/docs/credits.md)
+[![Stats](https://repobeats.axiom.co/api/embed/48546e3c768d38c450ba136e32c0992bcf58ad73.svg "Repobeats analytics image")](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/credits.md)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -157,11 +249,11 @@ To set up the development environment get Code:
  `git clone <TOOL REPO>.git`  and `cd <YOUR TOOL LC>`
 
 **Repo Status**:
-[![Open PRs](https://flat.badgen.net/github/open-prs/lissy93/dashy?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/pulls)
-[![Total PRs](https://flat.badgen.net/github/prs/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/pulls?q=)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=flat-square)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/commits/<PRIMARY BRANCH>)
-[![Last Commit](https://flat.badgen.net/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/commits/<PRIMARY BRANCH>)
-[![Contributors](https://flat.badgen.net/github/contributors/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](https://github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/graphs/contributors)
+[![Open PRs](https://flat.badgen.net/github/open-prs/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/pulls)
+[![Total PRs](https://flat.badgen.net/github/prs/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/pulls?q=)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=flat-square)](<TOOL REPO>/commits/<PRIMARY BRANCH>)
+[![Last Commit](https://flat.badgen.net/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/commits/<PRIMARY BRANCH>)
+[![Contributors](https://flat.badgen.net/github/contributors/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/graphs/contributors)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 

@@ -22,22 +22,22 @@ jobs:
         uses: rishabhgupta/git-action-issue@v2
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
-          assignees: <YOUR GIT NAME>
+          assignees: <YOUR GIT USERNAME>
           title: '[WEBSITE] Domain Expiring Soon'
           body: >
             **Priority Notice**
             Domain, ${{ matrix.domain }} will expire in ${{ steps.check-domain.outputs.paid-till-days-left }} days.
-            @<YOUR GIT NAME> - Please take action immediately to prevent any downtime
+            @<YOUR GIT USERNAME> - Please take action immediately to prevent any downtime
 
       - name: Raise issue if SSL Cert expiring soon
         if: ${{ steps.check-domain.outputs.ssl-expire-days-left && steps.check-domain.outputs.ssl-expire-days-left < 14 }}
         uses: rishabhgupta/git-action-issue@v2
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
-          assignees: <YOUR GIT NAME>
+          assignees: <YOUR GIT USERNAME>
           title: '[WEBSITE] SSL Cert Expiring Soon'
           body: >
             **Priority Notice**
             The SSL Certificate for ${{ matrix.domain }} will expire in ${{ steps.check-domain.outputs.ssl-expire-days-left }} days, on ${{ steps.check-domain.outputs.ssl-expire-date }}.
-            @<YOUR GIT NAME> - Please take action immediately to prevent any downtime
+            @<YOUR GIT USERNAME> - Please take action immediately to prevent any downtime
 

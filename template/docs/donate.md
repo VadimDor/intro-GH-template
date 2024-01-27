@@ -3,19 +3,19 @@
 
 
 ## Channels to contact：
-- be in touch with [eMails](https://<YOUR GIT NAME>.substack.com/)
-- [Telegram channel](https://t.me/<YOUR GIT NAME>)
-- Please [Twitter](https://twitter.com/<YOUR GIT NAME>)
+- be in touch with [eMails](https://<YOUR GIT USERNAME>.substack.com/)
+- [Telegram channel](https://t.me/<YOUR GIT USERNAME>)
+- Please [Twitter](https://twitter.com/<YOUR GIT USERNAME>)
 - [Star](<TOOL REPO>) please star us
 - Visit [Website](<TOOL HOMEPAGE>) for more
-- Welcome to [Crowdin](https://crowdin.com/project/<YOUR GIT NAME>) please
+- Welcome to [Crowdin](https://crowdin.com/project/<YOUR GIT USERNAME>) please
 - For issues [Github Issue](<TOOL REPO>/issues) welcome
 
 
 
-# Be in touch [Twitter status](https://twitter.com/<YOUR GIT NAME>/status)
+# Be in touch [Twitter status](https://twitter.com/<YOUR GIT USERNAME>/status)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT NAME>/<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT NAME>/<YOUR TOOL LC>&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT USERNAME>/<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT USERNAME>/<YOUR TOOL LC>&Date)
 
 
 ## Links

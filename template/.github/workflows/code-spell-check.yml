@@ -26,5 +26,5 @@ jobs:
         title: '[AUTO] Fix spelling and language'
         branch: 'AUTO/spelling-corrections'
         committer: 'Liss-Bot <alicia-gh-bot@mail.as93.net>'
-        assignees: <YOUR GIT NAME>
-        reviewers: <YOUR GIT NAME>
+        assignees: <YOUR GIT USERNAME>
+        reviewers: <YOUR GIT USERNAME>

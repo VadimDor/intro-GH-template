@@ -1,5 +1,5 @@
 # When a new comment is added to an issue, if it had the Stale or Awaiting User Response labels,
-# then those labels will be removed, providing it was not user <YOUR GIT NAME> who added the commend. 
+# then those labels will be removed, providing it was not user <YOUR GIT USERNAME> who added the commend. 
 name: 🎯 Add/ Remove Awaiting Response Labels
 on:
   issue_comment:

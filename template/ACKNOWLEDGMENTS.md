@@ -56,6 +56,9 @@ The attached notices are provided for information only.
 [special-files]: https://github.com/TheWisker/Shikai
 [Github-workflows]: https://github.com/open-policy-agent
 
+[For Sphinx READTHEDOCS](https://github.com/2bndy5/sphinx-social-cards)
+[For badges](https://github.com/seanpm2001/ )
+
 
 
 

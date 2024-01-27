@@ -45,26 +45,26 @@ jobs:
     - name: Generate Repo Metrics
       uses: lowlighter/metrics@latest
       with:
-        token: ${{ secrets.<YOUR GIT NAME>_PAT }}
+        token: ${{ secrets.<YOUR GIT USERNAME>_PAT }}
         committer_token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         committer_branch: master
         committer_message: ':purple_heart: Adds repo metrics'
         filename: docs/assets/repo-metrics.*
         template: classic
-        user: <YOUR GIT NAME>
+        user: <YOUR GIT USERNAME>
         repo: <YOUR TOOL LC>
         delay: 5 
 
     - name: Generate License Metrics
       uses: lowlighter/metrics@latest
       with:
-        token: ${{ secrets.<YOUR GIT NAME>_PAT }}
+        token: ${{ secrets.<YOUR GIT USERNAME>_PAT }}
         committer_token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         committer_branch: master
         committer_message: ':purple_heart: Adds license metrics'
         filename: docs/assets/license-metrics.*
         template: repository
-        user: <YOUR GIT NAME>
+        user: <YOUR GIT USERNAME>
         repo: <YOUR TOOL LC>
         delay: 5
         plugin_licenses: yes
@@ -75,12 +75,12 @@ jobs:
     - name: Generate Contributor Metrics
       uses: lowlighter/metrics@latest
       with:
-        token: ${{ secrets.<YOUR GIT NAME>_PAT }}
+        token: ${{ secrets.<YOUR GIT USERNAME>_PAT }}
         committer_token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
         committer_branch: master
         committer_message: ':purple_heart: Adds contributor metrics'
         filename: docs/assets/controbutor-metrics.*
-        user: <YOUR GIT NAME>
+        user: <YOUR GIT USERNAME>
         repo: <YOUR TOOL LC>
         delay: 5
         plugin_contributors: yes

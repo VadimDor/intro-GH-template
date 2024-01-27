@@ -48,7 +48,7 @@ jobs:
           type=ref,event=tag,prefix=release-,suffix={{tag}}
           type=semver,pattern={{raw}},value=${{ steps.package-version.outputs.version }}
         labels: |
-          maintainer=<YOUR GIT NAME>
+          maintainer=<YOUR GIT USERNAME>
           org.opencontainers.image.title=<YOUR TOOL LC>
           org.opencontainers.image.description=A self-hosted startpage of project
           org.opencontainers.image.documentation=<TOOL HOMEPAGE>/docs
@@ -97,7 +97,7 @@ jobs:
 #     - name: 💬 Set Docker Hub Description
 #       uses: peter-evans/dockerhub-description@v2
 #       with:
-#         repository: <YOUR GIT NAME>/<YOUR TOOL LC>
+#         repository: <YOUR GIT USERNAME>/<YOUR TOOL LC>
 #         readme-filepath: ./docker/docker-readme.md
 #         short-description: <YOUR TOOL LC> - A self-hosted start page for your server
 #         username: ${{ secrets.DOCKER_USERNAME }}

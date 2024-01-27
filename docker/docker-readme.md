@@ -1,28 +1,28 @@
-<h1 align="center">Dashy</h1>
+<h1 align="center"><YOUR TOOL LC></h1>
 <p align="center">
-  <i>Dashy helps you organize your self-hosted services by making them accessible from a single place</i>
+  <i><YOUR TOOL LC> helps you organize your self-hosted services by making them accessible from a single place</i>
    <br/>
-  <img width="120" src="https://i.ibb.co/yhbt6CY/dashy.png" />
+  <img width="120" src="https://i.ibb.co/yhbt6CY/<YOUR TOOL LC>.png" />
   <br/>
-  <b><a href="https://github.com/Lissy93/dashy/blob/master/docs/showcase.md">User Showcase</a></b> | <b><a href="https://demo.dashy.to">Live Demo</a></b> | <b><a href="https://github.com/Lissy93/dashy/blob/master/docs/quick-start.md">Getting Started</a></b> | <b><a href="https://dashy.to/docs">Documentation</a></b> | <b><a href="https://github.com/Lissy93/dashy">GitHub</a></b>
+  <b><a href="<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/showcase.md">User Showcase</a></b> | <b><a href="https://demo.<YOUR TOOL LC>.to">Live Demo</a></b> | <b><a href="<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/quick-start.md">Getting Started</a></b> | <b><a href="https://<YOUR TOOL LC>.to/docs">Documentation</a></b> | <b><a href="<TOOL REPO>">GitHub</a></b>
   <br/><br/>
   <a href="https://github.com/awesome-selfhosted/awesome-selfhosted#personal-dashboards">
     <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Self-Hosted">
   </a>
-  <a href="https://github.com/Lissy93/dashy/blob/master/LICENSE">
+  <a href="<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-0aa8d2?logo=opensourceinitiative&logoColor=fff" alt="License MIT">
   </a>
-  <a href="https://github.com/Lissy93/dashy/blob/master/.github/CHANGELOG.md">
-    <img src="https://img.shields.io/github/package-json/v/lissy93/dashy?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
+  <a href="<TOOL REPO>/blob/<PRIMARY BRANCH>/.github/CHANGELOG.md">
+    <img src="https://img.shields.io/github/package-json/v/<YOUR GIT USERNAME>/<YOUR TOOL LC>?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
   </a>
-  <a href="https://hub.docker.com/r/lissy93/dashy">
-    <img src="https://img.shields.io/docker/pulls/lissy93/dashy?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
+  <a href="https://hub.docker.com/r/<YOUR GIT USERNAME>/<YOUR TOOL LC>">
+    <img src="https://img.shields.io/docker/pulls/<YOUR GIT USERNAME>/<YOUR TOOL LC>?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
   </a>
-  <a href="http://as93.link/dashy-build-status">
-   <img src="https://badgen.net/github/status/lissy93/dashy?icon=github" alt="GitHub Status">
+  <a href="http://as93.link/<YOUR TOOL LC>-build-status">
+   <img src="https://badgen.net/github/status/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github" alt="GitHub Status">
   </a>
-  <a href="https://snyk.io/test/github/lissy93/dashy">
-    <img src="https://snyk.io/test/github/lissy93/dashy/badge.svg" alt="Known Vulnerabilities">
+  <a href="https://snyk.io/test/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>">
+    <img src="https://snyk.io/test/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/badge.svg" alt="Known Vulnerabilities">
   </a>
 </p>
 
@@ -51,65 +51,65 @@
 
 ## Demo ⚡
 
-**Live Instances**: [Demo 1](https://demo.dashy.to) (Live Demo) ┆ [Demo 2](https://live.dashy.to) (Dashy Links) ┆ [Demo 3](https://dev.dashy.to) (Dev Preview)
+**Live Instances**: [Demo 1](https://demo.<YOUR TOOL LC>.to) (Live Demo) ┆ [Demo 2](https://live.<YOUR TOOL LC>.to) (<YOUR TOOL LC> Links) ┆ [Demo 3](https://dev.<YOUR TOOL LC>.to) (Dev Preview)
 
-**Screenshots**: Checkout the [Showcase](https://github.com/Lissy93/dashy/blob/master/docs/showcase.md), to see example dashboards from the community
+**Screenshots**: Checkout the [Showcase](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/showcase.md), to see example dashboards from the community
 
-**Spin up your own demo**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/Lissy93/dashy/master/docker-compose.yml) or [`docker run -p 8080:80 lissy93/dashy`](./docs/quick-start.md)
+**Spin up your own demo**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/<PRIMARY BRANCH>/docker-compose.yml) or [`docker run -p 8080:80 <YOUR GIT USERNAME>/<YOUR TOOL LC>`](./docs/quick-start.md)
 
 
 <p align="center">
-  <img width="800" src="https://i.ibb.co/L8YbNNc/dashy-demo2.gif" alt="Demo" />
+  <img width="800" src="https://i.ibb.co/L8YbNNc/<YOUR TOOL LC>-demo2.gif" alt="Demo" />
 </p>
 
 
-**[⬆️ Back to Top](#dashy)**
+**[⬆️ Back to Top](#<YOUR TOOL LC>)**
 
 ---
 
 ## Getting Started 🛫
 
-To deploy Dashy with Docker, just run `docker run -p 8080:80 lissy93/dashy`, then open `http://localhost:8080`
+To deploy <YOUR TOOL LC> with Docker, just run `docker run -p 8080:80 <YOUR GIT USERNAME>/<YOUR TOOL LC>`, then open `http://localhost:8080`
 
-For full list of options and a Docker compose file, see the [Deployment Docs](https://github.com/Lissy93/dashy/blob/master/docs/deployment.md).
+For full list of options and a Docker compose file, see the [Deployment Docs](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/deployment.md).
 
-Dashy can also be run on bare metal using Node.js, or deployed to a cloud service, using the 1-Click deploy script.
+<YOUR TOOL LC> can also be run on bare metal using Node.js, or deployed to a cloud service, using the 1-Click deploy script.
 
 ---
 
 ## Documentation 📝
 
-#### Running Dashy
-- **[Quick Start](https://github.com/Lissy93/dashy/blob/master/docs/quick-start.md)** - TDLR guide on getting Dashy up and running
-- **[Deployment](https://github.com/Lissy93/dashy/blob/master/docs/deployment.md)** - Full guide on deploying Dashy either locally or online
-- **[Configuring](https://github.com/Lissy93/dashy/blob/master/docs/configuring.md)** - Complete list of all available options in the config file
-- **[App Management](https://github.com/Lissy93/dashy/blob/master/docs/management.md)** - Managing your app, updating, security, web server configuration, etc
-- **[Troubleshooting](https://github.com/Lissy93/dashy/blob/master/docs/troubleshooting.md)** - Common errors and problems, and how to fix them
+#### Running <YOUR TOOL LC>
+- **[Quick Start](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/quick-start.md)** - TDLR guide on getting <YOUR TOOL LC> up and running
+- **[Deployment](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/deployment.md)** - Full guide on deploying <YOUR TOOL LC> either locally or online
+- **[Configuring](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/configuring.md)** - Complete list of all available options in the config file
+- **[App Management](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/management.md)** - Managing your app, updating, security, web server configuration, etc
+- **[Troubleshooting](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/troubleshooting.md)** - Common errors and problems, and how to fix them
 
 #### Feature Docs
-- **[Authentication](https://github.com/Lissy93/dashy/blob/master/docs/authentication.md)** - Guide to setting up authentication to protect your dashboard
-- **[Alternate Views](https://github.com/Lissy93/dashy/blob/master/docs/alternate-views.md)** - Outline of available pages / views and item opening methods
-- **[Backup & Restore](https://github.com/Lissy93/dashy/blob/master/docs/backup-restore.md)** - Guide to backing up config with Dashy's cloud sync feature
-- **[Icons](https://github.com/Lissy93/dashy/blob/master/docs/icons.md)** - Outline of all available icon types for sections and items, with examples
-- **[Language Switching](https://github.com/Lissy93/dashy/blob/master/docs/multi-language-support.md)** - Details on how to switch language, or add a new locale
-- **[Status Indicators](https://github.com/Lissy93/dashy/blob/master/docs/status-indicators.md)** - Using Dashy to monitor uptime and status of your apps
-- **[Searching  & Shortcuts](https://github.com/Lissy93/dashy/blob/master/docs/searching.md)** - Searching, launching methods + keyboard shortcuts
-- **[Theming](https://github.com/Lissy93/dashy/blob/master/docs/theming.md)** - Complete guide to applying, writing and modifying themes + styles
-- **[Widgets](https://github.com/Lissy93/dashy/blob/master/docs/widgets.md)** - List of all dynamic content widgets, with usage guides and examples
+- **[Authentication](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/authentication.md)** - Guide to setting up authentication to protect your dashboard
+- **[Alternate Views](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/alternate-views.md)** - Outline of available pages / views and item opening methods
+- **[Backup & Restore](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/backup-restore.md)** - Guide to backing up config with <YOUR TOOL LC>'s cloud sync feature
+- **[Icons](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/icons.md)** - Outline of all available icon types for sections and items, with examples
+- **[Language Switching](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/multi-language-support.md)** - Details on how to switch language, or add a new locale
+- **[Status Indicators](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/status-indicators.md)** - Using <YOUR TOOL LC> to monitor uptime and status of your apps
+- **[Searching  & Shortcuts](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/searching.md)** - Searching, launching methods + keyboard shortcuts
+- **[Theming](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/theming.md)** - Complete guide to applying, writing and modifying themes + styles
+- **[Widgets](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/widgets.md)** - List of all dynamic content widgets, with usage guides and examples
 
 #### Development and Contributing 
-- **[Developing](https://github.com/Lissy93/dashy/blob/master/docs/developing.md)** - Running Dashy development server locally, and general workflow
-- **[Development Guides](https://github.com/Lissy93/dashy/blob/master/docs/development-guides.md)** - Common development tasks, to help new contributors
-- **[Contributing](https://github.com/Lissy93/dashy/blob/master/docs/contributing.md)** - How you can help keep Dashy alive
-- **[Showcase](https://github.com/Lissy93/dashy/blob/master/docs/showcase.md)** - See how others are using Dashy, and share your dashboard
-- **[Credits](https://github.com/Lissy93/dashy/blob/master/docs/credits.md)** - List of people and projects that have made Dashy possible
-- **[Release Workflow](https://github.com/Lissy93/dashy/blob/master/docs/release-workflow.md)** - Info about releases, CI and automated tasks
+- **[Developing](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/developing.md)** - Running <YOUR TOOL LC> development server locally, and general workflow
+- **[Development Guides](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/development-guides.md)** - Common development tasks, to help new contributors
+- **[Contributing](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/contributing.md)** - How you can help keep <YOUR TOOL LC> alive
+- **[Showcase](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/showcase.md)** - See how others are using <YOUR TOOL LC>, and share your dashboard
+- **[Credits](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/credits.md)** - List of people and projects that have made <YOUR TOOL LC> possible
+- **[Release Workflow](<TOOL REPO>/blob/<PRIMARY BRANCH>/docs/release-workflow.md)** - Info about releases, CI and automated tasks
 
 ---
 
 ## License 📜
 
-Dashy is Licensed under [MIT X11](https://en.wikipedia.org/wiki/MIT_License)
+<YOUR TOOL LC> is Licensed under [MIT X11](https://en.wikipedia.org/wiki/MIT_License)
 
 ```
 Copyright © 2021 Alicia Sykes <https://aliciasykes.com>
@@ -130,7 +130,7 @@ LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTR
 TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
 
-Except as contained in this notice, Dashy shall not be used in advertising or otherwise
+Except as contained in this notice, <YOUR TOOL LC> shall not be used in advertising or otherwise
 to promote the sale, use, or other dealings in this Software without prior written
 authorization from the repo owner.
 ```

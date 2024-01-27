@@ -65,8 +65,8 @@ jobs:
           days-before-close: 365
           operations-per-run: 30
           remove-stale-when-updated: true
-          stale-issue-message: Hey @<YOUR GIT NAME> - Don't forget to respond!
-          stale-pr-message: Hey @<YOUR GIT NAME> - Don't forget to respond!
+          stale-issue-message: Hey @<YOUR GIT USERNAME> - Don't forget to respond!
+          stale-pr-message: Hey @<YOUR GIT USERNAME> - Don't forget to respond!
           only-labels: '👤 Awaiting Maintainer Response'
           labels-to-remove-when-unstale: '👤 Awaiting Maintainer Response'
           close-issue-message: 'Closed due to no response from repo author for over a year'

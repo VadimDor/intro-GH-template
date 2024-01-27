@@ -10,6 +10,6 @@ jobs:
       - name: Repo Analytics
         uses: jgehrcke/github-repo-stats@HEAD
         with:
-          repository: <YOUR GIT NAME>/<YOUR TOOL LC>
+          repository: <YOUR GIT USERNAME>/<YOUR TOOL LC>
           databranch: DATA/repo-stats
           ghtoken: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
