@@ -36,10 +36,10 @@ LICENSE.
 TESTS.
 	I am going to test with BATS and Docker. Please install templates 
 "
-HELP_PLUGIN_NAME="Name for your plugin, starting with \`asdf-\`, eg. \`asdf-foo\`"
-HELP_TOOL_CHECK="Shell command for testing correct tool installation. eg. \`foo --version\` or \`foo --help\`"
-HELP_TOOL_REPO="The tool's GitHub homepage."
-HELP_TOOL_HOMEPAGE="The tool's documentation homepage if necessary."
+HELP_PLUGIN_NAME="Name for your plugin, starting with \`asdf-\`, eg. \`asdf-foo\`:"
+HELP_TOOL_CHECK="Shell command for testing correct tool installation. eg. \`foo --version\` or \`foo --help\`:"
+HELP_TOOL_REPO="The tool's GitHub homepage:"
+HELP_TOOL_HOMEPAGE="The tool's documentation homepage if necessary:"
 
 camel_case() {
  local word="$1"	
@@ -171,11 +171,11 @@ setup_git() {
 		$tool_name docs:     $tool_homepage
 		$tool_name test:     \`$check_command\`
 
-		After confirmation, the \`$primary_branch\` will be replaced with the generated
+		After confirmation, the \`$primary_branch\` branch here will be replaced with the generated
 		template using the above information. Please ensure all seems correct.
 	EOF
 
-	ok="${9:-$(ask_for "Type \`yes\` if you want to continue.")}"
+	ok="${9:-$(ask_for "Type \`yes\` if you want to continue:")}"
 	if [ "yes" != "$ok" ]; then
 		printf "Nothing done.\n"
 	else
@@ -244,7 +244,7 @@ setup_git() {
 			sed -i "s/\[name of copyright owner]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
 			sed -i "s/\<year\>/$(date +%Y)/g" "$out/LICENSE"
 			sed -i "s/\<name of author\>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
-			sed -i "s/\<program\>/$(<YOUR TOOL>)/g" "$out/LICENSE"			
+			sed -i "s/\<program\>/$(\<YOUR TOOL\>)/g" "$out/LICENSE"			
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
@@ -322,8 +322,9 @@ setup_git() {
 			git push -u origin gh-pages
 			# git push origin :gh-pages && 
 			# git subtree push --prefix docs origin gh-page
-			git checkout <PRIMARY BRANCH>
-			
+			git checkout "$primary_branch"
+			# <PRIMARY BRANCH>
+
 			printf "Showing pending TODO tags that you might want to review\n"
 			git grep -P -n -C 3 "TODO"
 		) || cd "$cwd"
