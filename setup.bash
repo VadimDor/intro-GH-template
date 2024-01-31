@@ -104,7 +104,7 @@ ask_license() {
 		fi
 	done
 
-	printf "%s\n" "$keyword"
+	printf "\n%s\n" "$keyword"
 }
 
 set_placeholder() {
@@ -186,7 +186,7 @@ setup_git() {
 			git checkout -f template
 			git worktree remove -f out 2>/dev/null || true
 			git branch -D out 2>/dev/null || true
-
+			printf "done git branch -D out"
 			# checkout a new worktree and replace placeholders there
 			git worktree add --detach out
 
@@ -194,7 +194,7 @@ setup_git() {
 			git checkout --orphan out
 			git rm -rf "$out" >/dev/null
 			git read-tree --prefix="$([[ $git == 'github' ]] && echo '' || echo '/')" -u template:template/
-
+			printf "\ndone git read-tree\n"
 			if [ $git == 'github' ]; then
 			  user_avatar=$(curl "$user_profile"|grep -o "https://avatars.githubusercontent.com[^\"]*[^\"]"|grep '\?'|head -n 1)
 			else
@@ -228,7 +228,7 @@ setup_git() {
 			local tmp=$(mktemp)   # Create a temporary file
 			# gets removed under a reasonable collection of signals (HUP, INT, QUIT, PIPE and TERM):
 			trap "rm -f $tmp; exit 1" 0 1 2 3 13 15 
-
+			printf "\ndone trap\n"
 			shopt -s globstar
 			for j in $out/*.md $out/**/*.md ; do
  			  cat "$out/header.html" "$j" >"$tmp"
@@ -238,6 +238,7 @@ setup_git() {
 			rm -f $out/header.html $out/footer.html
 
 			download_license "$license_keyword" "$out/LICENSE"
+			printf "\ndone download_license\n"
 			#sed -i '1s;^;TODO: INSERT YOUR NAME & COPYRIGHT YEAR (if applicable to your license)\n;g' "$out/LICENSE"
 			sed -i "s/\[yyyy]/$(date +%Y)/g" "$out/LICENSE"
 			sed -i "s/\[fullname]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
@@ -270,7 +271,7 @@ setup_git() {
 			set_placeholder "<GIT TYPE>" "$git" "$out"
 			set_placeholder "<USER PROFILE>" "$user_profile" "$out"
 		
-
+			printf "\ndone set placeholders\n"
 			git add "$out" 2>/dev/null	
 			# remove GitLab or GitHub specific files
 			if [ $git == 'github' ]; then
@@ -300,7 +301,8 @@ setup_git() {
 
 			#git branch gh-pages
 
-			git commit -m "Generate $tool_name plugin from template."	2>/dev/null		
+			git commit -m "Generate $tool_name plugin from template."	2>/dev/null	
+			printf "\ndone git commit\n"	
 			cd "$cwd"
 			git branch -M out "$primary_branch"
 			git worktree remove -f out
