@@ -188,7 +188,7 @@ setup_git() {
 			git checkout -f template
 			git worktree remove -f out 2>/dev/null || true
 			git branch -D out 2>/dev/null || true
-			printf "done git branch -D out"
+			printf "\ndone git branch -D out\n"
 			# checkout a new worktree and replace placeholders there
 			git worktree add --detach out
 
@@ -207,14 +207,17 @@ setup_git() {
 			fi 
 			# LC_ALL=C grep -obUaP "^\xFF\xD8" 111.jpg
 			pext=""
+			printf "\n11\n"
 			if [ ! -z "$user_avatar" ]; then
 			 curl "$user_avatar" --output avatar
+			 printf "\n12\n"
 			 ls avatar
 			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\xFF\xD8\xFF") ] &&  ( pext="jpg";mv -f avatar "$out"/assets/profile."$pext" )
 			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x89\x50\x4E") ] &&  ( pext="png";mv -f avatar "$out"/assets/profile."$pext" )
 			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x42\x4D\xB6") ] &&  ( pext="bmp";mv -f avatar "$out"/assets/profile."$pext"	)
 			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
 			fi
+			printf "\n13\n"
 			if [ -z "$pext"] ; then
 			 echo "Not recognized users avatar format. OSI avatar will be used in md files."
 			 pext="png"
@@ -225,7 +228,7 @@ setup_git() {
 			fi
 			# curl $user_avatar --output "$out/assets/profile.png"
 			# curl $(curl https://github.com/VadimDor|grep -o "https://avatars.githubusercontent.com[^\"]*[^\"]"|grep '\?'|head -n 1) --output test3.png
-
+			printf "\n14\n"
 
 			local tmp=$(mktemp)   # Create a temporary file
 			# gets removed under a reasonable collection of signals (HUP, INT, QUIT, PIPE and TERM):
