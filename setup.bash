@@ -82,7 +82,8 @@ extract_license() {
 }
 
 test_url() {
-	curl -fqsL -I "$1" | head -n 1 | grep 200 >/dev/null
+	# curl -fqsL -I "$1" | head -n 1 | grep 200 >/dev/null
+	curl -H "Accept: application/json" --connect-timeout 2 -s -D - "$1" -o /dev/null 2>/dev/null | head -n1 | grep 200 >/dev/null
 }
 
 ask_license() {
@@ -95,16 +96,16 @@ ask_license() {
 	while true; do
 		license="$(ask_for "License keyword:" "APACHE-2.0" "MIT/APACHE-2.0/MPL-2.0/AGPL-3.0")"
 		keyword=$(echo "$license" | tr '[:upper:]' '[:lower:]')
-
+		printf "\nkeyword is =%s\n" "$keyword"
 		url="https://choosealicense.com/licenses/$keyword/"
 		if test_url "$url"; then
 			break
 		else
-			printf "Invalid license keyword: %s\n" "$license"
+			printf "Invalid license keyword: %s\n" "$keyword"
 		fi
 	done
 
-	printf "\n%s\n" "$keyword"
+	printf "\nkeyword=%s\n" "$keyword"
 }
 
 set_placeholder() {
@@ -151,6 +152,7 @@ setup_git() {
 
 	license_keyword="${8:-$(ask_license)}"
 	license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
+	printf "\nkeyword-license=%s\n" "$license_keyword"
 
 	bats_tests="${9:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests." "yes")}"
 	bats_tests=$(echo "$bats_tests" | tr '[:upper:]' '[:lower:]')
