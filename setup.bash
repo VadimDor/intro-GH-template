@@ -83,18 +83,18 @@ extract_license() {
 
 test_url() {
 	# curl -fqsL -I "$1" | head -n 1 | grep 200 >/dev/null
-	curl -H "Accept: application/json" --connect-timeout 2 -s -D - "$1" -o /dev/null 2>/dev/null | head -n1 | grep 200 >/dev/null
+	curl -H "Accept: application/json" --connect-timeout 5 --max-time 5 -s -D - "$1" -o /dev/null 2>/dev/null | head -n1 | grep 200 >/dev/null
 }
 
 ask_license() {
 	local license keyword
 
 	printf "%s\n" "Please choose a LICENSE keyword." >&2
-	printf "%s\n" "See available license keywords at" >&2
-	printf "%s\n" "https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#searching-github-by-license-type" >&2
+	printf "%s\n" "See available license keywords at:" >&2
+	printf "%s\n" "  https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#searching-github-by-license-type" >&2
 
 	while true; do
-		license="$(ask_for "License keyword:" "APACHE-2.0" "MIT/APACHE-2.0/MPL-2.0/AGPL-3.0")"
+		license="$(ask_for "License keyword:" "APACHE-2.0" "MIT/APACHE-2.0/MPL-2.0/AGPL-3.0/GPL-3.0/UNILICENSE/BSL-1.0")"
 		keyword=$(echo "$license" | tr '[:upper:]' '[:lower:]')
 		printf "\nkeyword is =%s\n" "$keyword"
 		url="https://choosealicense.com/licenses/$keyword/"
@@ -141,9 +141,9 @@ setup_git() {
 	t="${url#*$1.com/}"
 	org="${t%%/*}"
     git_usernamer=$(printf '%s\n' "$org")
-	git_username="${4:-$(ask_for "Your $(camel_case $git) username" "$git_usernamer")}"
+	git_username="${4:-$(ask_for "Your $(camel_case $git) username:" "$git_usernamer")}"
 
-	author_name="${5:-$(ask_for "Your name" "$(git config user.name 2>/dev/null)")}"
+	author_name="${5:-$(ask_for "Your name:" "$(git config user.name 2>/dev/null)")}"
 
 	tool_repo="${6:-$(ask_for "$HELP_TOOL_REPO" "https://$1.com/$git_username/$tool_name")}"
 
@@ -154,7 +154,7 @@ setup_git() {
 	license_keyword="$(echo "$license_keyword" | tr '[:upper:]' '[:lower:]')"
 	printf "\nkeyword-license=%s\n" "$license_keyword"
 
-	bats_tests="${9:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests." "yes")}"
+	bats_tests="${9:-$(ask_for "Type \`yes\` if you want preinstall environment and samples for BATS tests:" "yes")}"
 	bats_tests=$(echo "$bats_tests" | tr '[:upper:]' '[:lower:]')
 	[[ $bats_tests == "tests" ]] && bats_tests="yes"
 
@@ -259,7 +259,7 @@ setup_git() {
 			# [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
 			#fi
 			printf "\n13\n"
-			if [ -z "$pext"] ; then
+			if [ -z "$pext" ]; then
 			 echo "Not recognized users avatar format. OSI avatar will be used in md files."
 			 pext="png"
 			 rm -f avatar
@@ -285,13 +285,15 @@ setup_git() {
 
 			download_license "$license_keyword" "$out/LICENSE"
 			printf "\ndone download_license\n"
-			#sed -i '1s;^;TODO: INSERT YOUR NAME & COPYRIGHT YEAR (if applicable to your license)\n;g' "$out/LICENSE"
+			sed -i '1s;^;TODO: CHECK YOUR NAME ,COPYRIGHT YEAR and other attributes applicable to your LICENSE\n;g' "$out/LICENSE"
 			sed -i "s/\[yyyy]/$(date +%Y)/g" "$out/LICENSE"
 			sed -i "s/\[fullname]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
 			sed -i "s/\[name of copyright owner]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
-			sed -i "s/\<year\>/$(date +%Y)/g" "$out/LICENSE"
-			sed -i "s/\<name of author\>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
-			sed -i "s/\<program\>/$(\<YOUR TOOL\>)/g" "$out/LICENSE"			
+			sed -i "s/<year>/$(date +%Y)/g" "$out/LICENSE"
+			sed -i "s/\[year]/$(date +%Y)/g" "$out/LICENSE"
+			sed -i "s/<name of author>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
+			sed -i "s/<program>/\<YOUR TOOL\>/g" "$out/LICENSE"		
+			sed -i "s/<one line to give/TODO: one line to give/g" "$out/LICENSE"				
 
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
