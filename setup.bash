@@ -232,17 +232,22 @@ setup_git() {
 			 declare -A signatures=( [JPEG]='^\xFF\xD8\xFF' [PNG]='^\x89PNG\x0D\x0A\x1A\x0A' [SVG]='^<svg' [GIF]='^GIF' [BMP]='^BM' [PSD]='^8BPS' [SWF]='^<FWS')
 
  			 for key in "${!signatures[@]}";    
-				do echo "$key => ${signatures[$key]}";    
-				escaped="${signatures[$key]/[/\]/\\}";  
-				echo $escaped;  
-				value=\$\'${escaped}\';  
-				echo "$value";   
-				cmd="grep -a -o -e $value avatar"; 
-				found=$(eval $cmd); 
-				[ -n "$found" ] && ( 
-					echo detected $key - yes; 
-					pext="jpg"; mv -f avatar "$out"/assets/profile."$pext"; break;
-					) || (echo detected $key - no, looking further); 
+			  do 
+				echo "$key => ${signatures[$key]}"    
+				escaped="${signatures[$key]/[/\]/\\}"  
+				echo $escaped  
+				magic=\$\'${escaped}\'  
+				echo "$magic"
+				cmd="grep -a -o -e $magic avatar"
+				found=$(eval $cmd)
+				if [ -n "$found" ]; then
+					echo detected $key - yes 
+					pext="jpg"
+					mv -f avatar "$out"/assets/profile."$pext"
+					break
+				else
+				 echo not $key, looking further
+				fi 
  			 done
 			fi
 
@@ -368,8 +373,9 @@ setup_git() {
 			git checkout "$primary_branch"
 			# <PRIMARY BRANCH>
 
-			printf "Showing pending TODO tags that you might want to review\n"
-			git grep -P -n -C 3 "TODO"
+			printf "YOu may need to review some pending TODO tags in the following files (press 'q' to exit):\n"
+			git grep -P -n --count --color  "TODO"
+			#git grep -P -n -C 3 "TODO"
 		) || cd "$cwd"
 	fi
 }
