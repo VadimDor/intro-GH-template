@@ -331,7 +331,7 @@ setup_git() {
 		 	git mv "$out/README-$git.md" "$out/README.md" 2>/dev/null
 			### git mv "$out/contributing-github.md" "$out/contributing.md"
 			# special files like README/CHANGELOG/LICENSE/README/LICENSE/AUTHORS
-	              if [ "$bats_tests" == "yes" ]; then
+	        if [ "$bats_tests" == "yes" ]; then
 		    	printf "Adding BATS submodules for tests.\n"
 				git submodule add https://github.com/bats-core/bats-core.git	"test/test_helper/bats"         2>/dev/null
  				git submodule add https://github.com/bats-core/bats-support.git "test/test_helper/bats-support" 2>/dev/null
@@ -348,7 +348,7 @@ setup_git() {
 
 
 			#git branch gh-pages
-
+			printf "\nGenerating plugin\n"	
 			git commit -m "Generate $tool_name plugin from template."	2>/dev/null	
 			printf "\nGenerated plugin was commited\n"	
 			cd "$cwd"
