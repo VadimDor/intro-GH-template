@@ -1,6 +1,6 @@
 # Checks for any broken links in the docs, and raises an issue if found
 name: 🌈 Broken Link Checker
-on:
+on:  # yamllint disable-line rule:truthy
   repository_dispatch:
   workflow_dispatch:
   schedule:
@@ -23,9 +23,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.BOT_GITHUB_TOKEN}}
           LYCHEE_OUT: .github/broken-link-report.md
-        
+
       - name: Raise an Issue with Results
-        uses: peter-evans/create-issue-from-file@v3
+        uses: peter-evans/create-issue-from-file@v5
         with:
           token: ${{secrets.BOT_GITHUB_TOKEN}}
           title: '[DOCS] Broken Links found in Documentation'

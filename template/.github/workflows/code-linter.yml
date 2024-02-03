@@ -1,6 +1,6 @@
 # Lints code merged into master branch
 name: 🌈 Lint Code Base
-on:
+on: # yamllint disable-line rule:truthy
   pull_request:
     branches: [master]
 jobs:
@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Lint Code Base
-        uses: github/super-linter@v4
+        uses: github/super-linter@v5
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
