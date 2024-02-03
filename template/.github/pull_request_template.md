@@ -1,7 +1,7 @@
 *Thank you for contributing to "<PROJECT NAME>"! So that your PR can be handled effectively, please populate the following fields (delete sections that are not applicable)*
 
 **Category**: 
-> One of: Bugfix / Feature / Code style update / Refactoring Only / Build related changes /  Documentation / Other (please specify)
+> One of: Bugfix / Feature / Code style update / Bumping dependency version /Refactoring Only / Build related changes /  Documentation / Other (please specify)
 
 **Overview**
 > Briefly outline your new changes...

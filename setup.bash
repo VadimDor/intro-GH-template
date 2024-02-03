@@ -284,7 +284,7 @@ setup_git() {
 			rm -f $out/header.html $out/footer.html
 
 			download_license "$license_keyword" "$out/LICENSE"
-			printf "\ndone download_license\n"
+			printf "\nlicense downloaded\n"
 			sed -i '1s;^;TODO: CHECK YOUR NAME ,COPYRIGHT YEAR and other attributes applicable to your LICENSE\n;g' "$out/LICENSE"
 			sed -i "s/\[yyyy]/$(date +%Y)/g" "$out/LICENSE"
 			sed -i "s/\[fullname]/${author_name:-$gitlab_username}/g" "$out/LICENSE"
@@ -294,7 +294,7 @@ setup_git() {
 			sed -i "s/<name of author>/${author_name:-$gitlab_username}/g" "$out/LICENSE"
 			sed -i "s/<program>/\<YOUR TOOL\>/g" "$out/LICENSE"		
 			sed -i "s/<one line to give/TODO: one line to give/g" "$out/LICENSE"				
-
+			printf "\nsetting placeholders\n"
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
 			set_placeholder "<YOUR TOOL UC>" "$tool_name_uc" "$out"
@@ -319,16 +319,16 @@ setup_git() {
 			set_placeholder "<GIT TYPE>" "$git" "$out"
 			set_placeholder "<USER PROFILE>" "$user_profile" "$out"
 		
-			printf "\ndone set placeholders\n"
+			printf "\nplaceholders were set\n"
 			git add "$out" 2>/dev/null	
 			# remove GitLab or GitHub specific files
 			if [ $git == 'github' ]; then
-			 git rm -rf "$out/.gitlab" "$out/.gitlab-ci.yml" "$out/README-gitlab.md" 
+			 git rm -rf "$out/.gitlab" "$out/.gitlab-ci.yml" "$out/README-gitlab.md" 2>/dev/null
 			else
-  			 git rm -rf "$out/.github" "$out/README-github.md" 
+  			 git rm -rf "$out/.github" "$out/README-github.md" 2>/dev/null
 			fi 
 			# rename GitHub specific files to final filenames
-		 	git mv "$out/README-$git.md" "$out/README.md"
+		 	git mv "$out/README-$git.md" "$out/README.md" 2>/dev/null
 			### git mv "$out/contributing-github.md" "$out/contributing.md"
 			# special files like README/CHANGELOG/LICENSE/README/LICENSE/AUTHORS
 	              if [ "$bats_tests" == "yes" ]; then
@@ -343,14 +343,14 @@ setup_git() {
 				#	docker-compose.yml
 				#	test/*
 				#EOF
-				git rm -rf "$out/test/" "$out/test/*" "$out/Dockerfile" "$out/docker-compose.yml" 
+				git rm -rf "$out/test/" "$out/test/*" "$out/Dockerfile" "$out/docker-compose.yml" 2>/dev/null
 			fi
 
 
 			#git branch gh-pages
 
 			git commit -m "Generate $tool_name plugin from template."	2>/dev/null	
-			printf "\ndone git commit\n"	
+			printf "\nGenerated plugin was commited\n"	
 			cd "$cwd"
 			git branch -M out "$primary_branch"
 			git worktree remove -f out
@@ -358,8 +358,8 @@ setup_git() {
 
 			printf "All done.\n"
 			printf "Your %s branch has been reset to an initial commit.\n" "$primary_branch"
-			printf "Push to origin/%s with \`git push --force-with-lease\`\n" "$primary_branch"
-			# Gitlab??:  printf "You might want to push using \`--force-with-lease\` to origin/%s\n" "$primary_branch"
+			printf "Now pushing to origin/%s with \`git push --force-with-lease\`:\n" "$primary_branch"
+			# TODO: Gitlab??:  printf "You might want to push using \`--force-with-lease\` to origin/%s\n" "$primary_branch"
 			
 			git push --force-with-lease
 
@@ -375,7 +375,7 @@ setup_git() {
 			git checkout "$primary_branch"
 			# <PRIMARY BRANCH>
 
-			printf "YOu may need to review some pending TODO tags in the following files (press 'q' to exit):\n"
+			printf "You may need to review some pending TODO tags in the following files (press 'q' to proceed):\n"
 			git grep -P -n --count --color  "TODO"
 			#git grep -P -n -C 3 "TODO"
 		) || cd "$cwd"
