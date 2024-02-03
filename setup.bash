@@ -206,17 +206,53 @@ setup_git() {
 			  fi
 			fi 
 			# LC_ALL=C grep -obUaP "^\xFF\xD8" 111.jpg
+			# grep -a -o -e $'GIF8' -e $'\xFF\xD8\xFF' -e $'^\x89PNG'  avatar
+			# grep -a -o   -e  $'^\x89PNG' avatar
+			# od -An -v -tx1 avatar| tr -d ' \n'|grep -oP "^89504e470d0a1a0a"
+			# $JPEG = "\xFF\xD8\xFF"  0xFFD8FFE1
+			#$GIF  = "GIF"
+			#$PNG  = "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a"
+			#$BMP  = "BM"
+			#$PSD  = "8BPS"
+			#$SWF  = "FWS"
+			# declare -A signatures=( [JPEG]='\xFF\xD8\xFF' [PNG]='\x89PNG\x0D\x0A\x1A\x0A' [SVG]='<svg' [GIF]='GIF' [BMP]='BM' [PSD]='8BPS' [SWF]='FWS')
+			# for key in "${!signatures[@]}"; do echo "$key => ${signatures[$key]}"; grep -a -o   -e  $'^${signatures[$key]}' avatar; done
+			# var=\$\'\\x89PNG\'
+			# echo "${signatures[PNG]//\\/\\\\}"
+			#  com="grep -a -o -e $var avatar"
+			# str=$(eval $com)
+			# [ -n "$str" ] && ( echo yes ) || (echo no)
+
 			pext=""
-			printf "\n11\n"
+			printf "\nuser_avatar=$user_avatar\n"
+
 			if [ ! -z "$user_avatar" ]; then
 			 curl "$user_avatar" --output avatar
-			 printf "\n12\n"
-			 ls avatar
-			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\xFF\xD8\xFF") ] &&  ( pext="jpg";mv -f avatar "$out"/assets/profile."$pext" )
-			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x89\x50\x4E") ] &&  ( pext="png";mv -f avatar "$out"/assets/profile."$pext" )
-			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x42\x4D\xB6") ] &&  ( pext="bmp";mv -f avatar "$out"/assets/profile."$pext"	)
-			 [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
+			 # see GIST for the following sniplet here: https://gist.github.com/VadimDor/b0ef69a69e5fab30c01083f11ceca1be
+			 declare -A signatures=( [JPEG]='^\xFF\xD8\xFF' [PNG]='^\x89PNG\x0D\x0A\x1A\x0A' [SVG]='^<svg' [GIF]='^GIF' [BMP]='^BM' [PSD]='^8BPS' [SWF]='^<FWS')
+
+ 			 for key in "${!signatures[@]}";    
+				do echo "$key => ${signatures[$key]}";    
+				escaped="${signatures[$key]/[/\]/\\}";  
+				echo $escaped;  
+				value=\$\'${escaped}\';  
+				echo "$value";   
+				cmd="grep -a -o -e $value avatar"; 
+				found=$(eval $cmd); 
+				[ -n "$found" ] && ( 
+					echo detected $key - yes; 
+					pext="jpg"; mv -f avatar "$out"/assets/profile."$pext"; break;
+					) || (echo detected $key - no, looking further); 
+ 			 done
 			fi
+
+			#if [ ! -z "$user_avatar" ]; then
+			# curl "$user_avatar" --output avatar
+			# [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\xFF\xD8\xFF") ] &&  ( pext="jpg";mv -f avatar "$out"/assets/profile."$pext" )
+			# [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x89\x50\x4E") ] &&  ( pext="png";mv -f avatar "$out"/assets/profile."$pext" )
+			# [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x42\x4D\xB6") ] &&  ( pext="bmp";mv -f avatar "$out"/assets/profile."$pext" )
+			# [ -z $(LC_ALL=en_US.utf8 grep -obUaP "^\x3C\x73\x76") ] &&  ( pext="svg";mv -f avatar "$out"/assets/profile."$pext" )
+			#fi
 			printf "\n13\n"
 			if [ -z "$pext"] ; then
 			 echo "Not recognized users avatar format. OSI avatar will be used in md files."
