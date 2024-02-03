@@ -17,7 +17,7 @@ jobs:
       if: startsWith(github.head_ref, 'AUTO/') == false
       uses: sobolevn/misspell-fixer-action@master
     - name: Create PR
-      uses: peter-evans/create-pull-request@v3.10.1
+      uses: peter-evans/create-pull-request@v6.0.0
       if: startsWith(github.head_ref, 'AUTO/') == false
       with:
         token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
