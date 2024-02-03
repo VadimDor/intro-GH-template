@@ -352,18 +352,18 @@ setup_git() {
 			git commit -m "Generate $tool_name plugin from template."	2>/dev/null	
 			printf "\nGenerated plugin was commited\n"	
 			cd "$cwd"
-			git branch -M out "$primary_branch"
-			git worktree remove -f out
-			git checkout -f "$primary_branch"
+			git branch -M out "$primary_branch" 2>/dev/null
+			git worktree remove -f out 2>/dev/null
+			git checkout -f "$primary_branch" 2>/dev/null
 
 			printf "All done.\n"
 			printf "Your %s branch has been reset to an initial commit.\n" "$primary_branch"
 			printf "Now pushing to origin/%s with \`git push --force-with-lease\`:\n" "$primary_branch"
 			# TODO: Gitlab??:  printf "You might want to push using \`--force-with-lease\` to origin/%s\n" "$primary_branch"
 			
-			git push --force-with-lease
+			git push --force-with-lease 2>/dev/null
 
-			git branch gh-pages
+			git branch gh-pages 
 			git checkout gh-pages
 			#echo "Hello World" > index.html
 
