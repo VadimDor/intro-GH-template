@@ -15,7 +15,7 @@ MACOS_X64_NIGHTLY_URL="https://github.com/<YOUR TOOL LC>-lang/nightlies/releases
 LINUX_X64_URL="https://<YOUR TOOL LC>-lang.org/download/<YOUR TOOL LC>-VERSION-linux_x64.tar.xz"
 LINUX_X32_URL="https://<YOUR TOOL LC>-lang.org/download/<YOUR TOOL LC>-VERSION-linux_x32.tar.xz"
 # see https://github.com/asdf-community/asdf-nim/blob/main/lib/utils.bash
-<YOUR TOOL UC>_ARGS=("--parallelBuild:${ASDF_CONCURRENCY:-0}" "-d:release") # Args to pass to koch/<YOUR TOOL LC>
+<YOUR TOOL EUC>_ARGS=("--parallelBuild:${ASDF_CONCURRENCY:-0}" "-d:release") # Args to pass to koch/<YOUR TOOL LC>
 
 normpath() {
   # Remove all /./ sequences.
@@ -632,8 +632,8 @@ die() {
   cd "$ASDF_DOWNLOAD_PATH"
 
   local <YOUR TOOL LC>
-  <YOUR TOOL LC>="./bin/<YOUR TOOL LC>"
-  if [ ! -f "$<YOUR TOOL LC>" ]; then
+  <YOUR TOOL ELC>="./bin/<YOUR TOOL LC>"
+  if [ ! -f "$<YOUR TOOL ELC>" ]; then
     if [ -f "build.sh" ]; then
       # source directory has build.sh to build koch, <YOUR TOOL LC>, and tools.
       step_start "./build.sh"
@@ -645,26 +645,26 @@ die() {
       sh build_all.sh
       step_end "✓"
     else
-      step_start "<YOUR TOOL LC> already built"
+      step_start "<YOUR TOOL ELC> already built"
       step_end "✓"
     fi
   else
-    step_start "<YOUR TOOL LC> already built"
+    step_start "<YOUR TOOL ELC> already built"
     step_end "✓"
   fi
 
-  [ -f "$<YOUR TOOL LC>" ] # A <YOUR TOOL LC> executable must exist at this point to proceed
+  [ -f "$<YOUR TOOL ELC>" ] # A <YOUR TOOL ELC> executable must exist at this point to proceed
   [ -f "./koch" ] || <YOUR TOOL ELC>_build_koch "$<YOUR TOOL LC>"
   [ -f "./bin/<YOUR TOOL LC>" ] || <YOUR TOOL ELC>_build_<YOUR TOOL LC>
 }
 
 <YOUR TOOL ELC>_build_koch() {
-  local <YOUR TOOL LC>
-  <YOUR TOOL LC>="$1"
+  local <YOUR TOOL ELC>
+  <YOUR TOOL ELC>="$1"
   step_start "build koch"
   cd "$ASDF_DOWNLOAD_PATH"
   # shellcheck disable=SC2046
-  eval "$<YOUR TOOL LC>" c --skipParentCfg:on $(printf ' %q ' "${<YOUR TOOL UC>_ARGS[@]}") koch
+  eval "$<YOUR TOOL ELC>" c --skipParentCfg:on $(printf ' %q ' "${<YOUR TOOL UC>_ARGS[@]}") koch
   step_end "✓"
 }
 
@@ -701,11 +701,11 @@ die() {
   bootstrap=n
   local build_tools
   build_tools=n
-  local build_<YOUR TOOL LC>
-  build_<YOUR TOOL LC>=n
+  local build_<YOUR TOOL ELC>
+  build_<YOUR TOOL ELC>=n
   [ -f "./bin/<YOUR TOOL LC>" ] || bootstrap=y
   [ -f "./bin/<YOUR TOOL LC>grep" ] || build_tools=y
-  [ -f "./bin/<YOUR TOOL LC>" ] || build_<YOUR TOOL LC>=y
+  [ -f "./bin/<YOUR TOOL LC>" ] || build_<YOUR TOOL ELC>=y
 
   if [ "$bootstrap" = "n" ] && [ "$build_tools" = "n" ] && [ "$build_<YOUR TOOL LC>" = "n" ]; then
     step_start "already built"

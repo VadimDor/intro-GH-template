@@ -21,7 +21,7 @@ jobs:
             https://media3.giphy.com/media/5DQdk5oZzNgGc/giphy.gif
             https://media4.giphy.com/media/3o7abB06u9bNzA8lu8/giphy.gif
             https://media4.giphy.com/media/l2JJrEx9aRsjNruhi/giphy.gif
-      - uses: ddradar/lgtm-action@v1
+      - uses: ddradar/lgtm-action@v2
         with:
           image-url: ${{ steps.act.outputs.selected }}
           token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

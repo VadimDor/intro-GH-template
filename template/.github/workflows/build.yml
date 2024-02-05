@@ -92,7 +92,7 @@ jobs:
       # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
       - name: Restore cache
         if: matrix.<YOUR TOOL LC>-version != 'ref:HEAD' && matrix.<YOUR TOOL LC>-version != 'latest'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache
           key: cache-${{ matrix.os }}-${{ matrix.<YOUR TOOL LC>-version }}
@@ -154,7 +154,7 @@ jobs:
     steps:
       # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
       - name: Restore cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache
           key: cache-ubuntu-latest-${{ matrix.<YOUR TOOL LC>-version }}
@@ -190,7 +190,7 @@ jobs:
     steps:
       # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
       - name: Restore cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache
           key: cache-${{ matrix.arch }}-${{ matrix.<YOUR TOOL LC>-version }}

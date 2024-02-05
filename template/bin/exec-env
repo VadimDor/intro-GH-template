@@ -21,14 +21,14 @@ fi
 export PATH
 PATH="${ASDF_INSTALL_PATH}/bin:${PATH}"
 
-export <YOUR TOOL LC>_DIR
+export <YOUR TOOL EUC>_DIR
 
 # Tell <YOUR TOOL ULC> where to find <YOUR TOOL LC> package metadata and packages.
-# If a user has a custom <YOUR TOOL LC>_DIR, use that.
+# If a user has a custom <YOUR TOOL EUC>_DIR, use that.
 # Otherwise if the current working directory has a <YOUR TOOL LC>deps directory, use that.
 # Otherwise, use the <YOUR TOOL LC> directory within ASDF_INSTALL_PATH.
 # see https://github.com/<YOUR TOOL LC>-lang/<YOUR TOOL LC>#<YOUR TOOL LC>s-folder-structure-and-packages
-if [ "${<YOUR TOOL LC>_DIR-}" = "" ] &&
+if [ "${<YOUR TOOL EUC>_DIR-}" = "" ] &&
   [ ! -d "${PWD}/<YOUR TOOL LC>deps" ]; then
-  <YOUR TOOL LC>_DIR="${ASDF_INSTALL_PATH}/<YOUR TOOL LC>"
+  <YOUR TOOL EUC>_DIR="${ASDF_INSTALL_PATH}/<YOUR TOOL LC>"
 fi
