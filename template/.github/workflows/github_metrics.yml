@@ -22,10 +22,10 @@ jobs:
           email: <USER EMAIL>
           repo_name: ${{ github.event.repository.name }}
         run: |
-          git config --global user.name $username
-          git config --global user.email $email
+          git config --global user.name "$username"
+          git config --global user.email "$email"
           git config --global init.defaultBranch <PRIMARY BRANCH>
-          git config --global --add safe.directory /__w/$repo_name/$repo_name
+          git config --global --add safe.directory "/__w/$repo_name/$repo_name"
           
           echo "Configured Git Credentials"
     

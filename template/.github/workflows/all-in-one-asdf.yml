@@ -38,7 +38,7 @@ jobs:
           sh_checker_comment: true
       - name: Install asdf
         run: |
-          git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+          git clone https://github.com/asdf-vm/asdf.git "$HOME"/asdf
 
       - name: Install bats
         run: |
@@ -48,5 +48,5 @@ jobs:
       - name: Test plugin with bats
         run: |
           . $HOME/asdf/asdf.sh
-          asdf plugin-add <TOOL CHECK> $GITHUB_WORKSPACE
+          asdf plugin-add <TOOL CHECK> "$GITHUB_WORKSPACE"
           bats test

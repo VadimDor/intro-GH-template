@@ -23,14 +23,14 @@ clear_lock() {
 
 setup_test() {
   # Hide pretty output
-  ASDF_<YOUR TOOL UC>_SILENT="yes"
-  export ASDF_<YOUR TOOL UC>_SILENT
+  <YOUR TOOL EUC>_SILENT="yes"
+  export <YOUR TOOL EUC>_SILENT
 
-  ASDF_<YOUR TOOL UC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-utils-tests.XXXX -d)"
-  export ASDF_<YOUR TOOL UC>_TEST_TEMP
+  <YOUR TOOL EUC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-utils-tests.XXXX -d)"
+  export <YOUR TOOL EUC>_TEST_TEMP
 
   # Mock ASDF vars
-  ASDF_DATA_DIR="${ASDF_<YOUR TOOL UC>_TEST_TEMP}/asdf"
+  ASDF_DATA_DIR="${<YOUR TOOL EUC>_TEST_TEMP}/asdf"
   export ASDF_DATA_DIR
   ASDF_INSTALL_VERSION="1.6.0"
   export ASDF_INSTALL_VERSION
@@ -40,12 +40,12 @@ setup_test() {
   export ASDF_INSTALL_PATH
   ASDF_DOWNLOAD_PATH="${ASDF_DATA_DIR}/downloads/<YOUR TOOL LC>/1.6.0"
   export ASDF_DOWNLOAD_PATH
-  ASDF_<YOUR TOOL UC>_MOCK_GCC_DEFINES="#"
-  export ASDF_<YOUR TOOL UC>_MOCK_GCC_DEFINES
+  <YOUR TOOL EUC>_MOCK_GCC_DEFINES="#"
+  export <YOUR TOOL EUC>_MOCK_GCC_DEFINES
 
   # Mock some other vars
   export XDG_CONFIG_HOME
-  XDG_CONFIG_HOME="$ASDF_<YOUR TOOL UC>_TEST_TEMP"
+  XDG_CONFIG_HOME="$<YOUR TOOL EUC>_TEST_TEMP"
   export ACTUAL_GITHUB_TOKEN
   ACTUAL_GITHUB_TOKEN="${GITHUB_TOKEN-}"
   export GITHUB_TOKEN
@@ -61,5 +61,5 @@ setup_test() {
 }
 
 teardown_test() {
-  rm -rf "$ASDF_<YOUR TOOL UC>_TEST_TEMP"
+  rm -rf "$<YOUR TOOL EUC>_TEST_TEMP"
 }

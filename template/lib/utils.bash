@@ -14,7 +14,7 @@ MACOS_X64_NIGHTLY_URL="https://github.com/<YOUR TOOL LC>-lang/nightlies/releases
 
 LINUX_X64_URL="https://<YOUR TOOL LC>-lang.org/download/<YOUR TOOL LC>-VERSION-linux_x64.tar.xz"
 LINUX_X32_URL="https://<YOUR TOOL LC>-lang.org/download/<YOUR TOOL LC>-VERSION-linux_x32.tar.xz"
-
+# see https://github.com/asdf-community/asdf-nim/blob/main/lib/utils.bash
 <YOUR TOOL UC>_ARGS=("--parallelBuild:${ASDF_CONCURRENCY:-0}" "-d:release") # Args to pass to koch/<YOUR TOOL LC>
 
 normpath() {
@@ -29,62 +29,62 @@ normpath() {
 }
 
 # Create the temp directories used by the download/build/install functions.
-asdf_<YOUR TOOL LC>_init() {
-  export ASDF_<YOUR TOOL UC>_ACTION
-  ASDF_<YOUR TOOL UC>_ACTION="$1"
+<YOUR TOOL ELC>_init() {
+  export <YOUR TOOL EUC>_ACTION
+  <YOUR TOOL EUC>_ACTION="$1"
 
   # Configuration options
-  export ASDF_<YOUR TOOL UC>_REMOVE_TEMP
-  ASDF_<YOUR TOOL UC>_REMOVE_TEMP="${ASDF_<YOUR TOOL UC>_REMOVE_TEMP:-yes}" # If no, <YOUR TOOL LC>'s temporary directory won't be deleted on exit
-  export ASDF_<YOUR TOOL UC>_DEBUG
-  ASDF_<YOUR TOOL UC>_DEBUG="${ASDF_<YOUR TOOL UC>_DEBUG:-no}" # If yes, extra information will be logged to the console and every command executed will be logged to the logfile.
-  export ASDF_<YOUR TOOL UC>_STDOUT
-  ASDF_<YOUR TOOL UC>_STDOUT="${ASDF_<YOUR TOOL UC>_STDOUT:-1}" # The file descriptor where the script's standard output should be directed.
-  export ASDF_<YOUR TOOL UC>_STDERR
-  ASDF_<YOUR TOOL UC>_STDERR="${ASDF_<YOUR TOOL UC>_STDERR:-2}" # The file descriptor where the script's standard error output should be directed.
-  export ASDF_<YOUR TOOL UC>_SILENT
-  ASDF_<YOUR TOOL UC>_SILENT="${ASDF_<YOUR TOOL UC>_SILENT:-no}" # If yes, <YOUR TOOL LC> will not echo build steps to stdout.
+  export <YOUR TOOL EUC>_REMOVE_TEMP
+  <YOUR TOOL EUC>_REMOVE_TEMP="${<YOUR TOOL EUC>_REMOVE_TEMP:-yes}" # If no, <YOUR TOOL LC>'s temporary directory won't be deleted on exit
+  export <YOUR TOOL EUC>_DEBUG
+  <YOUR TOOL EUC>_DEBUG="${<YOUR TOOL EUC>_DEBUG:-no}" # If yes, extra information will be logged to the console and every command executed will be logged to the logfile.
+  export <YOUR TOOL EUC>_STDOUT
+  <YOUR TOOL EUC>_STDOUT="${<YOUR TOOL EUC>_STDOUT:-1}" # The file descriptor where the script's standard output should be directed.
+  export <YOUR TOOL EUC>_STDERR
+  <YOUR TOOL EUC>_STDERR="${<YOUR TOOL EUC>_STDERR:-2}" # The file descriptor where the script's standard error output should be directed.
+  export <YOUR TOOL EUC>_SILENT
+  <YOUR TOOL EUC>_SILENT="${<YOUR TOOL EUC>_SILENT:-no}" # If yes, <YOUR TOOL LC> will not echo build steps to stdout.
   # End configuration options
 
   # Ensure ASDF_DATA_DIR has a value
   if [ -n "${ASDF_INSTALL_PATH-}" ]; then
     export ASDF_DATA_DIR
     ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
-    export ASDF_<YOUR TOOL UC>_TEMP
-    ASDF_<YOUR TOOL UC>_TEMP="${ASDF_DATA_DIR}/tmp/<YOUR TOOL LC>/${ASDF_INSTALL_VERSION}"
-    export ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH
-    ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH="${ASDF_<YOUR TOOL UC>_TEMP}/download" # Temporary directory where downloads are placed
-    export ASDF_<YOUR TOOL UC>_INSTALL_PATH
-    ASDF_<YOUR TOOL UC>_INSTALL_PATH="${ASDF_<YOUR TOOL UC>_TEMP}/install" # Temporary directory where installation is prepared
-    mkdir -p "$ASDF_<YOUR TOOL UC>_TEMP"
-    rm -f "$(asdf_<YOUR TOOL LC>_log)"
+    export <YOUR TOOL EUC>_TEMP
+    <YOUR TOOL EUC>_TEMP="${ASDF_DATA_DIR}/tmp/<YOUR TOOL LC>/${ASDF_INSTALL_VERSION}"
+    export <YOUR TOOL EUC>_DOWNLOAD_PATH
+    <YOUR TOOL EUC>_DOWNLOAD_PATH="${<YOUR TOOL EUC>_TEMP}/download" # Temporary directory where downloads are placed
+    export <YOUR TOOL EUC>_INSTALL_PATH
+    <YOUR TOOL EUC>_INSTALL_PATH="${<YOUR TOOL EUC>_TEMP}/install" # Temporary directory where installation is prepared
+    mkdir -p "$<YOUR TOOL EUC>_TEMP"
+    rm -f "$(<YOUR TOOL ELC>_log)"
   fi
 
-  if [ "$ASDF_<YOUR TOOL UC>_DEBUG" = "yes" ]; then
+  if [ "$<YOUR TOOL EUC>_DEBUG" = "yes" ]; then
     out
     out "# Environment:"
     out
-    env | grep "^ASDF_" | sort | xargs printf "#  %s\n" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR" || true
+    env | grep "^ASDF_" | sort | xargs printf "#  %s\n" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR" || true
   fi
 }
 
-asdf_<YOUR TOOL LC>_init_traps() {
+<YOUR TOOL ELC>_init_traps() {
   # Exit handlers
-  trap 'ASDF_<YOUR TOOL UC>_EXIT_STATUS=$?; asdf_<YOUR TOOL LC>_on_exit; exit $ASDF_<YOUR TOOL UC>_EXIT_STATUS' EXIT
-  trap 'trap - HUP; ASDF_<YOUR TOOL UC>_SIGNAL=SIGHUP; kill -HUP $$' HUP
-  trap 'trap - INT; ASDF_<YOUR TOOL UC>_SIGNAL=SIGINT; kill -INT $$' INT
-  trap 'trap - TERM; ASDF_<YOUR TOOL UC>_SIGNAL=SIGTERM; kill -TERM $$' TERM
+  trap '<YOUR TOOL EUC>_EXIT_STATUS=$?; <YOUR TOOL ELC>_on_exit; exit $<YOUR TOOL EUC>_EXIT_STATUS' EXIT
+  trap 'trap - HUP; <YOUR TOOL EUC>_SIGNAL=SIGHUP; kill -HUP $$' HUP
+  trap 'trap - INT; <YOUR TOOL EUC>_SIGNAL=SIGINT; kill -INT $$' INT
+  trap 'trap - TERM; <YOUR TOOL EUC>_SIGNAL=SIGTERM; kill -TERM $$' TERM
 }
 
 out() {
   # To screen
-  if [ "$ASDF_<YOUR TOOL UC>_SILENT" = "no" ]; then
-    echo "$@" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR"
+  if [ "$<YOUR TOOL EUC>_SILENT" = "no" ]; then
+    echo "$@" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR"
   fi
 }
 
-asdf_<YOUR TOOL LC>_on_exit() {
-  asdf_<YOUR TOOL LC>_cleanup_asdf_install_path() {
+<YOUR TOOL ELC>_on_exit() {
+  <YOUR TOOL ELC>_cleanup_asdf_install_path() {
     if [ -d "$ASDF_INSTALL_PATH" ]; then
       step_start "rm ${ASDF_INSTALL_PATH//${HOME}/\~} …"
       rm -rf "$ASDF_INSTALL_PATH"
@@ -92,7 +92,7 @@ asdf_<YOUR TOOL LC>_on_exit() {
     fi
   }
 
-  asdf_<YOUR TOOL LC>_cleanup_asdf_download_path() {
+  <YOUR TOOL ELC>_cleanup_asdf_download_path() {
     if [ -d "$ASDF_DOWNLOAD_PATH" ]; then
       if [ "${1-}" = "force" ]; then
         # Force delete
@@ -112,31 +112,31 @@ asdf_<YOUR TOOL LC>_on_exit() {
     fi
   }
 
-  asdf_<YOUR TOOL LC>_cleanup_temp() {
-    if [ -d "$ASDF_<YOUR TOOL UC>_TEMP" ]; then
-      if [ "$ASDF_<YOUR TOOL UC>_REMOVE_TEMP" = "yes" ]; then
-        step_start "rm ${ASDF_<YOUR TOOL UC>_TEMP//${HOME}/\~}"
-        rm -rf "$ASDF_<YOUR TOOL UC>_TEMP"
+  <YOUR TOOL ELC>_cleanup_temp() {
+    if [ -d "$<YOUR TOOL EUC>_TEMP" ]; then
+      if [ "$<YOUR TOOL EUC>_REMOVE_TEMP" = "yes" ]; then
+        step_start "rm ${<YOUR TOOL EUC>_TEMP//${HOME}/\~}"
+        rm -rf "$<YOUR TOOL EUC>_TEMP"
         step_end "✓"
       else
-        step_start "ASDF_<YOUR TOOL UC>_REMOVE_TEMP=${ASDF_<YOUR TOOL UC>_REMOVE_TEMP}, keeping temp dir ${ASDF_<YOUR TOOL UC>_TEMP//${HOME}/\~}"
+        step_start "<YOUR TOOL EUC>_REMOVE_TEMP=${<YOUR TOOL EUC>_REMOVE_TEMP}, keeping temp dir ${<YOUR TOOL EUC>_TEMP//${HOME}/\~}"
         step_end "✓"
       fi
     fi
   }
 
-  case "$ASDF_<YOUR TOOL UC>_ACTION" in
+  case "$<YOUR TOOL EUC>_ACTION" in
     download)
       # install gets called by asdf even after a failed download, so don't do
-      # any cleanup here... *unless* ASDF_<YOUR TOOL UC>_SIGNAL is set, in which case
+      # any cleanup here... *unless* <YOUR TOOL EUC>_SIGNAL is set, in which case
       # install will not be called and ASDF_DOWNLOAD_PATH should be deleted
       # regardless of --keep-download/always_keep_download.
-      case "${ASDF_<YOUR TOOL UC>_SIGNAL-}" in
+      case "${<YOUR TOOL EUC>_SIGNAL-}" in
         SIG*)
           # cleanup everything
-          asdf_<YOUR TOOL LC>_cleanup_asdf_install_path
-          asdf_<YOUR TOOL LC>_cleanup_asdf_download_path force
-          asdf_<YOUR TOOL LC>_cleanup_temp
+          <YOUR TOOL ELC>_cleanup_asdf_install_path
+          <YOUR TOOL ELC>_cleanup_asdf_download_path force
+          <YOUR TOOL ELC>_cleanup_temp
           out
           ;;
         *) ;;
@@ -144,26 +144,26 @@ asdf_<YOUR TOOL LC>_on_exit() {
       ;;
     install)
       # actually do cleanup here
-      case "$ASDF_<YOUR TOOL UC>_EXIT_STATUS" in
+      case "$<YOUR TOOL EUC>_EXIT_STATUS" in
         0)
           # successful install, only clean up temp dir, make download path
           # removable.
-          asdf_<YOUR TOOL LC>_cleanup_asdf_download_path
-          asdf_<YOUR TOOL LC>_cleanup_temp
+          <YOUR TOOL ELC>_cleanup_asdf_download_path
+          <YOUR TOOL ELC>_cleanup_temp
           out
           ;;
         *)
           # failure, dump log
           out
-          out "😱 Exited with status ${ASDF_<YOUR TOOL UC>_EXIT_STATUS}:"
+          out "😱 Exited with status ${<YOUR TOOL EUC>_EXIT_STATUS}:"
           out
-          cat "$(asdf_<YOUR TOOL LC>_log download)" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR"
-          cat "$(asdf_<YOUR TOOL LC>_log install)" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR"
+          cat "$(<YOUR TOOL ELC>_log download)" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR"
+          cat "$(<YOUR TOOL ELC>_log install)" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR"
           # cleanup everything
           out
-          asdf_<YOUR TOOL LC>_cleanup_asdf_install_path
-          asdf_<YOUR TOOL LC>_cleanup_asdf_download_path
-          asdf_<YOUR TOOL LC>_cleanup_temp
+          <YOUR TOOL ELC>_cleanup_asdf_install_path
+          <YOUR TOOL ELC>_cleanup_asdf_download_path
+          <YOUR TOOL ELC>_cleanup_temp
           out
           ;;
       esac
@@ -172,9 +172,9 @@ asdf_<YOUR TOOL LC>_on_exit() {
 }
 
 # Log file path. Most command output gets redirected here.
-asdf_<YOUR TOOL LC>_log() {
+<YOUR TOOL ELC>_log() {
   local path
-  path="${ASDF_<YOUR TOOL UC>_TEMP}/${1:-$ASDF_<YOUR TOOL UC>_ACTION}.log"
+  path="${<YOUR TOOL EUC>_TEMP}/${1:-$<YOUR TOOL EUC>_ACTION}.log"
   touch "$path"
   echo "$path"
 }
@@ -183,48 +183,48 @@ STEP=0
 
 section_start() {
   STEP=0
-  if [ "$ASDF_<YOUR TOOL UC>_SILENT" = "no" ]; then
-    printf "\n%s\n" "$1" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR"
+  if [ "$<YOUR TOOL EUC>_SILENT" = "no" ]; then
+    printf "\n%s\n" "$1" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR"
   fi
 }
 
 step_start() {
   export STEP=$((STEP + 1))
-  if [ "$ASDF_<YOUR TOOL UC>_SILENT" = "no" ]; then
-    printf "     %s. %s … " "$STEP" "$1" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR"
+  if [ "$<YOUR TOOL EUC>_SILENT" = "no" ]; then
+    printf "     %s. %s … " "$STEP" "$1" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR"
   fi
 }
 
 step_end() {
-  if [ "$ASDF_<YOUR TOOL UC>_SILENT" = "no" ]; then
-    printf "%s\n" "$1" 1>&"$ASDF_<YOUR TOOL UC>_STDOUT" 2>&"$ASDF_<YOUR TOOL UC>_STDERR"
+  if [ "$<YOUR TOOL EUC>_SILENT" = "no" ]; then
+    printf "%s\n" "$1" 1>&"$<YOUR TOOL EUC>_STDOUT" 2>&"$<YOUR TOOL EUC>_STDERR"
   fi
 }
 
 die() {
-  if [ "$ASDF_<YOUR TOOL UC>_SILENT" = "no" ]; then
-    printf "\n💥 %s\n\n" "$1" 1>&"$ASDF_<YOUR TOOL UC>_STDERR"
+  if [ "$<YOUR TOOL EUC>_SILENT" = "no" ]; then
+    printf "\n💥 %s\n\n" "$1" 1>&"$<YOUR TOOL EUC>_STDERR"
   fi
 }
 
 # Sort semantic version numbers.
-asdf_<YOUR TOOL LC>_sort_versions() {
+<YOUR TOOL ELC>_sort_versions() {
   awk '{ if ($1 ~ /-/) print; else print $0"_" ; }' | sort -V | sed 's/_$//'
 }
 
 # List all stable <YOUR TOOL ULC> versions (tagged releases at github.com/<YOUR TOOL LC>-lang/<YOUR TOOL ULC>).
-asdf_<YOUR TOOL LC>_list_all_versions() {
+<YOUR TOOL ELC>_list_all_versions() {
   git ls-remote --tags --refs "$SOURCE_REPO" |
     awk -v col=2 '{print $col}' |
     grep '^refs/tags/.*' |
     sed 's/^refs\/tags\///' |
     sed 's/^v//' |
-    asdf_<YOUR TOOL LC>_sort_versions
+    <YOUR TOOL ELC>_sort_versions
 }
 
-asdf_<YOUR TOOL LC>_normalize_os() {
+<YOUR TOOL ELC>_normalize_os() {
   local os
-  os="$(echo "${ASDF_<YOUR TOOL UC>_MOCK_OS_NAME:-$(uname)}" | tr '[:upper:]' '[:lower:]')"
+  os="$(echo "${<YOUR TOOL EUC>_MOCK_OS_NAME:-$(uname)}" | tr '[:upper:]' '[:lower:]')"
   case "$os" in
     darwin) echo macos ;;
     mingw*) echo windows ;; # not actually supported by asdf?
@@ -242,14 +242,14 @@ asdf_<YOUR TOOL LC>_normalize_os() {
 # - aaarch64 (on Linux)
 # - arm64 (on macOS)
 # - powerpc64le
-asdf_<YOUR TOOL LC>_normalize_arch() {
+<YOUR TOOL ELC>_normalize_arch() {
   local arch arm_arch arch_version
-  arch="${ASDF_<YOUR TOOL UC>_MOCK_MACHINE_NAME:-$(uname -m)}"
+  arch="${<YOUR TOOL EUC>_MOCK_MACHINE_NAME:-$(uname -m)}"
   case "$arch" in
     x86_64 | x64 | amd64)
-      if [ -n "$(command -v gcc)" ] || [ -n "${ASDF_<YOUR TOOL UC>_MOCK_GCC_DEFINES-}" ]; then
+      if [ -n "$(command -v gcc)" ] || [ -n "${<YOUR TOOL EUC>_MOCK_GCC_DEFINES-}" ]; then
         # Edge case: detect 386 container on amd64 kernel using __amd64 definition
-        IS_AMD64="$(echo "${ASDF_<YOUR TOOL UC>_MOCK_GCC_DEFINES:-$(gcc -dM -E - </dev/null)}" | grep "#define __amd64 " | sed 's/#define __amd64 //')"
+        IS_AMD64="$(echo "${<YOUR TOOL EUC>_MOCK_GCC_DEFINES:-$(gcc -dM -E - </dev/null)}" | grep "#define __amd64 " | sed 's/#define __amd64 //')"
         if [ "$IS_AMD64" = "1" ]; then
           echo "x86_64"
         else
@@ -262,24 +262,24 @@ asdf_<YOUR TOOL LC>_normalize_arch() {
       ;;
     *86* | x32) echo "i686" ;;
     *aarch64* | *arm64* | armv8b | armv8l)
-      case "$(asdf_<YOUR TOOL LC>_normalize_os)" in
+      case "$(<YOUR TOOL ELC>_normalize_os)" in
         macos) echo arm64 ;;
         *) echo "aarch64" ;;
       esac
       ;;
     arm*)
       arm_arch=""
-      if [ -n "$(command -v gcc)" ] || [ -n "${ASDF_<YOUR TOOL UC>_MOCK_GCC_DEFINES-}" ]; then
+      if [ -n "$(command -v gcc)" ] || [ -n "${<YOUR TOOL EUC>_MOCK_GCC_DEFINES-}" ]; then
         # Detect arm32 version using __ARM_ARCH definition
-        arch_version="$(echo "${ASDF_<YOUR TOOL UC>_MOCK_GCC_DEFINES:-$(gcc -dM -E - </dev/null)}" | grep "#define __ARM_ARCH " | sed 's/#define __ARM_ARCH //')"
+        arch_version="$(echo "${<YOUR TOOL EUC>_MOCK_GCC_DEFINES:-$(gcc -dM -E - </dev/null)}" | grep "#define __ARM_ARCH " | sed 's/#define __ARM_ARCH //')"
         if [ -n "$arch_version" ]; then
           arm_arch="armv$arch_version"
         fi
       fi
       if [ -z "$arm_arch" ]; then
-        if [ -n "$(command -v dpkg)" ] || [ -n "${ASDF_<YOUR TOOL UC>_MOCK_DPKG_ARCHITECTURE-}" ]; then
+        if [ -n "$(command -v dpkg)" ] || [ -n "${<YOUR TOOL EUC>_MOCK_DPKG_ARCHITECTURE-}" ]; then
           # Detect arm32 version using dpkg
-          case "${ASDF_<YOUR TOOL UC>_MOCK_DPKG_ARCHITECTURE:-"$(dpkg --print-architecture)"}" in
+          case "${<YOUR TOOL EUC>_MOCK_DPKG_ARCHITECTURE:-"$(dpkg --print-architecture)"}" in
             armel) arm_arch="armv5" ;;
             armhf) arm_arch="armv7" ;;
           esac
@@ -302,8 +302,8 @@ asdf_<YOUR TOOL LC>_normalize_arch() {
   esac
 }
 
-asdf_<YOUR TOOL LC>_pkg_mgr() {
-  echo "${ASDF_<YOUR TOOL UC>_MOCK_PKG_MGR:-$(
+<YOUR TOOL ELC>_pkg_mgr() {
+  echo "${<YOUR TOOL EUC>_MOCK_PKG_MGR:-$(
     (command -v brew >/dev/null 2>&1 && echo "brew") ||
       (command -v apt-get >/dev/null 2>&1 && echo "apt-get") ||
       (command -v apk >/dev/null 2>&1 && echo "apk") ||
@@ -315,8 +315,8 @@ asdf_<YOUR TOOL LC>_pkg_mgr() {
 
 # List dependencies of this plugin, as package names for use with the system
 # package manager.
-asdf_<YOUR TOOL LC>_list_deps() {
-  case "$(asdf_<YOUR TOOL LC>_pkg_mgr)" in
+<YOUR TOOL ELC>_list_deps() {
+  case "$(<YOUR TOOL ELC>_pkg_mgr)" in
     apt-get)
       echo xz-utils
       echo build-essential
@@ -327,7 +327,7 @@ asdf_<YOUR TOOL LC>_list_deps() {
       ;;
     brew) echo xz ;;
     *)
-      case "$(asdf_<YOUR TOOL LC>_normalize_os)" in
+      case "$(<YOUR TOOL ELC>_normalize_os)" in
         *)
           echo xz
           echo gcc
@@ -338,10 +338,10 @@ asdf_<YOUR TOOL LC>_list_deps() {
 }
 
 # Generate the command to install dependencies via the system package manager.
-asdf_<YOUR TOOL LC>_install_deps_cmds() {
+<YOUR TOOL ELC>_install_deps_cmds() {
   local deps
-  deps="$(asdf_<YOUR TOOL LC>_list_deps | xargs)"
-  case "$(asdf_<YOUR TOOL LC>_pkg_mgr)" in
+  deps="$(<YOUR TOOL ELC>_list_deps | xargs)"
+  case "$(<YOUR TOOL ELC>_pkg_mgr)" in
     apt-get) echo "apt-get update -q -y && apt-get -qq install -y $deps" ;;
     apk) echo "apk add --update $deps" ;;
     brew) echo "brew install $deps" ;;
@@ -352,16 +352,16 @@ asdf_<YOUR TOOL LC>_install_deps_cmds() {
 }
 
 # Install missing dependencies using the system package manager.
-# Note - this is interactive, so in CI use `yes | cmd-that-calls-asdf_<YOUR TOOL LC>_install_deps`.
-asdf_<YOUR TOOL LC>_install_deps() {
+# Note - this is interactive, so in CI use `yes | cmd-that-calls-<YOUR TOOL ELC>_install_deps`.
+<YOUR TOOL ELC>_install_deps() {
   local deps
-  deps="$(asdf_<YOUR TOOL LC>_list_deps | xargs)"
+  deps="$(<YOUR TOOL ELC>_list_deps | xargs)"
   local input
   input=""
   echo
   echo "[<YOUR TOOL LC>:install-deps] additional packages are required: ${deps}"
   echo
-  if [ "${ASDF_<YOUR TOOL UC>_INSTALL_DEPS_ACCEPT:-no}" = "no" ]; then
+  if [ "${<YOUR TOOL EUC>_INSTALL_DEPS_ACCEPT:-no}" = "no" ]; then
     read -r -p "[<YOUR TOOL LC>:install-deps] Install them now? [Y/n] " input
   else
     echo "[<YOUR TOOL LC>:install-deps] --yes passed, installing…"
@@ -372,7 +372,7 @@ asdf_<YOUR TOOL LC>_install_deps() {
   case "$input" in
     [yY][eE][sS] | [yY] | "")
       local cmds
-      cmds="$(asdf_<YOUR TOOL LC>_install_deps_cmds)"
+      cmds="$(<YOUR TOOL ELC>_install_deps_cmds)"
       if [ -z "$cmds" ]; then
         echo
         echo "[<YOUR TOOL LC>:install-deps] no package managers recognized, install the packages manually."
@@ -397,9 +397,9 @@ asdf_<YOUR TOOL LC>_install_deps() {
 
 # Detect if the standard C library on the system is musl or not.
 # Echoes "yes" or "no"
-asdf_<YOUR TOOL LC>_is_musl() {
-  if [ -n "${ASDF_<YOUR TOOL UC>_MOCK_IS_MUSL-}" ]; then
-    echo "$ASDF_<YOUR TOOL UC>_MOCK_IS_MUSL"
+<YOUR TOOL ELC>_is_musl() {
+  if [ -n "${<YOUR TOOL EUC>_MOCK_IS_MUSL-}" ]; then
+    echo "$<YOUR TOOL EUC>_MOCK_IS_MUSL"
   else
     if [ -n "$(command -v ldd)" ]; then
       if (ldd --version 2>&1 || true) | grep -qF "musl"; then
@@ -415,14 +415,14 @@ asdf_<YOUR TOOL LC>_is_musl() {
 
 # Echo the official binary archive URL (from <YOUR TOOL LC>-lang.org) for the current
 # architecture.
-asdf_<YOUR TOOL LC>_official_archive_url() {
+<YOUR TOOL ELC>_official_archive_url() {
   if [ "${ASDF_INSTALL_TYPE}" = "version" ] && [[ ${ASDF_INSTALL_VERSION} =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-    case "$(asdf_<YOUR TOOL LC>_normalize_os)" in
+    case "$(<YOUR TOOL ELC>_normalize_os)" in
       linux)
-        case "$(asdf_<YOUR TOOL LC>_is_musl)" in
+        case "$(<YOUR TOOL ELC>_is_musl)" in
           no)
             # Official Linux builds are only available for glibc x86_64 and x86
-            case "$(asdf_<YOUR TOOL LC>_normalize_arch)" in
+            case "$(<YOUR TOOL ELC>_normalize_arch)" in
               x86_64) echo "${LINUX_X64_URL//VERSION/$ASDF_INSTALL_VERSION}" ;;
               i686) echo "${LINUX_X32_URL//VERSION/$ASDF_INSTALL_VERSION}" ;;
             esac
@@ -434,17 +434,17 @@ asdf_<YOUR TOOL LC>_official_archive_url() {
 }
 
 # Echo the nightly url for arch/os
-asdf_<YOUR TOOL LC>_nightly_url() {
+<YOUR TOOL ELC>_nightly_url() {
   if [ "${ASDF_INSTALL_TYPE}" != "ref" ]; then
     return 0
   fi
   if [[ $ASDF_INSTALL_VERSION =~ ^version-[0-9]+-[0-9]+$ ]] || [ "$ASDF_INSTALL_VERSION" = "devel" ]; then
-    case "$(asdf_<YOUR TOOL LC>_normalize_os)" in
+    case "$(<YOUR TOOL ELC>_normalize_os)" in
       linux)
-        case "$(asdf_<YOUR TOOL LC>_is_musl)" in
+        case "$(<YOUR TOOL ELC>_is_musl)" in
           no)
             # Nightly Linux builds are only available for glibc and a few archs
-            case "$(asdf_<YOUR TOOL LC>_normalize_arch)" in
+            case "$(<YOUR TOOL ELC>_normalize_arch)" in
               x86_64) echo "${LINUX_X64_NIGHTLY_URL//BRANCH/$ASDF_INSTALL_VERSION}" ;;
               i686) echo "${LINUX_X32_NIGHTLY_URL//BRANCH/$ASDF_INSTALL_VERSION}" ;;
               aarch64) echo "${LINUX_ARM64_NIGHTLY_URL//BRANCH/$ASDF_INSTALL_VERSION}" ;;
@@ -454,7 +454,7 @@ asdf_<YOUR TOOL LC>_nightly_url() {
         esac
         ;;
       macos)
-        case "$(asdf_<YOUR TOOL LC>_normalize_arch)" in
+        case "$(<YOUR TOOL ELC>_normalize_arch)" in
           # Nightly macos builds are only available for x86_64
           x86_64) echo "${MACOS_X64_NIGHTLY_URL//BRANCH/$ASDF_INSTALL_VERSION}" ;;
         esac
@@ -463,18 +463,18 @@ asdf_<YOUR TOOL LC>_nightly_url() {
   fi
 }
 
-asdf_<YOUR TOOL LC>_github_token() {
+<YOUR TOOL ELC>_github_token() {
   echo "${GITHUB_TOKEN:-${GITHUB_API_TOKEN-}}"
 }
 
 # Echo the source archive URL (from <YOUR TOOL LC>-lang.org).
-asdf_<YOUR TOOL LC>_source_url() {
+<YOUR TOOL ELC>_source_url() {
   if [ "${ASDF_INSTALL_TYPE}" = "version" ] && [[ ${ASDF_INSTALL_VERSION} =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     echo "${SOURCE_URL//VERSION/$ASDF_INSTALL_VERSION}"
   fi
 }
 
-asdf_<YOUR TOOL LC>_needs_download() {
+<YOUR TOOL ELC>_needs_download() {
   # No download path
   if [ ! -d "$ASDF_DOWNLOAD_PATH" ]; then
     echo "yes"
@@ -483,21 +483,21 @@ asdf_<YOUR TOOL LC>_needs_download() {
   fi
 }
 
-asdf_<YOUR TOOL LC>_download_urls() {
+<YOUR TOOL ELC>_download_urls() {
   # Official binaries
-  asdf_<YOUR TOOL LC>_official_archive_url
+  <YOUR TOOL ELC>_official_archive_url
   # Nightly binaries
-  asdf_<YOUR TOOL LC>_nightly_url
+  <YOUR TOOL ELC>_nightly_url
   # Fall back to building from source
-  asdf_<YOUR TOOL LC>_source_url
+  <YOUR TOOL ELC>_source_url
 }
 
-asdf_<YOUR TOOL LC>_download_via_git() {
+<YOUR TOOL ELC>_download_via_git() {
   step_start "git clone"
-  rm -rf "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
-  mkdir -p "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
+  rm -rf "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
+  mkdir -p "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
   (
-    cd "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
+    cd "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
     git init
     git remote add origin "$SOURCE_REPO"
     git fetch origin "$ASDF_INSTALL_VERSION" --depth 1
@@ -507,10 +507,10 @@ asdf_<YOUR TOOL LC>_download_via_git() {
   step_end "✓"
 }
 
-asdf_<YOUR TOOL LC>_download_via_url() {
+<YOUR TOOL ELC>_download_via_url() {
   local urls url archive_path archive_name archive_ext
   # shellcheck disable=SC2207
-  urls=($(asdf_<YOUR TOOL LC>_download_urls))
+  urls=($(<YOUR TOOL ELC>_download_urls))
   url=""
   archive_path=""
   if [ "${#urls[@]}" -eq 0 ]; then
@@ -519,7 +519,7 @@ asdf_<YOUR TOOL LC>_download_via_url() {
   for i in "${!urls[@]}"; do
     url="${urls[$i]}"
     step_start "curl ${url}"
-    archive_path="$(asdf_<YOUR TOOL LC>_fetch "$url")"
+    archive_path="$(<YOUR TOOL ELC>_fetch "$url")"
     if [ -n "$archive_path" ]; then
       step_end "✓"
       break
@@ -536,25 +536,25 @@ asdf_<YOUR TOOL LC>_download_via_url() {
   archive_ext="${archive_name##*.}"
   step_start "unzip"
 
-  rm -rf "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
-  mkdir -p "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
+  rm -rf "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
+  mkdir -p "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
 
   case "$archive_ext" in
-    xz) tar -xJf "${ASDF_<YOUR TOOL UC>_TEMP}/${archive_name}" -C "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH" --strip-components=1 ;;
+    xz) tar -xJf "${<YOUR TOOL EUC>_TEMP}/${archive_name}" -C "$<YOUR TOOL EUC>_DOWNLOAD_PATH" --strip-components=1 ;;
     *)
-      unzip -q "${ASDF_<YOUR TOOL UC>_TEMP}/${archive_name}" -d "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
-      mv -v "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH/<YOUR TOOL LC>-${ASDF_INSTALL_VERSION}/"* "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH"
-      rm -vr "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH/<YOUR TOOL LC>-${ASDF_INSTALL_VERSION}"
+      unzip -q "${<YOUR TOOL EUC>_TEMP}/${archive_name}" -d "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
+      mv -v "$<YOUR TOOL EUC>_DOWNLOAD_PATH/<YOUR TOOL LC>-${ASDF_INSTALL_VERSION}/"* "$<YOUR TOOL EUC>_DOWNLOAD_PATH"
+      rm -vr "$<YOUR TOOL EUC>_DOWNLOAD_PATH/<YOUR TOOL LC>-${ASDF_INSTALL_VERSION}"
       ;;
   esac
   step_end "✓"
 }
 
 # Detect which method to install <YOUR TOOL ULC> with (official binary, nightly binary, or
-# build from source), download the code to ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH, prepare it for
+# build from source), download the code to <YOUR TOOL EUC>_DOWNLOAD_PATH, prepare it for
 # use by the build or install functions, then move it to ASDF_DOWNLOAD_PATH.
-asdf_<YOUR TOOL LC>_download() {
-  section_start "I.   Download (${ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH//${HOME}/\~})"
+<YOUR TOOL ELC>_download() {
+  section_start "I.   Download (${<YOUR TOOL EUC>_DOWNLOAD_PATH//${HOME}/\~})"
   {
 
     if [ -f "${ASDF_DOWNLOAD_PATH}/install.sh" ] || [ -f "${ASDF_DOWNLOAD_PATH}/build.sh" ] || [ -f "${ASDF_DOWNLOAD_PATH}/build_all.sh" ]; then
@@ -563,9 +563,9 @@ asdf_<YOUR TOOL LC>_download() {
       return 0
     fi
 
-    date +%s >"${ASDF_<YOUR TOOL UC>_TEMP}/download.start"
+    date +%s >"${<YOUR TOOL EUC>_TEMP}/download.start"
 
-    if [ "$ASDF_<YOUR TOOL UC>_DEBUG" = "yes" ]; then
+    if [ "$<YOUR TOOL EUC>_DEBUG" = "yes" ]; then
       set -x
     fi
 
@@ -574,9 +574,9 @@ asdf_<YOUR TOOL LC>_download() {
     # it may have a nightly build for the current arch/os
     # so first try to download via URL
     # but if none is available, fallback to git
-    if ! asdf_<YOUR TOOL LC>_download_via_url; then
+    if ! <YOUR TOOL ELC>_download_via_url; then
       if [ "${ASDF_INSTALL_TYPE}" = "ref" ]; then
-        asdf_<YOUR TOOL LC>_download_via_git
+        <YOUR TOOL ELC>_download_via_git
       else
         die "No download method available for ${ASDF_INSTALL_TYPE} ${ASDF_INSTALL_VERSION}"
         return 1
@@ -586,33 +586,33 @@ asdf_<YOUR TOOL LC>_download() {
     step_start "mv to ${ASDF_DOWNLOAD_PATH//${HOME}/\~}"
     rm -rf "$ASDF_DOWNLOAD_PATH"
     mkdir -p "$(dirname "$ASDF_DOWNLOAD_PATH")"
-    mv -v "$ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH" "$ASDF_DOWNLOAD_PATH"
+    mv -v "$<YOUR TOOL EUC>_DOWNLOAD_PATH" "$ASDF_DOWNLOAD_PATH"
     step_end "✓"
 
-    if [ "$ASDF_<YOUR TOOL UC>_DEBUG" = "yes" ]; then
+    if [ "$<YOUR TOOL EUC>_DEBUG" = "yes" ]; then
       set +x
     fi
-  } 1>>"$(asdf_<YOUR TOOL LC>_log)" 2>>"$(asdf_<YOUR TOOL LC>_log)"
+  } 1>>"$(<YOUR TOOL ELC>_log)" 2>>"$(<YOUR TOOL ELC>_log)"
 }
 
-asdf_<YOUR TOOL LC>_fetch() {
+<YOUR TOOL ELC>_fetch() {
   local url
   url="$1"
   declare -a curl_args
   curl_args=("-fsSL" "--connect-timeout" "10")
 
   # Use a github personal access token to avoid API rate limiting
-  if [ -n "$(asdf_<YOUR TOOL LC>_github_token)" ]; then
+  if [ -n "$(<YOUR TOOL ELC>_github_token)" ]; then
     case "$url" in
       'https://github.com/'*)
-        curl_args+=("-H" "Authorization: token $(asdf_<YOUR TOOL LC>_github_token)")
+        curl_args+=("-H" "Authorization: token $(<YOUR TOOL ELC>_github_token)")
         ;;
     esac
   fi
 
   # Debian ARMv7 at least seem to have out-of-date ca certs, so use a newer
   # one from Mozilla.
-  case "$(asdf_<YOUR TOOL LC>_normalize_arch)" in
+  case "$(<YOUR TOOL ELC>_normalize_arch)" in
     armv*)
       curl_args+=("--cacert" "${ASDF_DATA_DIR}/plugins/<YOUR TOOL LC>/share/cacert.pem")
       ;;
@@ -620,7 +620,7 @@ asdf_<YOUR TOOL LC>_fetch() {
   local archive_name
   archive_name="$(basename "$url")"
   local archive_path
-  archive_path="${ASDF_<YOUR TOOL UC>_TEMP}/${archive_name}"
+  archive_path="${<YOUR TOOL EUC>_TEMP}/${archive_name}"
 
   curl_args+=("$url" "-o" "$archive_path")
 
@@ -628,7 +628,7 @@ asdf_<YOUR TOOL LC>_fetch() {
   eval curl $(printf ' "%s" ' "${curl_args[@]}") && echo "$archive_path" || echo ""
 }
 
-asdf_<YOUR TOOL LC>_bootstrap_<YOUR TOOL LC>() {
+<YOUR TOOL ELC>_bootstrap_<YOUR TOOL LC>() {
   cd "$ASDF_DOWNLOAD_PATH"
 
   local <YOUR TOOL LC>
@@ -654,11 +654,11 @@ asdf_<YOUR TOOL LC>_bootstrap_<YOUR TOOL LC>() {
   fi
 
   [ -f "$<YOUR TOOL LC>" ] # A <YOUR TOOL LC> executable must exist at this point to proceed
-  [ -f "./koch" ] || asdf_<YOUR TOOL LC>_build_koch "$<YOUR TOOL LC>"
-  [ -f "./bin/<YOUR TOOL LC>" ] || asdf_<YOUR TOOL LC>_build_<YOUR TOOL LC>
+  [ -f "./koch" ] || <YOUR TOOL ELC>_build_koch "$<YOUR TOOL LC>"
+  [ -f "./bin/<YOUR TOOL LC>" ] || <YOUR TOOL ELC>_build_<YOUR TOOL LC>
 }
 
-asdf_<YOUR TOOL LC>_build_koch() {
+<YOUR TOOL ELC>_build_koch() {
   local <YOUR TOOL LC>
   <YOUR TOOL LC>="$1"
   step_start "build koch"
@@ -668,7 +668,7 @@ asdf_<YOUR TOOL LC>_build_koch() {
   step_end "✓"
 }
 
-asdf_<YOUR TOOL LC>_build_<YOUR TOOL LC>() {
+<YOUR TOOL ELC>_build_<YOUR TOOL LC>() {
   step_start "build <YOUR TOOL LC>"
   cd "$ASDF_DOWNLOAD_PATH"
   # shellcheck disable=SC2046
@@ -676,7 +676,7 @@ asdf_<YOUR TOOL LC>_build_<YOUR TOOL LC>() {
   step_end "✓"
 }
 
-asdf_<YOUR TOOL LC>_build_tools() {
+<YOUR TOOL ELC>_build_tools() {
   step_start "build tools"
   cd "$ASDF_DOWNLOAD_PATH"
   # shellcheck disable=SC2046
@@ -684,7 +684,7 @@ asdf_<YOUR TOOL LC>_build_tools() {
   step_end "✓"
 }
 
-asdf_<YOUR TOOL LC>_build_<YOUR TOOL LC>() {
+<YOUR TOOL ELC>_build_<YOUR TOOL LC>() {
   step_start "build <YOUR TOOL LC>"
   cd "$ASDF_DOWNLOAD_PATH"
   # shellcheck disable=SC2046
@@ -692,8 +692,8 @@ asdf_<YOUR TOOL LC>_build_<YOUR TOOL LC>() {
   step_end "✓"
 }
 
-# Build <YOUR TOOL ULC> binaries in ASDF_<YOUR TOOL UC>_DOWNLOAD_PATH.
-asdf_<YOUR TOOL LC>_build() {
+# Build <YOUR TOOL ULC> binaries in <YOUR TOOL EUC>_DOWNLOAD_PATH.
+<YOUR TOOL ELC>_build() {
   section_start "II.  Build (${ASDF_DOWNLOAD_PATH//${HOME}/\~})"
 
   cd "$ASDF_DOWNLOAD_PATH"
@@ -713,14 +713,14 @@ asdf_<YOUR TOOL LC>_build() {
     return 0
   fi
 
-  [ "$bootstrap" = "n" ] || asdf_<YOUR TOOL LC>_bootstrap_<YOUR TOOL LC>
-  [ "$build_tools" = "n" ] || asdf_<YOUR TOOL LC>_build_tools
-  [ "$build_<YOUR TOOL LC>" = "n" ] || asdf_<YOUR TOOL LC>_build_<YOUR TOOL LC>
+  [ "$bootstrap" = "n" ] || <YOUR TOOL ELC>_bootstrap_<YOUR TOOL LC>
+  [ "$build_tools" = "n" ] || <YOUR TOOL ELC>_build_tools
+  [ "$build_<YOUR TOOL LC>" = "n" ] || <YOUR TOOL ELC>_build_<YOUR TOOL LC>
 }
 
-asdf_<YOUR TOOL LC>_time() {
+<YOUR TOOL ELC>_time() {
   local start
-  start="$(cat "${ASDF_<YOUR TOOL UC>_TEMP}/download.start" 2>/dev/null || true)"
+  start="$(cat "${<YOUR TOOL EUC>_TEMP}/download.start" 2>/dev/null || true)"
   if [ -n "$start" ]; then
     local now
     now="$(date +%s)"

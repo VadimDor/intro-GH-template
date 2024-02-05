@@ -7,8 +7,8 @@
 # which prevents certain env vars such as DYLD_LIBRARY_PATH from propagating
 # to /usr/bin/env child processes. So, we assume that if the user is on M1 macOS
 # and has Homebrew installed, they want to link to libraries there. To skip this
-# set ASDF_<YOUR TOOL UC>_MACOS_M1_HOMEBREW_WORKAROUND=no in your environment.
-if [ "${ASDF_<YOUR TOOL UC>_MACOS_M1_HOMEBREW_WORKAROUND:-yes}" = "yes" ] &&
+# set <YOUR TOOL EUC>_MACOS_M1_HOMEBREW_WORKAROUND=no in your environment.
+if [ "${<YOUR TOOL EUC>_MACOS_M1_HOMEBREW_WORKAROUND:-yes}" = "yes" ] &&
   [ "$(uname)" = "Darwin" ] &&
   [ "$(uname -m)" = "arm64" ] &&
   [ "${DYLD_LIBRARY_PATH-}" = "" ] &&

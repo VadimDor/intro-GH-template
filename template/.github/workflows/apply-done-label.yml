@@ -3,7 +3,7 @@
 name: 💡 Apply Done Label
 on:
   pull_request:
-    types: [opened, merged, closed]
+    types: [opened, closed]
 jobs:
   triage:
     runs-on: ubuntu-latest

@@ -298,11 +298,15 @@ setup_git() {
 			set_placeholder "<YOUR TOOL>" "$tool_name" "$out"
 			tool_name_uc=$(echo "$tool_name" | tr '[:lower:]' '[:upper:]')
 			set_placeholder "<YOUR TOOL UC>" "$tool_name_uc" "$out"
+			tool_name_euc=$(echo "$tool_name_uc" | tr '-' '_')	
+			set_placeholder "<YOUR TOOL EUC>" "$tool_name_euc" "$out"
 			tool_name_lc=$(echo "$tool_name" | tr '[:upper:]' '[:lower:]')			
 			set_placeholder "<YOUR TOOL LC>" "$tool_name_lc" "$out"
 			tool_name_ulc=$(camel_case $tool_name)
 			# tool_name_ulc="$(tr '[:lower:]' '[:upper:]' <<< ${tool_name:0:1})${tool_name:1}"		
 			set_placeholder "<YOUR TOOL ULC>" "$tool_name_ulc" "$out"
+			tool_name_elc=$(echo "$tool_name_lc" | tr '-' '_')		
+			set_placeholder "<YOUR TOOL ELC>" "$tool_name_elc" "$out"
 			set_placeholder "<TOOL HOMEPAGE>" "$tool_homepage" "$out"
 			set_placeholder "<TOOL REPO>" "$tool_repo" "$out"
 			set_placeholder "<TOOL CHECK>" "$check_command" "$out"

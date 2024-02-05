@@ -7,5 +7,5 @@ shopt -s dotglob
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/utils.bash"
 
 echo "<YOUR TOOL LC> depends on the following packages:"
-asdf_<YOUR TOOL LC>_list_deps
+<YOUR TOOL ELC>_list_deps
 echo

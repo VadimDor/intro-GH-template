@@ -32,9 +32,9 @@ teardown_file() {
 }
 
 setup() {
-  ASDF_<YOUR TOOL UC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-integration-tests.XXXX -d)"
-  export ASDF_<YOUR TOOL UC>_TEST_TEMP
-  ASDF_DATA_DIR="${ASDF_<YOUR TOOL UC>_TEST_TEMP}/asdf"
+  <YOUR TOOL EUC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-integration-tests.XXXX -d)"
+  export <YOUR TOOL EUC>_TEST_TEMP
+  ASDF_DATA_DIR="${<YOUR TOOL EUC>_TEST_TEMP}/asdf"
   export ASDF_DATA_DIR
   mkdir -p "$ASDF_DATA_DIR/plugins"
 
@@ -46,15 +46,15 @@ setup() {
   # shellcheck disable=SC1090,SC1091
   source "${ASDF_DIR}/asdf.sh"
 
-  ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH="${ASDF_DATA_DIR}/installs/<YOUR TOOL LC>/ref-version-1-6"
-  export ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH
+  <YOUR TOOL EUC>_VERSION_INSTALL_PATH="${ASDF_DATA_DIR}/installs/<YOUR TOOL LC>/ref-version-1-6"
+  export <YOUR TOOL EUC>_VERSION_INSTALL_PATH
 
   # optimization if already installed
   info "asdf install <YOUR TOOL LC> ref:version-1-6"
   if [ -d "${HOME}/.asdf/installs/<YOUR TOOL LC>/ref-version-1-6" ]; then
     mkdir -p "${ASDF_DATA_DIR}/installs/<YOUR TOOL LC>"
-    cp -R "${HOME}/.asdf/installs/<YOUR TOOL LC>/ref-version-1-6" "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}"
-    rm -rf "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>"
+    cp -R "${HOME}/.asdf/installs/<YOUR TOOL LC>/ref-version-1-6" "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}"
+    rm -rf "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>"
     asdf reshim
   else
     get_lock git
@@ -66,7 +66,7 @@ setup() {
 
 teardown() {
   asdf plugin remove <YOUR TOOL LC> || true
-  rm -rf "${ASDF_<YOUR TOOL UC>_TEST_TEMP}"
+  rm -rf "${<YOUR TOOL EUC>_TEST_TEMP}"
 }
 
 info() {
@@ -79,15 +79,15 @@ info() {
   get_lock git
   <YOUR TOOL LC> refresh -y
   clear_lock git
-  assert [ -f "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/packages_official.json" ]
+  assert [ -f "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/packages_official.json" ]
 
   # Assert package installs to correct location
   info "<YOUR TOOL LC> install -y <YOUR TOOL LC>json@1.2.8"
   get_lock git
   <YOUR TOOL LC> install -y <YOUR TOOL LC>json@1.2.8
   clear_lock git
-  assert [ -x "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/bin/<YOUR TOOL LC>json" ]
-  assert [ -f "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/pkgs/<YOUR TOOL LC>json-1.2.8/<YOUR TOOL LC>json.<YOUR TOOL LC>" ]
+  assert [ -x "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/bin/<YOUR TOOL LC>json" ]
+  assert [ -f "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/pkgs/<YOUR TOOL LC>json-1.2.8/<YOUR TOOL LC>json.<YOUR TOOL LC>" ]
   assert [ ! -x "./<YOUR TOOL LC>deps/bin/<YOUR TOOL LC>json" ]
   assert [ ! -f "./<YOUR TOOL LC>deps/pkgs/<YOUR TOOL LC>json-1.2.8/<YOUR TOOL LC>json.<YOUR TOOL LC>" ]
 
@@ -98,9 +98,9 @@ info() {
   assert [ -n "$(<YOUR TOOL LC>json -v | grep ' version 1\.2\.8')" ]
 
   # Assert that <YOUR TOOL LC> finds <YOUR TOOL LC> packages
-  echo "import <YOUR TOOL LC>json" >"${ASDF_<YOUR TOOL UC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
-  info "<YOUR TOOL LC> c -r \"${ASDF_<YOUR TOOL UC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>\""
-  <YOUR TOOL LC> c -r "${ASDF_<YOUR TOOL UC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
+  echo "import <YOUR TOOL LC>json" >"${<YOUR TOOL EUC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
+  info "<YOUR TOOL LC> c -r \"${<YOUR TOOL EUC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>\""
+  <YOUR TOOL LC> c -r "${<YOUR TOOL EUC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
 }
 
 @test "<YOUR TOOL LC>_configuration__with_<YOUR TOOL LC>deps" {
@@ -121,13 +121,13 @@ info() {
   clear_lock git
   assert [ -x "./<YOUR TOOL LC>deps/bin/<YOUR TOOL LC>json" ]
   assert [ -f "./<YOUR TOOL LC>deps/pkgs/<YOUR TOOL LC>json-1.2.8/<YOUR TOOL LC>json.<YOUR TOOL LC>" ]
-  assert [ ! -x "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/bin/<YOUR TOOL LC>json" ]
-  assert [ ! -f "${ASDF_<YOUR TOOL UC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/pkgs/<YOUR TOOL LC>json-1.2.8/<YOUR TOOL LC>json.<YOUR TOOL LC>" ]
+  assert [ ! -x "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/bin/<YOUR TOOL LC>json" ]
+  assert [ ! -f "${<YOUR TOOL EUC>_VERSION_INSTALL_PATH}/<YOUR TOOL LC>/pkgs/<YOUR TOOL LC>json-1.2.8/<YOUR TOOL LC>json.<YOUR TOOL LC>" ]
 
   # Assert that <YOUR TOOL LC> finds <YOUR TOOL LC> packages
-  echo "import <YOUR TOOL LC>json" >"${ASDF_<YOUR TOOL UC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
-  info "<YOUR TOOL LC> c --<YOUR TOOL LC>Path:./<YOUR TOOL LC>deps/pkgs -r \"${ASDF_<YOUR TOOL UC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>\""
-  <YOUR TOOL LC> c --<YOUR TOOL LC>Path:./<YOUR TOOL LC>deps/pkgs -r "${ASDF_<YOUR TOOL UC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
+  echo "import <YOUR TOOL LC>json" >"${<YOUR TOOL EUC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
+  info "<YOUR TOOL LC> c --<YOUR TOOL LC>Path:./<YOUR TOOL LC>deps/pkgs -r \"${<YOUR TOOL EUC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>\""
+  <YOUR TOOL LC> c --<YOUR TOOL LC>Path:./<YOUR TOOL LC>deps/pkgs -r "${<YOUR TOOL EUC>_TEST_TEMP}/test<YOUR TOOL LC>.<YOUR TOOL LC>"
 
   rm -rf <YOUR TOOL LC>deps
 }
