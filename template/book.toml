@@ -6,5 +6,5 @@ src = "."
 [output.html]
 git-repository-url = "<TOOL REPO>/"
 edit-url-template = "<TOOL REPO>/edit/<PRIMARY BRANCH>/{path}"
-additional-css = ["custom.css"]
+additional-css = ["./docs/theme/custom.css"]
 theme = "./docs/theme"
