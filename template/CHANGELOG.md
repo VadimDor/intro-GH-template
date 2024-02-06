@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  
 ## [1.0.4] - 2023-05-05
 This release focuses on bug fixes, but also includes some improvements.
-- fix: sorting for `asdf list-all <YOUR TOOL LC>`
+- fix: sorting for `asdf list-all asdf-<YOUR TOOL LC>`
 
 ### Changed
 - No changes
@@ -25,7 +25,7 @@ This release focuses on bug fixes, but also includes some improvements.
 - add: nightly unstable binary support  
 - add: docker-compose config for Linux development
 - improve: linting (yaml, markdown, update shellcheck/shfmt)
-- remove: unofficial binaries from <YOUR TOOL LC>-builds
+- remove: unofficial binaries from asdf-<YOUR TOOL LC>-builds
 
 ### Changed
 - No changes

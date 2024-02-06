@@ -1,8 +1,8 @@
 <div align="center">
 
-# <YOUR TOOL> ![Build Status](<TOOL REPO>/badges/<PRIMARY BRANCH>/pipeline.svg)[![Join the chat at https://gitter.im/<YOUR TOOL LC>/community](https://badges.gitter.im/<YOUR TOOL LC>/community.svg)](https://gitter.im/<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# asdf-<YOUR TOOL> ![Build Status](<TOOL REPO>/badges/<PRIMARY BRANCH>/pipeline.svg)[![Join the chat at https://gitter.im/asdf-<YOUR TOOL LC>/community](https://badges.gitter.im/asdf-<YOUR TOOL LC>/community.svg)](https://gitter.im/asdf-<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
+[asdf-<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -28,11 +28,11 @@ Plugin:
 
 
 ```sh
-asdf plugin add <YOUR TOOL LC> # install the <YOUR TOOL LC> plugin
+asdf plugin add asdf-<YOUR TOOL LC> # install the asdf-<YOUR TOOL LC> plugin
 # or
 asdf plugin add <TOOL REPO>.git
 
-asdf <YOUR TOOL LC> install-deps  # install system-specific dependencies for downloading & building <YOUR TOOL ULC>
+asdf asdf-<YOUR TOOL LC> install-deps  # install system-specific dependencies for downloading & building <YOUR TOOL ULC>
 ```
 
 ### To install <YOUR TOOL ULC>:
@@ -41,55 +41,55 @@ When available for the version and platform, the plugin will install pre-compile
 
 ```sh
 # latest stable version of <YOUR TOOL ULC>
-asdf install <YOUR TOOL LC> latest
+asdf install asdf-<YOUR TOOL LC> latest
 # or latest stable minor/patch release of <YOUR TOOL ULC> 1.x.x
-asdf install <YOUR TOOL LC> latest:1
+asdf install asdf-<YOUR TOOL LC> latest:1
 # or latest stable patch release of <YOUR TOOL ULC> 1.6.x
-asdf install <YOUR TOOL LC> latest:1.6
+asdf install asdf-<YOUR TOOL LC> latest:1.6
 # or specific patch release
-asdf install <YOUR TOOL LC> 1.6.8
+asdf install asdf-<YOUR TOOL LC> 1.6.8
 ```
 
 ### To install a nightly build of <YOUR TOOL ULC>:
 
 ```sh
 # nightly unstable build of devel branch
-asdf install <YOUR TOOL LC> ref:devel
+asdf install asdf-<YOUR TOOL LC> ref:devel
 # or nightly unstable build of version-1-6 branch, i.e. the latest 1.6.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-6
+asdf install asdf-<YOUR TOOL LC> ref:version-1-6
 # or nightly unstable build of version-1-4 branch, i.e. the latest 1.4.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-4
+asdf install asdf-<YOUR TOOL LC> ref:version-1-4
 # or nightly unstable build of version-1-2 branch, i.e. the 1.2.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-2
+asdf install asdf-<YOUR TOOL LC> ref:version-1-2
 # or nightly unstable build of version-1-0 branch, i.e. the 1.0.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-0
+asdf install asdf-<YOUR TOOL LC> ref:version-1-0
 ```
 
 ### To build a specific git commit or branch of <YOUR TOOL ULC>:
 
 ```sh
 # build using latest commit from the devel branch
-asdf install <YOUR TOOL LC> ref:HEAD
+asdf install asdf-<YOUR TOOL LC> ref:HEAD
 # build using the specific commit 7d15fdd
-asdf install <YOUR TOOL LC> ref:7d15fdd
+asdf install asdf-<YOUR TOOL LC> ref:7d15fdd
 # build using the tagged release v1.6.8
-asdf install <YOUR TOOL LC> ref:v1.6.8
+asdf install asdf-<YOUR TOOL LC> ref:v1.6.8
 ```
 
 
-<YOUR TOOL>:
+asdf-<YOUR TOOL>:
 
 ```shell
 # Show all installable versions
-asdf list-all <YOUR TOOL>
+asdf list-all asdf-<YOUR TOOL>
 
 # Install specific version
-asdf install <YOUR TOOL> latest
+asdf install asdf-<YOUR TOOL> latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global <YOUR TOOL> latest
+asdf global asdf-<YOUR TOOL> latest
 
-# Now <YOUR TOOL> commands are available
+# Now asdf-<YOUR TOOL> commands are available
 <TOOL CHECK>
 ```
 
@@ -97,18 +97,18 @@ Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on ho
 install & manage versions.
 
 
-# <YOUR TOOL LC>
+# asdf-<YOUR TOOL LC>
 
-<YOUR TOOL LC> allows you to quickly install any version of [<YOUR TOOL ULC>](https://<YOUR TOOL LC>-lang.org).
+asdf-<YOUR TOOL LC> allows you to quickly install any version of [<YOUR TOOL ULC>](https://asdf-<YOUR TOOL LC>-lang.org).
 
-<YOUR TOOL LC> is intended for end-users and continuous integration. Whether macOS or Linux, x86 or ARM - all you'll need to install <YOUR TOOL ULC> is bash.
+asdf-<YOUR TOOL LC> is intended for end-users and continuous integration. Whether macOS or Linux, x86 or ARM - all you'll need to install <YOUR TOOL ULC> is bash.
 
 
 
 ### To set the default version of <YOUR TOOL ULC> for your user:
 
 ```sh
-asdf global <YOUR TOOL LC> latest:1.6
+asdf global asdf-<YOUR TOOL LC> latest:1.6
 ```
 
 This creates a `.tool-versions` file in your home directory specifying the <YOUR TOOL ULC> version.
@@ -117,16 +117,16 @@ This creates a `.tool-versions` file in your home directory specifying the <YOUR
 
 ```sh
 cd my-project
-asdf local <YOUR TOOL LC> latest:1.6
+asdf local asdf-<YOUR TOOL LC> latest:1.6
 ```
 
 This creates a `.tool-versions` file in the current directory specifying the <YOUR TOOL ULC> version. For additional plugin usage see the [asdf documentation](https://asdf-vm.com/#/core-manage-asdf).
 
-## <YOUR TOOL LC> packages
+## asdf-<YOUR TOOL LC> packages
 
-<YOUR TOOL LC> packages are installed in `~/.asdf/installs/<YOUR TOOL LC>/<<YOUR TOOL LC>-version>/<YOUR TOOL LC>/pkgs`, unless a `<YOUR TOOL LC>deps` directory exists in the directory where `<YOUR TOOL LC> install` is run from.
+asdf-<YOUR TOOL LC> packages are installed in `~/.asdf/installs/asdf-<YOUR TOOL LC>/<asdf-<YOUR TOOL LC>-version>/asdf-<YOUR TOOL LC>/pkgs`, unless a `asdf-<YOUR TOOL LC>deps` directory exists in the directory where `asdf-<YOUR TOOL LC> install` is run from.
 
-See the [<YOUR TOOL LC> documentation](https://github.com/<YOUR TOOL LC>-lang/<YOUR TOOL LC>#<YOUR TOOL LC>s-folder-structure-and-packages) for more information about <YOUR TOOL LC>deps.
+See the [asdf-<YOUR TOOL LC> documentation](https://github.com/asdf-<YOUR TOOL LC>-lang/asdf-<YOUR TOOL LC>#asdf-<YOUR TOOL LC>s-folder-structure-and-packages) for more information about asdf-<YOUR TOOL LC>deps.
 
 ## Continuous Integration
 
@@ -150,15 +150,15 @@ jobs:
       include:
         # Test against stable <YOUR TOOL ULC> builds on linux
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: latest:1.6
+          asdf-<YOUR TOOL LC>-version: latest:1.6
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: latest:1.4
+          asdf-<YOUR TOOL LC>-version: latest:1.4
 
         # Test against unstable nightly <YOUR TOOL ULC> builds on macos (faster than building from source)
         - os: macos-latest
-          <YOUR TOOL LC>-version: ref:version-1-6
+          asdf-<YOUR TOOL LC>-version: ref:version-1-6
         - os: macos-latest
-          <YOUR TOOL LC>-version: ref:version-1-4
+          asdf-<YOUR TOOL LC>-version: ref:version-1-4
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -166,13 +166,13 @@ jobs:
         uses: asdf-vm/actions/install@v1
         with:
           tool_versions: |
-            <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
+            asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
       - name: Run tests
         run: |
-          asdf local <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
-          <YOUR TOOL LC> develop -y
-          <YOUR TOOL LC> test
-          <YOUR TOOL LC> examples
+          asdf local asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
+          asdf-<YOUR TOOL LC> develop -y
+          asdf-<YOUR TOOL LC> test
+          asdf-<YOUR TOOL LC> examples
 ```
 
 ### Continuous Integration on Non-x86 Architectures
@@ -188,14 +188,14 @@ on:
 
 jobs:
   test_non_x86:
-    name: Test <YOUR TOOL LC>-${{ matrix.<YOUR TOOL LC>-version }} / debian-buster / ${{ matrix.arch }}
+    name: Test asdf-<YOUR TOOL LC>-${{ matrix.asdf-<YOUR TOOL LC>-version }} / debian-buster / ${{ matrix.arch }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - <YOUR TOOL LC>-version: ref:version-1-6
+          - asdf-<YOUR TOOL LC>-version: ref:version-1-6
             arch: armv7
-          - <YOUR TOOL LC>-version: ref:version-1-2
+          - asdf-<YOUR TOOL LC>-version: ref:version-1-2
             arch: aarch64
 
     runs-on: ubuntu-latest
@@ -230,24 +230,24 @@ jobs:
             set -uexo pipefail
             . "${HOME}/.asdf/asdf.sh"
 
-            # Install <YOUR TOOL LC> and dependencies
-            git clone <TOOL REPO>.git ~/<YOUR TOOL LC> --branch main --depth 1
-            asdf plugin add <YOUR TOOL LC> ~/<YOUR TOOL LC>
-            asdf <YOUR TOOL LC> install-deps -y
+            # Install asdf-<YOUR TOOL LC> and dependencies
+            git clone <TOOL REPO>.git ~/asdf-<YOUR TOOL LC> --branch main --depth 1
+            asdf plugin add asdf-<YOUR TOOL LC> ~/asdf-<YOUR TOOL LC>
+            asdf asdf-<YOUR TOOL LC> install-deps -y
 
             # Install <YOUR TOOL ULC>
-            asdf install <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
-            asdf local <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
+            asdf install asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
+            asdf local asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
 
             # Run tests
-            <YOUR TOOL LC> develop -y
-            <YOUR TOOL LC> test
-            <YOUR TOOL LC> examples
+            asdf-<YOUR TOOL LC> develop -y
+            asdf-<YOUR TOOL LC> test
+            asdf-<YOUR TOOL LC> examples
 ```
 
 ## Stable binaries
 
-[<YOUR TOOL LC>-lang.org](https://<YOUR TOOL LC>-lang.org/install.html) supplies pre-compiled stable binaries of <YOUR TOOL ULC> for:
+[asdf-<YOUR TOOL LC>-lang.org](https://asdf-<YOUR TOOL LC>-lang.org/install.html) supplies pre-compiled stable binaries of <YOUR TOOL ULC> for:
 
 Linux:
 
@@ -256,7 +256,7 @@ Linux:
 
 ## Unstable nightly binaries
 
-[<YOUR TOOL LC>-lang/nightlies](https://github.com/<YOUR TOOL LC>-lang/nightlies) supplies pre-compiled unstable binaries of <YOUR TOOL ULC> for:
+[asdf-<YOUR TOOL LC>-lang/nightlies](https://github.com/asdf-<YOUR TOOL LC>-lang/nightlies) supplies pre-compiled unstable binaries of <YOUR TOOL ULC> for:
 
 Linux:
 
@@ -269,11 +269,11 @@ macOS:
 
 - `x86_64`
 
-## Updating asdf and <YOUR TOOL LC>
+## Updating asdf and asdf-<YOUR TOOL LC>
 
 ```sh
 asdf update
-asdf plugin update <YOUR TOOL LC> main
+asdf plugin update asdf-<YOUR TOOL LC> main
 ```
 
 
@@ -282,7 +282,7 @@ asdf plugin update <YOUR TOOL LC> main
 This project uses [bats](https://github.com/bats-core/bats-core) for unit testing. Please follow existing patterns and add unit tests for your changeset. Dev dependencies for unit tests are installed via:
 
 ```shell
-cd ~/.asdf/plugins/<YOUR TOOL LC>
+cd ~/.asdf/plugins/asdf-<YOUR TOOL LC>
 npm install --include=dev
 ```
 
@@ -308,8 +308,8 @@ Contributions of any kind and pull requests welcome! See the [contributing guide
 Fork this repo, then run:
 
 ```sh
-rm -rf ~/.asdf/plugins/<YOUR TOOL LC>
-git clone git@<GIT TYPE>.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
+rm -rf ~/.asdf/plugins/asdf-<YOUR TOOL LC>
+git clone git@<GIT TYPE>.com:<your-username>/asdf-<YOUR TOOL LC>.git ~/.asdf/plugins/asdf-<YOUR TOOL LC>
 ```
 
 [Thanks goes to these contributors](<TOOL REPO>/graphs/<PRIMARY BRANCH>)!

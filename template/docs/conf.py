@@ -194,7 +194,7 @@ html_theme_options = {
         },
         {
             "icon": "fontawesome/brands/python",
-            "link": "https://pypi.org/project/<YOUR TOOL LC>/",
+            "link": "https://pypi.org/project/asdf-<YOUR TOOL LC>/",
         },
     ],
 }

@@ -9,7 +9,7 @@ jobs:
    runs-on: ubuntu-latest
    steps:
    - name: Remove Labels when Closed
-     uses: actions-cool/issues-helper@v2
+     uses: actions-cool/issues-helper@v3
      with:
       actions: remove-labels
       token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

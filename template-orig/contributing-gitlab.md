@@ -11,7 +11,7 @@ Testing Locally:
 asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
 
 # TODO: adapt this
-asdf plugin test <YOUR TOOL> <TOOL REPO>.git "<TOOL CHECK>"
+asdf plugin test asdf-<YOUR TOOL> <TOOL REPO>.git "<TOOL CHECK>"
 ```
 
 Tests are automatically run in GitLab CI on push and merge request.
@@ -40,7 +40,7 @@ Here are the **steps** involved when making a contribution:
 
 ```
 /**
- * @license <YOUR TOOL>
+ * @license asdf-<YOUR TOOL>
  * filename.ext
  *
  * Copyright (c) 202x, <YOUR GIT USERNAME>.

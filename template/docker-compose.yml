@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/root/.asdf/plugins/<YOUR TOOL LC>
+      - .:/root/.asdf/plugins/asdf-<YOUR TOOL LC>
     command: /bin/bash
     stdin_open: true
     tty: true

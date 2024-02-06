@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "bin <YOUR TOOL LC>/bin"
+echo "bin asdf-<YOUR TOOL LC>/bin"

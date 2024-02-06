@@ -29,7 +29,7 @@ svghash:
 
 .Phony: publish
 publish:
-	wrangler pages publish ./book --project-name <YOUR TOOL>
+	wrangler pages publish ./book --project-name asdf-<YOUR TOOL>
 
 .Phony: sync
 sync:

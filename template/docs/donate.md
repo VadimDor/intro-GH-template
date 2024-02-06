@@ -15,7 +15,7 @@
 
 # Be in touch [Twitter status](https://twitter.com/<YOUR GIT USERNAME>/status)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT USERNAME>/<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT USERNAME>/<YOUR TOOL LC>&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>&Date)
 
 
 ## Links

@@ -10,7 +10,7 @@ jobs:
    if: ${{ github.event.comment.author_association != 'COLLABORATOR' && github.event.comment.author_association != 'OWNER' }}
    steps:
    - name: Remove Stale labels when Updated
-     uses: actions-cool/issues-helper@v2
+     uses: actions-cool/issues-helper@v3
      with:
       actions: remove-labels
       token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
    if: ${{!github.event.issue.pull_request && github.event.comment.author_association != 'COLLABORATOR' && github.event.comment.author_association != 'OWNER' && github.event.issue.state == 'open' }}
    steps:
    - name: Add Awaiting Author labels when Updated
-     uses: actions-cool/issues-helper@v2
+     uses: actions-cool/issues-helper@v3
      with:
       actions: add-labels
       token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -34,7 +34,7 @@ jobs:
    if: ${{ github.event.comment.author_association == 'OWNER' }}
    steps:
    - name: Remove Awaiting Author labels when Updated
-     uses: actions-cool/issues-helper@v2
+     uses: actions-cool/issues-helper@v3
      with:
       actions: remove-labels
       token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

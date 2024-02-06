@@ -51,7 +51,7 @@ jobs:
           npm run test -- --jobs 4
 
   plugin_test_x86:
-    name: 👑${{ matrix.<YOUR TOOL LC>-version }}/${{ matrix.platform }}/x86_64
+    name: 👑${{ matrix.asdf-<YOUR TOOL LC>-version }}/${{ matrix.platform }}/x86_64
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -60,63 +60,63 @@ jobs:
         include:
           # Stable binary
           - os: ubuntu-latest
-            <YOUR TOOL LC>-version: 'latest:1.6'
+            asdf-<YOUR TOOL LC>-version: 'latest:1.6'
             platform: linux-glibc
 
           # Stable binary
           - os: ubuntu-latest
-            <YOUR TOOL LC>-version: 'latest:1.4'
+            asdf-<YOUR TOOL LC>-version: 'latest:1.4'
             platform: linux-glibc
 
           # Unstable binary
           - os: ubuntu-latest
-            <YOUR TOOL LC>-version: 'ref:version-1-6'
+            asdf-<YOUR TOOL LC>-version: 'ref:version-1-6'
             platform: linux-glibc
 
           # Unstable binary
           - os: macos-latest
-            <YOUR TOOL LC>-version: 'ref:devel'
+            asdf-<YOUR TOOL LC>-version: 'ref:devel'
             platform: macOS
 
           # Build from source
           - os: ubuntu-latest
-            <YOUR TOOL LC>-version: 'ref:HEAD'
+            asdf-<YOUR TOOL LC>-version: 'ref:HEAD'
             platform: linux-glibc
 
           # Build from source
           - os: macos-latest
-            <YOUR TOOL LC>-version: 'latest:1.4'
+            asdf-<YOUR TOOL LC>-version: 'latest:1.4'
             platform: macOS
 
     steps:
       # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
       - name: Restore cache
-        if: matrix.<YOUR TOOL LC>-version != 'ref:HEAD' && matrix.<YOUR TOOL LC>-version != 'latest'
+        if: matrix.asdf-<YOUR TOOL LC>-version != 'ref:HEAD' && matrix.asdf-<YOUR TOOL LC>-version != 'latest'
         uses: actions/cache@v4
         with:
           path: ~/.cache
-          key: cache-${{ matrix.os }}-${{ matrix.<YOUR TOOL LC>-version }}
+          key: cache-${{ matrix.os }}-${{ matrix.asdf-<YOUR TOOL LC>-version }}
 
       - name: Upgrade bash
         if: runner.os == 'macOS'
         run: brew install bash parallel
 
       - name: Install asdf
-        uses: asdf-vm/actions/setup@v1
+        uses: asdf-vm/actions/setup@v3
 
       - name: Checkout plugin
         uses: actions/checkout@v3
 
-      - name: Install <YOUR TOOL LC> & test
+      - name: Install asdf-<YOUR TOOL LC> & test
         shell: bash
         run: |
           set -ueo pipefail
-          asdf plugin test <YOUR TOOL LC> . \
+          asdf plugin test asdf-<YOUR TOOL LC> . \
             --asdf-tool-version \
-            "${{ matrix.<YOUR TOOL LC>-version }}" \
+            "${{ matrix.asdf-<YOUR TOOL LC>-version }}" \
             --asdf-plugin-gitref \
             "${GITHUB_SHA}" \
-            <YOUR TOOL LC> -v
+            asdf-<YOUR TOOL LC> -v
 
   # Test musl installation
   plugin_test_x86_musl:
@@ -132,22 +132,22 @@ jobs:
        include:
          # Stable binary
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: 'latest:1.6'
+          asdf-<YOUR TOOL LC>-version: 'latest:1.6'
           platform: linux-glibc
 
           # Stable binary
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: 'latest:1.4'
+          asdf-<YOUR TOOL LC>-version: 'latest:1.4'
           platform: linux-glibc
 
          # Unstable binary
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: 'ref:version-1-6'        
+          asdf-<YOUR TOOL LC>-version: 'ref:version-1-6'        
           platform: linux-glibc
           
           # Build from source
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: 'ref:HEAD'
+          asdf-<YOUR TOOL LC>-version: 'ref:HEAD'
           platform: linux-glibc
 ##################################
     
@@ -157,20 +157,20 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache
-          key: cache-ubuntu-latest-${{ matrix.<YOUR TOOL LC>-version }}
+          key: cache-ubuntu-latest-${{ matrix.asdf-<YOUR TOOL LC>-version }}
 
       - name: Install dependencies
         run: apk add --update --no-cache --upgrade bash git curl coreutils tar xz grep build-base
 
       - name: Test plugin
-        uses: asdf-vm/actions/plugin-test@v1
+        uses: asdf-vm/actions/plugin-test@v3
         with:
-          command: <YOUR TOOL LC> -v
+          command: asdf-<YOUR TOOL LC> -v
           version: 'latest:1.6'
 
   # Test installation for a few non-x86 architectures
   plugin_test_non_x86:
-    name: 👑${{ matrix.<YOUR TOOL LC>-version }}/linux-glibc/${{ matrix.arch }}
+    name: 👑${{ matrix.asdf-<YOUR TOOL LC>-version }}/linux-glibc/${{ matrix.arch }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -179,12 +179,12 @@ jobs:
         include:
           # Unstable binary
           - runs-on: ubuntu-latest
-            <YOUR TOOL LC>-version: 'ref:version-1-6'
+            asdf-<YOUR TOOL LC>-version: 'ref:version-1-6'
             arch: aarch64
 
           # Unstable binary
           - runs-on: ubuntu-latest
-            <YOUR TOOL LC>-version: 'ref:version-1-4'
+            asdf-<YOUR TOOL LC>-version: 'ref:version-1-4'
             arch: armv7
 
     steps:
@@ -193,7 +193,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache
-          key: cache-${{ matrix.arch }}-${{ matrix.<YOUR TOOL LC>-version }}
+          key: cache-${{ matrix.arch }}-${{ matrix.asdf-<YOUR TOOL LC>-version }}
 
       - name: Checkout plugin
         uses: actions/checkout@v3
@@ -224,9 +224,9 @@ jobs:
             set -exo pipefail
             set +u
             . "${HOME}/.asdf/asdf.sh"
-            asdf plugin test <YOUR TOOL LC> . \
+            asdf plugin test asdf-<YOUR TOOL LC> . \
               --asdf-tool-version \
-              "${{ matrix.<YOUR TOOL LC>-version }}" \
+              "${{ matrix.asdf-<YOUR TOOL LC>-version }}" \
               --asdf-plugin-gitref \
               "${GITHUB_SHA}" \
-              <YOUR TOOL LC> -v
+              asdf-<YOUR TOOL LC> -v

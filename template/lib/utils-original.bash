@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for <YOUR TOOL>.
+# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for asdf-<YOUR TOOL>.
 GH_REPO="<TOOL REPO>"
-TOOL_NAME="<YOUR TOOL>"
+TOOL_NAME="asdf-<YOUR TOOL>"
 TOOL_TEST="<TOOL CHECK>"
 
 fail() {
@@ -14,7 +14,7 @@ fail() {
 
 curl_opts=(-fsSL)
 
-# NOTE: You might want to remove this if <YOUR TOOL> is not hosted on GitHub releases.
+# NOTE: You might want to remove this if asdf-<YOUR TOOL> is not hosted on GitHub releases.
 if [ -n "${GITHUB_API_TOKEN:-}" ]; then
 	curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
@@ -32,7 +32,7 @@ list_github_tags() {
 
 list_all_versions() {
 	# TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-	# Change this function if <YOUR TOOL> has other means of determining installable versions.
+	# Change this function if asdf-<YOUR TOOL> has other means of determining installable versions.
 	list_github_tags
 }
 

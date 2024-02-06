@@ -1,8 +1,8 @@
 <div align="center">
 
-# <YOUR TOOL> ![Build Status](<TOOL REPO>/badges/<PRIMARY BRANCH>/pipeline.svg)
+# asdf-<YOUR TOOL> ![Build Status](<TOOL REPO>/badges/<PRIMARY BRANCH>/pipeline.svg)
 
-[<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
+[asdf-<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -25,24 +25,24 @@
 Plugin:
 
 ```shell
-asdf plugin add <YOUR TOOL>
+asdf plugin add asdf-<YOUR TOOL>
 # or
 asdf plugin add <TOOL REPO>.git
 ```
 
-<YOUR TOOL>:
+asdf-<YOUR TOOL>:
 
 ```shell
 # Show all installable versions
-asdf list-all <YOUR TOOL>
+asdf list-all asdf-<YOUR TOOL>
 
 # Install specific version
-asdf install <YOUR TOOL> latest
+asdf install asdf-<YOUR TOOL> latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global <YOUR TOOL> latest
+asdf global asdf-<YOUR TOOL> latest
 
-# Now <YOUR TOOL> commands are available
+# Now asdf-<YOUR TOOL> commands are available
 <TOOL CHECK>
 ```
 

@@ -2,12 +2,12 @@
 <!--  TODO: review and adopt the content -->
 
                   LICENSES FOR THIRD-PARTY COMPONENTS
-                     <YOUR TOOL>
+                     asdf-<YOUR TOOL>
 
 ===============================================================================
 
 The following sections contain licensing information for libraries that we/I have
-included with the "<YOUR TOOL>>" source and components. 
+included with the "asdf-<YOUR TOOL>>" source and components. 
 We are/I am thankful to all individuals that have created these.
 The following software may be included in this product:
 

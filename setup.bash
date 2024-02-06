@@ -123,7 +123,7 @@ set_placeholder() {
 
 setup_git() {
 	local cwd out tool_name tool_repo check_command author_name github_username tool_homepage ok primary_branch \
-	  git bats_tests user_email user_profile pext user_avatar
+	  git bats_tests user_email user_profile pext user_avatar plugin_name
 
 	cwd="$PWD"
 	out="$cwd/out"
@@ -131,11 +131,11 @@ setup_git() {
 	
 
 	# ask for arguments not given via CLI
-	tool_name="${2:-$(ask_for "$HELP_PLUGIN_NAME")}"
+	plugin_name="${2:-$(ask_for "$HELP_PLUGIN_NAME")}"
 
-	#tool_name="${tool_name/asdf-/}"
-
-	check_command="${3:-$(ask_for "$HELP_TOOL_CHECK" "${tool_name/asdf-/} --version")}"
+	tool_name="${tool_name/asdf-/}"
+    
+	check_command="${3:-$(ask_for "$HELP_TOOL_CHECK" "$tool_name --version")}"
     
 	url=$(git config --list| grep "remote.origin.url=")  
 	t="${url#*$1.com/}"
@@ -162,7 +162,7 @@ setup_git() {
 	primary_branch="main"
 
 	cat <<-EOF
-		Setting up plugin: $tool_name
+		Setting up plugin: $plugin_name
 
 		author:        $author_name
 		plugin repo:   https://$git.com/$git_username/$tool_name

@@ -3,16 +3,16 @@
 set -ueo pipefail
 
 ASDF_BIN="${ASDF_DIR:-$HOME/.asdf}/bin/"
-ASDF_INSTALL_BIN_PATH=$(dirname "$("${ASDF_BIN}/asdf" which <YOUR TOOL LC>)")
+ASDF_INSTALL_BIN_PATH=$(dirname "$("${ASDF_BIN}/asdf" which asdf-<YOUR TOOL LC>)")
 
 # TODO: check if you really need custom shims below
 
 regenerate() {
-  # After a <YOUR TOOL LC> operation, regenerate <YOUR TOOL LC> shims to find new package binaries
-  if "${ASDF_BIN}/asdf" reshim <YOUR TOOL LC>; then
-    echo "  <YOUR TOOL LC>: regenerated shims"
+  # After a asdf-<YOUR TOOL LC> operation, regenerate asdf-<YOUR TOOL LC> shims to find new package binaries
+  if "${ASDF_BIN}/asdf" reshim asdf-<YOUR TOOL LC>; then
+    echo "  asdf-<YOUR TOOL LC>: regenerated shims"
   else
-    echo "  <YOUR TOOL LC>: failed to regenerate shims"
+    echo "  asdf-<YOUR TOOL LC>: failed to regenerate shims"
     exit 1
   fi
   echo
@@ -22,7 +22,7 @@ trap 'trap - HUP; SIGNAL=SIGHUP; regenerate; kill -HUP $$' HUP
 trap 'trap - INT; SIGNAL=SIGINT; regenerate; kill -INT $$' INT
 trap 'trap - TERM; SIGNAL=SIGTERM; regenerate; kill -TERM $$' TERM
 
-if "${ASDF_INSTALL_BIN_PATH}/<YOUR TOOL LC>" "$@"; then
+if "${ASDF_INSTALL_BIN_PATH}/asdf-<YOUR TOOL LC>" "$@"; then
   case "${1-}" in
     install | develop | uninstall)
       regenerate

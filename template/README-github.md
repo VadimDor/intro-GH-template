@@ -1,14 +1,14 @@
 <h1 align="center"><PROJECT NAME></h1>
 <div align="center">
-# <YOUR TOOL> [![Build](<TOOL REPO>/actions/workflows/build.yml/badge.svg)](<TOOL REPO>/actions/workflows/build.yml) [![Lint](<TOOL REPO>/actions/workflows/lint.yml/badge.svg)](<TOOL REPO>/actions/workflows/lint.yml)
+# asdf-<YOUR TOOL> [![Build](<TOOL REPO>/actions/workflows/build.yml/badge.svg)](<TOOL REPO>/actions/workflows/build.yml) [![Lint](<TOOL REPO>/actions/workflows/lint.yml/badge.svg)](<TOOL REPO>/actions/workflows/lint.yml)
 
 
-[<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
+[asdf-<YOUR TOOL>](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
 </div>
 
-[![Build Status](<TOOL REPO>/workflows/Post%20Merge/badge.svg?branch=main)](<TOOL REPO>/actions) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/99999999/badge)](https://bestpractices.coreinfrastructure.org/projects/99999999) [![Join the chat at https://gitter.im/<YOUR TOOL LC>/community](https://badges.gitter.im/<YOUR TOOL LC>/community.svg)](https://gitter.im/<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![<YOUR TOOL UC> downloads][badge-dl]][downloads] [![<YOUR TOOL UC> docs][badge-docs]][docs] [![<YOUR GIT USERNAME> on Slack][badge-slack]][slack] [![<YOUR TOOL LC> on Twitter][badge-twitter]][twitter] [![<YOUR TOOL LC> on YouTube][badge-yt]][youtube]  [![<YOUR TOOL LC> Gate][badge-gate]][gate] [![License][badge-license]](#license)
-[![Build status: AppVeyor](https://ci.appveyor.com/api/projects/status/a6551f723231bjly?svg=true)](https://ci.appveyor.com/project/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+[![Build Status](<TOOL REPO>/workflows/Post%20Merge/badge.svg?branch=main)](<TOOL REPO>/actions) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/99999999/badge)](https://bestpractices.coreinfrastructure.org/projects/99999999) [![Join the chat at https://gitter.im/asdf-<YOUR TOOL LC>/community](https://badges.gitter.im/asdf-<YOUR TOOL LC>/community.svg)](https://gitter.im/asdf-<YOUR TOOL LC>/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![ASDF-<YOUR TOOL UC> downloads][badge-dl]][downloads] [![ASDF-<YOUR TOOL UC> docs][badge-docs]][docs] [![<YOUR GIT USERNAME> on Slack][badge-slack]][slack] [![asdf-<YOUR TOOL LC> on Twitter][badge-twitter]][twitter] [![asdf-<YOUR TOOL LC> on YouTube][badge-yt]][youtube]  [![asdf-<YOUR TOOL LC> Gate][badge-gate]][gate] [![License][badge-license]](#license)
+[![Build status: AppVeyor](https://ci.appveyor.com/api/projects/status/a6551f723231bjly?svg=true)](https://ci.appveyor.com/project/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)
 
 
  <a href="https://github.com/awesome-selfhosted/awesome-selfhosted#personal-dashboards">
@@ -18,33 +18,33 @@
     <img src="https://img.shields.io/badge/License-MIT-0aa8d2?logo=opensourceinitiative&logoColor=fff" alt="License MIT">
   </a>
   <a href="./.github/CHANGELOG.md">
-    <img src="https://img.shields.io/github/package-json/v/<YOUR GIT USERNAME>/<YOUR TOOL LC>?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
+    <img src="https://img.shields.io/github/package-json/v/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
   </a>
-  <a href="https://hub.docker.com/r/<YOUR GIT USERNAME>/<YOUR TOOL LC>">
-    <img src="https://img.shields.io/docker/pulls/<YOUR GIT USERNAME>/<YOUR TOOL LC>?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
+  <a href="https://hub.docker.com/r/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>">
+    <img src="https://img.shields.io/docker/pulls/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
   </a>
   <a href="http://as93.link/<YOUR GIT USERNAME>-build-status">
-   <img src="https://badgen.net/github/status/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github" alt="GitHub Status">
+   <img src="https://badgen.net/github/status/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?icon=github" alt="GitHub Status">
   </a>
-  <a href="https://snyk.io/test/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>">
-    <img src="https://snyk.io/test/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/badge.svg" alt="Known Vulnerabilities">
+  <a href="https://snyk.io/test/github/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>">
+    <img src="https://snyk.io/test/github/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>/badge.svg" alt="Known Vulnerabilities">
   </a>
 
 <div align="center">
 # ◐ &nbsp; Development &nbsp; ◑
 <p>
-<a href="<TOOL REPO>/commits"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
-<a href="<TOOL REPO>/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
-<a href="<TOOL REPO>/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/<YOUR GIT USERNAME>/<YOUR TOOL LC>" /></a>
+<a href="<TOOL REPO>/commits"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>" /></a>
+<a href="<TOOL REPO>/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>" /></a>
+<a href="<TOOL REPO>/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>" /></a>
 <a href="<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE"><img alt="Github License" src="https://img.shields.io/badge/License-MIT-green.svg" /></a>
-<a href="<TOOL REPO>"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=social" /></a>
+<a href="<TOOL REPO>"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?style=social" /></a>
 </p>
 <br />
 </div>
 
 [![Twitter Badge](https://img.shields.io/badge/Twitter-Profile-informational?style=flat&logo=twitter&color=1CA2F1)](https://twitter.com/<YOUR GIT USERNAME>)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&color=0D76A8)](https://www.linkedin.com/in/<YOUR GIT USERNAME>/)
-[![Visitors](https://visitor-badge.glitch.me/badge?page_id=<YOUR GIT USERNAME>.<YOUR TOOL LC>)](<TOOL HOMEPAGE>)
+[![Visitors](https://visitor-badge.glitch.me/badge?page_id=<YOUR GIT USERNAME>.asdf-<YOUR TOOL LC>)](<TOOL HOMEPAGE>)
 
 ![](https://img.shields.io/badge/Tools-Git-informational?style=flat&logo=Git&color=F05032)
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
@@ -85,17 +85,17 @@
 <div align="center">
   <img width="400" alt="GitHub Actions for deploying to GitHub Pages with Static Site Generators" src="./images/ogp.svg">
 
-[![license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
-[![release](https://img.shields.io/github/release/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/releases/latest)
-[![GitHub release date](https://img.shields.io/github/release-date/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/releases)
+[![license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>.svg)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
+[![release](https://img.shields.io/github/release/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>.svg)](<TOOL REPO>/releases/latest)
+[![GitHub release date](https://img.shields.io/github/release-date/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>.svg)](<TOOL REPO>/releases)
 ![Test](<TOOL REPO>/workflows/Test/badge.svg?branch=main&event=push)
 ![Code Scanning](<TOOL REPO>/workflows/Code%20Scanning/badge.svg?event=push)
-[![CodeFactor](https://www.codefactor.io/repository/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/badge)](https://www.codefactor.io/repository/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+[![CodeFactor](https://www.codefactor.io/repository/github/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>/badge)](https://www.codefactor.io/repository/github/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)
 
 </div>
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/faaed58a577d4c3099cf8d6d4d572fb8)](https://www.codacy.com/manual/<YOUR GIT USERNAME>-nunes/<YOUR TOOL LC>?utm_source=github.com&utm_medium=referral&utm_content=<YOUR GIT USERNAME>/<YOUR TOOL LC>&utm_campaign=Badge_Grade) [![License](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>.svg)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE) [![Donate](https://img.shields.io/badge/donate-%E2%99%A5%20-E91E63.svg)](https://www.paypal.me/<YOUR GIT USERNAME>nunes/)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/faaed58a577d4c3099cf8d6d4d572fb8)](https://www.codacy.com/manual/<YOUR GIT USERNAME>-nunes/asdf-<YOUR TOOL LC>?utm_source=github.com&utm_medium=referral&utm_content=<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>&utm_campaign=Badge_Grade) [![License](https://img.shields.io/github/license/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>.svg)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE) [![Donate](https://img.shields.io/badge/donate-%E2%99%A5%20-E91E63.svg)](https://www.paypal.me/<YOUR GIT USERNAME>nunes/)
 
-[![Code Coverage](https://codecov.io/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>/branch/<PRIMARY BRANCH>/graph/badge.svg?token=I6E0KUANUO)](https://codecov.io/github/<YOUR GIT USERNAME>/<YOUR TOOL LC>) 
+[![Code Coverage](https://codecov.io/github/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>/branch/<PRIMARY BRANCH>/graph/badge.svg?token=I6E0KUANUO)](https://codecov.io/github/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>) 
 [![ReadTheDocs Status](https://readthedocs.org/projects/<YOUR GIT USERNAME>/badge/?version=latest)](https://<YOUR GIT USERNAME>.readthedocs.io/en/latest/?badge=latest)
 
 
@@ -112,11 +112,11 @@
 ***
 
 ![AllInOne](TOOL REPO>/workflows/AllInOne/badge.svg)
-[![GitHub license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=plastic)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?style=plastic)](<TOOL REPO>/blob/<PRIMARY BRANCH>/LICENSE)
 
 ## Build History
 
-[![Build history](https://buildstats.info/github/chart/<YOUR GIT USERNAME>/<YOUR TOOL LC>?branch=<PRIMARY BRANCH>)](<TOOL REPO>/actions)
+[![Build history](https://buildstats.info/github/chart/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?branch=<PRIMARY BRANCH>)](<TOOL REPO>/actions)
 
 
 # 介绍
@@ -138,9 +138,9 @@
 ## Features 🌈
 - 🆓 100% free and open-source
 - 🚀 Easy to setup with Docker
-- [<img src="https://i.ibb.co/HVWVYF7/docker.png" width="18"/>**Tested in Docker**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/<PRIMARY BRANCH>/docker-compose.yml)
+- [<img src="https://i.ibb.co/HVWVYF7/docker.png" width="18"/>**Tested in Docker**: [![One-Click Deploy with PWD](https://img.shields.io/badge/Play--with--Docker-Deploy-2496ed?style=flat-square&logo=docker)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>/<PRIMARY BRANCH>/docker-compose.yml)
 
-[![<YOUR TOOL LC> on Docker🐳 Hub](https://dockeri.co/image/<YOUR GIT USERNAME>/<YOUR TOOL LC>)](https://hub.docker.com/r/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+[![asdf-<YOUR TOOL LC> on Docker🐳 Hub](https://dockeri.co/image/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)](https://hub.docker.com/r/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -204,7 +204,7 @@ Huge thanks to the sponsors helping to support🙋‍♀️ <PROJECT NAME>'s dev
    This is plugin for asdf tool
 
 #### Contributors
-[![Auto-generated contributors](https://raw.githubusercontent.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>/<PRIMARY BRANCH>/docs/assets/CONTRIBUTORS.svg)](./docs/credits.md)
+[![Auto-generated contributors](https://raw.githubusercontent.com/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>/<PRIMARY BRANCH>/docs/assets/CONTRIBUTORS.svg)](./docs/credits.md)
 
 
 ## AllContributors ✨
@@ -239,21 +239,21 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 > For full development documentation, see: [**Developing**](./docs/developing.md)
 
-[![Open Project in VS Code](https://img.shields.io/badge/Open_in-VS_Code-863cfc?style=flat-square&logo=visualstudiocode)](https://open.vscode.dev/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
-[![Open in GitPod](https://img.shields.io/badge/Open_in-GitPod-ffae33?style=flat-square&logo=gitpod)](https://gitpod.io/#github.com/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
-[![Open in GitHub Code Spaces](https://img.shields.io/badge/Open_in-Code%20Spaces-131313?style=flat-square&logo=github)](https://github.dev/<YOUR GIT USERNAME>/<YOUR TOOL LC>)
+[![Open Project in VS Code](https://img.shields.io/badge/Open_in-VS_Code-863cfc?style=flat-square&logo=visualstudiocode)](https://open.vscode.dev/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)
+[![Open in GitPod](https://img.shields.io/badge/Open_in-GitPod-ffae33?style=flat-square&logo=gitpod)](https://gitpod.io/#github.com/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)
+[![Open in GitHub Code Spaces](https://img.shields.io/badge/Open_in-Code%20Spaces-131313?style=flat-square&logo=github)](https://github.dev/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>)
 
 Before getting started, you'll need [Git](https://git-scm.com/downloads) installed.
 
 To set up the development environment get Code: 
- `git clone <TOOL REPO>.git`  and `cd <YOUR TOOL LC>`
+ `git clone <TOOL REPO>.git`  and `cd asdf-<YOUR TOOL LC>`
 
 **Repo Status**:
-[![Open PRs](https://flat.badgen.net/github/open-prs/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/pulls)
-[![Total PRs](https://flat.badgen.net/github/prs/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/pulls?q=)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/<YOUR GIT USERNAME>/<YOUR TOOL LC>?style=flat-square)](<TOOL REPO>/commits/<PRIMARY BRANCH>)
-[![Last Commit](https://flat.badgen.net/github/last-commit/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/commits/<PRIMARY BRANCH>)
-[![Contributors](https://flat.badgen.net/github/contributors/<YOUR GIT USERNAME>/<YOUR TOOL LC>?icon=github)](<TOOL REPO>/graphs/contributors)
+[![Open PRs](https://flat.badgen.net/github/open-prs/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?icon=github)](<TOOL REPO>/pulls)
+[![Total PRs](https://flat.badgen.net/github/prs/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?icon=github)](<TOOL REPO>/pulls?q=)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?style=flat-square)](<TOOL REPO>/commits/<PRIMARY BRANCH>)
+[![Last Commit](https://flat.badgen.net/github/last-commit/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?icon=github)](<TOOL REPO>/commits/<PRIMARY BRANCH>)
+[![Contributors](https://flat.badgen.net/github/contributors/<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>?icon=github)](<TOOL REPO>/graphs/contributors)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -275,11 +275,11 @@ Plugin:
 
 
 ```sh
-asdf plugin add <YOUR TOOL LC> # install the <YOUR TOOL LC> plugin
+asdf plugin add asdf-<YOUR TOOL LC> # install the asdf-<YOUR TOOL LC> plugin
 # or
-asdf plugin add <YOUR TOOL> <TOOL REPO>.git
+asdf plugin add asdf-<YOUR TOOL> <TOOL REPO>.git
 
-asdf <YOUR TOOL LC> install-deps  # install system-specific dependencies for downloading & building <YOUR TOOL ULC>
+asdf asdf-<YOUR TOOL LC> install-deps  # install system-specific dependencies for downloading & building <YOUR TOOL ULC>
 ```
 
 ### To install <YOUR TOOL ULC>:
@@ -288,55 +288,55 @@ When available for the version and platform, the plugin will install pre-compile
 
 ```sh
 # latest stable version of <YOUR TOOL ULC>
-asdf install <YOUR TOOL LC> latest
+asdf install asdf-<YOUR TOOL LC> latest
 # or latest stable minor/patch release of <YOUR TOOL ULC> 1.x.x
-asdf install <YOUR TOOL LC> latest:1
+asdf install asdf-<YOUR TOOL LC> latest:1
 # or latest stable patch release of <YOUR TOOL ULC> 1.6.x
-asdf install <YOUR TOOL LC> latest:1.6
+asdf install asdf-<YOUR TOOL LC> latest:1.6
 # or specific patch release
-asdf install <YOUR TOOL LC> 1.6.8
+asdf install asdf-<YOUR TOOL LC> 1.6.8
 ```
 
 ### To install a nightly build of <YOUR TOOL ULC>:
 
 ```sh
 # nightly unstable build of devel branch
-asdf install <YOUR TOOL LC> ref:devel
+asdf install asdf-<YOUR TOOL LC> ref:devel
 # or nightly unstable build of version-1-6 branch, i.e. the latest 1.6.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-6
+asdf install asdf-<YOUR TOOL LC> ref:version-1-6
 # or nightly unstable build of version-1-4 branch, i.e. the latest 1.4.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-4
+asdf install asdf-<YOUR TOOL LC> ref:version-1-4
 # or nightly unstable build of version-1-2 branch, i.e. the 1.2.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-2
+asdf install asdf-<YOUR TOOL LC> ref:version-1-2
 # or nightly unstable build of version-1-0 branch, i.e. the 1.0.x release + any recent backports from devel
-asdf install <YOUR TOOL LC> ref:version-1-0
+asdf install asdf-<YOUR TOOL LC> ref:version-1-0
 ```
 
 ### To build a specific git commit or branch of <YOUR TOOL ULC>:
 
 ```sh
 # build using latest commit from the devel branch
-asdf install <YOUR TOOL LC> ref:HEAD
+asdf install asdf-<YOUR TOOL LC> ref:HEAD
 # build using the specific commit 7d15fdd
-asdf install <YOUR TOOL LC> ref:7d15fdd
+asdf install asdf-<YOUR TOOL LC> ref:7d15fdd
 # build using the tagged release v1.6.8
-asdf install <YOUR TOOL LC> ref:v1.6.8
+asdf install asdf-<YOUR TOOL LC> ref:v1.6.8
 ```
 
 
-<YOUR TOOL>:
+asdf-<YOUR TOOL>:
 
 ```shell
 # Show all installable versions
-asdf list-all <YOUR TOOL>
+asdf list-all asdf-<YOUR TOOL>
 
 # Install specific version
-asdf install <YOUR TOOL> latest
+asdf install asdf-<YOUR TOOL> latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global <YOUR TOOL> latest
+asdf global asdf-<YOUR TOOL> latest
 
-# Now <YOUR TOOL> commands are available
+# Now asdf-<YOUR TOOL> commands are available
 <TOOL CHECK>
 ```
 
@@ -344,18 +344,18 @@ Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on ho
 install & manage versions.
 
 
-# <YOUR TOOL LC>
+# asdf-<YOUR TOOL LC>
 
-<YOUR TOOL LC> allows you to quickly install any version of [<YOUR TOOL ULC>](https://<YOUR TOOL LC>-lang.org).
+asdf-<YOUR TOOL LC> allows you to quickly install any version of [<YOUR TOOL ULC>](https://asdf-<YOUR TOOL LC>-lang.org).
 
-<YOUR TOOL LC> is intended for end-users and continuous integration. Whether macOS or Linux, x86 or ARM - all you'll need to install <YOUR TOOL ULC> is bash.
+asdf-<YOUR TOOL LC> is intended for end-users and continuous integration. Whether macOS or Linux, x86 or ARM - all you'll need to install <YOUR TOOL ULC> is bash.
 
 
 
 ### To set the default version of <YOUR TOOL ULC> for your user:
 
 ```sh
-asdf global <YOUR TOOL LC> latest:1.6
+asdf global asdf-<YOUR TOOL LC> latest:1.6
 ```
 
 This creates a `.tool-versions` file in your home directory specifying the <YOUR TOOL ULC> version.
@@ -364,16 +364,16 @@ This creates a `.tool-versions` file in your home directory specifying the <YOUR
 
 ```sh
 cd my-project
-asdf local <YOUR TOOL LC> latest:1.6
+asdf local asdf-<YOUR TOOL LC> latest:1.6
 ```
 
 This creates a `.tool-versions` file in the current directory specifying the <YOUR TOOL ULC> version. For additional plugin usage see the [asdf documentation](https://asdf-vm.com/#/core-manage-asdf).
 
-## <YOUR TOOL LC> packages
+## asdf-<YOUR TOOL LC> packages
 
-<YOUR TOOL LC> packages are installed in `~/.asdf/installs/<YOUR TOOL LC>/<<YOUR TOOL LC>-version>/<YOUR TOOL LC>/pkgs`, unless a `<YOUR TOOL LC>deps` directory exists in the directory where `<YOUR TOOL LC> install` is run from.
+asdf-<YOUR TOOL LC> packages are installed in `~/.asdf/installs/asdf-<YOUR TOOL LC>/<asdf-<YOUR TOOL LC>-version>/asdf-<YOUR TOOL LC>/pkgs`, unless a `asdf-<YOUR TOOL LC>deps` directory exists in the directory where `asdf-<YOUR TOOL LC> install` is run from.
 
-See the [<YOUR TOOL LC> documentation](https://github.com/<YOUR TOOL LC>-lang/<YOUR TOOL LC>#<YOUR TOOL LC>s-folder-structure-and-packages) for more information about <YOUR TOOL LC>deps.
+See the [asdf-<YOUR TOOL LC> documentation](https://github.com/asdf-<YOUR TOOL LC>-lang/asdf-<YOUR TOOL LC>#asdf-<YOUR TOOL LC>s-folder-structure-and-packages) for more information about asdf-<YOUR TOOL LC>deps.
 
 ## Continuous Integration
 
@@ -397,15 +397,15 @@ jobs:
       include:
         # Test against stable <YOUR TOOL ULC> builds on linux
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: latest:1.6
+          asdf-<YOUR TOOL LC>-version: latest:1.6
         - os: ubuntu-latest
-          <YOUR TOOL LC>-version: latest:1.4
+          asdf-<YOUR TOOL LC>-version: latest:1.4
 
         # Test against unstable nightly <YOUR TOOL ULC> builds on macos (faster than building from source)
         - os: macos-latest
-          <YOUR TOOL LC>-version: ref:version-1-6
+          asdf-<YOUR TOOL LC>-version: ref:version-1-6
         - os: macos-latest
-          <YOUR TOOL LC>-version: ref:version-1-4
+          asdf-<YOUR TOOL LC>-version: ref:version-1-4
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -413,13 +413,13 @@ jobs:
         uses: asdf-vm/actions/install@v1
         with:
           tool_versions: |
-            <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
+            asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
       - name: Run tests
         run: |
-          asdf local <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
-          <YOUR TOOL LC> develop -y
-          <YOUR TOOL LC> test
-          <YOUR TOOL LC> examples
+          asdf local asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
+          asdf-<YOUR TOOL LC> develop -y
+          asdf-<YOUR TOOL LC> test
+          asdf-<YOUR TOOL LC> examples
 ```
 
 ### Continuous Integration on Non-x86 Architectures
@@ -435,14 +435,14 @@ on:
 
 jobs:
   test_non_x86:
-    name: Test <YOUR TOOL LC>-${{ matrix.<YOUR TOOL LC>-version }} / debian-buster / ${{ matrix.arch }}
+    name: Test asdf-<YOUR TOOL LC>-${{ matrix.asdf-<YOUR TOOL LC>-version }} / debian-buster / ${{ matrix.arch }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - <YOUR TOOL LC>-version: ref:version-1-6
+          - asdf-<YOUR TOOL LC>-version: ref:version-1-6
             arch: armv7
-          - <YOUR TOOL LC>-version: ref:version-1-2
+          - asdf-<YOUR TOOL LC>-version: ref:version-1-2
             arch: aarch64
 
     runs-on: ubuntu-latest
@@ -477,24 +477,24 @@ jobs:
             set -uexo pipefail
             . "${HOME}/.asdf/asdf.sh"
 
-            # Install <YOUR TOOL LC> and dependencies
-            git clone <TOOL REPO>.git ~/<YOUR TOOL LC> --branch main --depth 1
-            asdf plugin add <YOUR TOOL LC> ~/<YOUR TOOL LC>
-            asdf <YOUR TOOL LC> install-deps -y
+            # Install asdf-<YOUR TOOL LC> and dependencies
+            git clone <TOOL REPO>.git ~/asdf-<YOUR TOOL LC> --branch main --depth 1
+            asdf plugin add asdf-<YOUR TOOL LC> ~/asdf-<YOUR TOOL LC>
+            asdf asdf-<YOUR TOOL LC> install-deps -y
 
             # Install <YOUR TOOL ULC>
-            asdf install <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
-            asdf local <YOUR TOOL LC> ${{ matrix.<YOUR TOOL LC>-version }}
+            asdf install asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
+            asdf local asdf-<YOUR TOOL LC> ${{ matrix.asdf-<YOUR TOOL LC>-version }}
 
             # Run tests
-            <YOUR TOOL LC> develop -y
-            <YOUR TOOL LC> test
-            <YOUR TOOL LC> examples
+            asdf-<YOUR TOOL LC> develop -y
+            asdf-<YOUR TOOL LC> test
+            asdf-<YOUR TOOL LC> examples
 ```
 
 ## Stable binaries
 
-[<YOUR TOOL LC>-lang.org](https://<YOUR TOOL LC>-lang.org/install.html) supplies pre-compiled stable binaries of <YOUR TOOL ULC> for:
+[asdf-<YOUR TOOL LC>-lang.org](https://asdf-<YOUR TOOL LC>-lang.org/install.html) supplies pre-compiled stable binaries of <YOUR TOOL ULC> for:
 
 Linux:
 
@@ -503,7 +503,7 @@ Linux:
 
 ## Unstable nightly binaries
 
-[<YOUR TOOL LC>-lang/nightlies](https://github.com/<YOUR TOOL LC>-lang/nightlies) supplies pre-compiled unstable binaries of <YOUR TOOL ULC> for:
+[asdf-<YOUR TOOL LC>-lang/nightlies](https://github.com/asdf-<YOUR TOOL LC>-lang/nightlies) supplies pre-compiled unstable binaries of <YOUR TOOL ULC> for:
 
 Linux:
 
@@ -516,11 +516,11 @@ macOS:
 
 - `x86_64`
 
-## Updating asdf and <YOUR TOOL LC>
+## Updating asdf and asdf-<YOUR TOOL LC>
 
 ```sh
 asdf update
-asdf plugin update <YOUR TOOL LC> main
+asdf plugin update asdf-<YOUR TOOL LC> main
 ```
 
 
@@ -529,7 +529,7 @@ asdf plugin update <YOUR TOOL LC> main
 This project uses [bats](https://github.com/bats-core/bats-core) for unit testing. Please follow existing patterns and add unit tests for your changeset. Dev dependencies for unit tests are installed via:
 
 ```shell
-cd ~/.asdf/plugins/<YOUR TOOL LC>
+cd ~/.asdf/plugins/asdf-<YOUR TOOL LC>
 npm install --include=dev
 ```
 
@@ -575,15 +575,15 @@ We look forward to your contributions!
 Fork this repo, then run:
 
 ```sh
-rm -rf ~/.asdf/plugins/<YOUR TOOL LC>
-git clone git@<GIT TYPE>.com:<your-username>/<YOUR TOOL LC>.git ~/.asdf/plugins/<YOUR TOOL LC>
+rm -rf ~/.asdf/plugins/asdf-<YOUR TOOL LC>
+git clone git@<GIT TYPE>.com:<your-username>/asdf-<YOUR TOOL LC>.git ~/.asdf/plugins/asdf-<YOUR TOOL LC>
 ```
 
 [Thanks goes to these contributors](<TOOL REPO>/graphs/contributors)!
 
 ## Star History 🌟🏆🙌
 
-[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT USERNAME>/<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT USERNAME>/<YOUR TOOL LC>&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>&type=Date)](https://star-history.com/#<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>&Date)
 
 <h2 align="center">Discussions [<a href="<TOOL REPO>#index">↑</a>]</h2>
 
@@ -641,7 +641,7 @@ _There is no warranty that this app will work as expected, and the author cannot
 _liable for anything that goes wrong._
 For more info, see TLDR Legal's [Explanation of MIT](https://tldrlegal.com/license/mit-license)
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2F<YOUR TOOL LC>.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2F<YOUR TOOL LC>?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2Fasdf-<YOUR TOOL LC>.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2F<YOUR GIT USERNAME>%2Fasdf-<YOUR TOOL LC>?ref=badge_large)
 
 **[⬆️ Back to Top](#'<PROJECT NAME>')**
 
@@ -687,7 +687,7 @@ For more info, see TLDR Legal's [Explanation of MIT](https://tldrlegal.com/licen
 [badge-gate]: <TOOL REPO>/actions/workflows/main.yml/badge.svg
 [badge-license]: https://img.shields.io/badge/license-GPLv2+CE-green
 [badge-slack]: https://img.shields.io/badge/Slack-join-active?logo=slack
-[badge-twitter]: https://img.shields.io/badge/Twitter-@<YOUR TOOL LC>-active?logo=twitter
+[badge-twitter]: https://img.shields.io/badge/Twitter-@asdf-<YOUR TOOL LC>-active?logo=twitter
 [docs]: <TOOL HOMEPAGE>/docs/
 [downloads]: <TOOL HOMEPAGE>/downloads/
 [gate]: <TOOL REPO>/actions/workflows/main.yml

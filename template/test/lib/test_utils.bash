@@ -23,29 +23,29 @@ clear_lock() {
 
 setup_test() {
   # Hide pretty output
-  <YOUR TOOL EUC>_SILENT="yes"
-  export <YOUR TOOL EUC>_SILENT
+  ASDF_<YOUR TOOL EUC>_SILENT="yes"
+  export ASDF_<YOUR TOOL EUC>_SILENT
 
-  <YOUR TOOL EUC>_TEST_TEMP="$(mktemp -t <YOUR TOOL LC>-utils-tests.XXXX -d)"
-  export <YOUR TOOL EUC>_TEST_TEMP
+  ASDF_<YOUR TOOL EUC>_TEST_TEMP="$(mktemp -t asdf-<YOUR TOOL LC>-utils-tests.XXXX -d)"
+  export ASDF_<YOUR TOOL EUC>_TEST_TEMP
 
   # Mock ASDF vars
-  ASDF_DATA_DIR="${<YOUR TOOL EUC>_TEST_TEMP}/asdf"
+  ASDF_DATA_DIR="${ASDF_<YOUR TOOL EUC>_TEST_TEMP}/asdf"
   export ASDF_DATA_DIR
   ASDF_INSTALL_VERSION="1.6.0"
   export ASDF_INSTALL_VERSION
   ASDF_INSTALL_TYPE="version"
   export ASDF_INSTALL_TYPE
-  ASDF_INSTALL_PATH="${ASDF_DATA_DIR}/installs/<YOUR TOOL LC>/1.6.0"
+  ASDF_INSTALL_PATH="${ASDF_DATA_DIR}/installs/asdf-<YOUR TOOL LC>/1.6.0"
   export ASDF_INSTALL_PATH
-  ASDF_DOWNLOAD_PATH="${ASDF_DATA_DIR}/downloads/<YOUR TOOL LC>/1.6.0"
+  ASDF_DOWNLOAD_PATH="${ASDF_DATA_DIR}/downloads/asdf-<YOUR TOOL LC>/1.6.0"
   export ASDF_DOWNLOAD_PATH
-  <YOUR TOOL EUC>_MOCK_GCC_DEFINES="#"
-  export <YOUR TOOL EUC>_MOCK_GCC_DEFINES
+  ASDF_<YOUR TOOL EUC>_MOCK_GCC_DEFINES="#"
+  export ASDF_<YOUR TOOL EUC>_MOCK_GCC_DEFINES
 
   # Mock some other vars
   export XDG_CONFIG_HOME
-  XDG_CONFIG_HOME="$<YOUR TOOL EUC>_TEST_TEMP"
+  XDG_CONFIG_HOME="$ASDF_<YOUR TOOL EUC>_TEST_TEMP"
   export ACTUAL_GITHUB_TOKEN
   ACTUAL_GITHUB_TOKEN="${GITHUB_TOKEN-}"
   export GITHUB_TOKEN
@@ -57,9 +57,9 @@ setup_test() {
 
   # Make plugin files findable via ASDF_DATA_DIR
   mkdir -p "${ASDF_DATA_DIR}/plugins"
-  ln -s "$PROJECT_DIR" "${ASDF_DATA_DIR}/plugins/<YOUR TOOL LC>"
+  ln -s "$PROJECT_DIR" "${ASDF_DATA_DIR}/plugins/asdf-<YOUR TOOL LC>"
 }
 
 teardown_test() {
-  rm -rf "$<YOUR TOOL EUC>_TEST_TEMP"
+  rm -rf "$ASDF_<YOUR TOOL EUC>_TEST_TEMP"
 }

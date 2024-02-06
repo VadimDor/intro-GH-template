@@ -5,7 +5,7 @@
 # This owner will be the default owner for everything in the repo. 
 # Unless a later match takes precedence, @<YOUR GIT USERNAME> will be requested for review when someone opens a pull request.
 
-* @<YOUR GIT USERNAME>/<YOUR TOOL LC>
+* @<YOUR GIT USERNAME>/asdf-<YOUR TOOL LC>
 
 # Sample file:
 /test/integration.bats @HarryPotter

@@ -5,14 +5,14 @@ set -euo pipefail
 # shellcheck source=SCRIPTDIR/../utils.bash
 source "$(dirname "${BASH_SOURCE[0]}")/../utils.bash"
 
-<YOUR TOOL EUC>_INSTALL_DEPS_ACCEPT="no"
+ASDF_<YOUR TOOL EUC>_INSTALL_DEPS_ACCEPT="no"
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
   key="$1"
 
   case $key in
     -y | --yes)
-      <YOUR TOOL EUC>_INSTALL_DEPS_ACCEPT="yes"
+      ASDF_<YOUR TOOL EUC>_INSTALL_DEPS_ACCEPT="yes"
       shift # past argument
       ;;
     *)                   # unknown option
@@ -22,4 +22,4 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-<YOUR TOOL ELC>_install_deps @POSITIONAL
+asdf_<YOUR TOOL ELC>_install_deps @POSITIONAL
