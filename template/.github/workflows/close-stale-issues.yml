@@ -10,7 +10,7 @@ jobs:
     steps:
       # Comment on, then close issues that haven't been updated for ages 
       - name: Close Stale Issues
-        uses: actions/stale@v4
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           days-before-stale: 90
@@ -38,7 +38,7 @@ jobs:
           
         # Comment on, then close issues that required a response from the user, but didn't get one
       - name: Close Issues without Response
-        uses: actions/stale@v4
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           days-before-stale: 5
@@ -58,7 +58,7 @@ jobs:
           
         # Comment on issues that I should have replied to
       - name: Notify Repo Owner to Respond
-        uses: actions/stale@v4
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           days-before-stale: 7

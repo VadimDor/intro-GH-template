@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Checkout
       if: startsWith(github.head_ref, 'AUTO/') == false
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Spell Check
       if: startsWith(github.head_ref, 'AUTO/') == false
       uses: sobolevn/misspell-fixer-action@master

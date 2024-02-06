@@ -133,8 +133,8 @@ setup_git() {
 	# ask for arguments not given via CLI
 	plugin_name="${2:-$(ask_for "$HELP_PLUGIN_NAME")}"
 
-	tool_name="${tool_name/asdf-/}"
-    
+	tool_name="${plugin_name/asdf-/}"
+    # echo ${tool_name%-*} #openssl-9 -> openssl
 	check_command="${3:-$(ask_for "$HELP_TOOL_CHECK" "$tool_name --version")}"
     
 	url=$(git config --list| grep "remote.origin.url=")  

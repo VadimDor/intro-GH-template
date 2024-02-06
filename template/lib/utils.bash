@@ -497,7 +497,7 @@ asdf_<YOUR TOOL ELC>_download_via_git() {
   rm -rf "$ASDF_<YOUR TOOL EUC>_DOWNLOAD_PATH"
   mkdir -p "$ASDF_<YOUR TOOL EUC>_DOWNLOAD_PATH"
   (
-    cd "$ASDF_<YOUR TOOL EUC>_DOWNLOAD_PATH"
+    cd "$ASDF_<YOUR TOOL EUC>_DOWNLOAD_PATH" || exit
     git init
     git remote add origin "$SOURCE_REPO"
     git fetch origin "$ASDF_INSTALL_VERSION" --depth 1
@@ -629,7 +629,7 @@ asdf_<YOUR TOOL ELC>_fetch() {
 }
 
 asdf_<YOUR TOOL ELC>_bootstrap_<YOUR TOOL ELC>() {
-  cd "$ASDF_DOWNLOAD_PATH"
+  cd "$ASDF_DOWNLOAD_PATH" || exit
 
   local <YOUR TOOL ELC>
   <YOUR TOOL ELC>="./bin/<YOUR TOOL ELC>"
@@ -660,43 +660,17 @@ asdf_<YOUR TOOL ELC>_bootstrap_<YOUR TOOL ELC>() {
 
 asdf_<YOUR TOOL ELC>_build_<YOUR TOOL ELC>() {
   step_start "build <YOUR TOOL ELC>"
-  cd "$ASDF_DOWNLOAD_PATH"
+  cd "$ASDF_DOWNLOAD_PATH" || exit
   # shellcheck disable=SC2046
   eval make   $(printf ' %q ' "${<YOUR TOOL UC>_ARGS[@]}")
   step_end "✓"
 }
-
-#asdf_<YOUR TOOL ELC>_build_tools() {
- # step_start "build tools"
-#  cd "$ASDF_DOWNLOAD_PATH"
- # # shellcheck disable=SC2046
- # eval make tools $(printf ' %q ' "${<YOUR TOOL UC>_ARGS[@]}")
- # step_end "✓"
-#}
-
-#asdf_<YOUR TOOL ELC>_build_<YOUR TOOL LC>() {
-#  step_start "build asdf-<YOUR TOOL LC>"
-#  cd "$ASDF_DOWNLOAD_PATH"
-#  # shellcheck disable=SC2046
-#  eval ./koch asdf-<YOUR TOOL LC> $(printf ' %q ' "${ASDF-<YOUR TOOL UC>_ARGS[@]}")
-#  step_end "✓"
-#}
-
-
-
-
-
-
-
-
-
-
-
+ 
 # Build <YOUR TOOL ULC> binaries in ASDF_<YOUR TOOL EUC>_DOWNLOAD_PATH.
 asdf_<YOUR TOOL ELC>_build() {
   section_start "II.  Build (${ASDF_DOWNLOAD_PATH//${HOME}/\~})"
 
-  cd "$ASDF_DOWNLOAD_PATH"
+  cd "$ASDF_DOWNLOAD_PATH" || exit
   local bootstrap
   bootstrap=n
   [ -f "./bin/<YOUR TOOL ELC>" ] || bootstrap=y

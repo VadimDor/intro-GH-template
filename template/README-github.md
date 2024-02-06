@@ -408,7 +408,7 @@ jobs:
           asdf-<YOUR TOOL LC>-version: ref:version-1-4
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install <YOUR TOOL ULC>
         uses: asdf-vm/actions/install@v1
         with:
@@ -448,7 +448,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout <YOUR TOOL ULC> project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - uses: uraimo/run-on-arch-action@v2
         name: Install <YOUR TOOL ULC> & run tests

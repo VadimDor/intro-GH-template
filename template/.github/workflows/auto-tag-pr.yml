@@ -11,7 +11,7 @@ jobs:
     outputs:
       tag: ${{ steps.autotag.outputs.tagname }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: butlerlogic/action-autotag@stable
       id: autotag
       with:
@@ -23,7 +23,7 @@ jobs:
     needs: tag-pre-release
     if: ${{ needs.tag-pre-release.outputs.tag }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -32,7 +32,7 @@ jobs:
   mark-issue-fixed:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Label Fixed Issues
       uses: gh-bot/fix-labeler@master
       with:

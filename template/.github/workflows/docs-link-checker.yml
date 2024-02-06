@@ -9,15 +9,15 @@ jobs:
   link-checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Load Excludes
         run: |
           LYCHEE_EXCLUDE=$(sed -e :a  -e 'N;s/\n/ /;ta' .github/.lycheeexclude)
-          echo "LYCHEE_EXCLUDE=$LYCHEE_EXCLUDE" >> $GITHUB_ENV
+          echo "LYCHEE_EXCLUDE=$LYCHEE_EXCLUDE" >> "$GITHUB_ENV"
 
       - name: Check for Broken Links
-        uses: lycheeverse/lychee-action@v1.0.8
+        uses: lycheeverse/lychee-action@v1.9.3
         with:
           args: --verbose -a 200,302,304,429 --exclude ${{ env.LYCHEE_EXCLUDE }} --exclude-mail --no-progress **/*.md
         env:

@@ -27,9 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Run the sh-checker
-        uses: luizm/action-sh-checker@v0.1.12
+        uses: luizm/action-sh-checker@v0.8.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           #SHELLCHECK_OPTS: -e SC1004 # Optional: exclude some shellcheck warnings.
@@ -47,6 +47,6 @@ jobs:
 
       - name: Test plugin with bats
         run: |
-          . $HOME/asdf/asdf.sh
+          . "$HOME/asdf/asdf.sh"
           asdf plugin-add <TOOL CHECK> "$GITHUB_WORKSPACE"
           bats test

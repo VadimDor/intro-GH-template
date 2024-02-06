@@ -26,14 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Generate Sponsors in Readme 💖
-        uses: JamesIves/github-sponsors-readme-action@1.0.5
+        uses: JamesIves/github-sponsors-readme-action@v1.3.1
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           file: 'README.md'
       - name: Generate Sponsors in Credits 💖
-        uses: JamesIves/github-sponsors-readme-action@1.0.5
+        uses: JamesIves/github-sponsors-readme-action@v1.3.1
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           file: 'docs/credits.md'
@@ -55,7 +55,7 @@ jobs:
         committer_username: liss-bot
         committer_email: liss-bot@d0h.co
     - name: Sponsors List - Readme
-      uses: akhilmhdh/contributors-readme-action@v2.2
+      uses: akhilmhdh/contributors-readme-action@v2.3
       env:
           GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
       with:
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: wow-actions/update-authors@v1.1.4
