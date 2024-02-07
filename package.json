@@ -1,0 +1,29 @@
+{
+	"name": "asdf-plugin-template-ext-package",
+	"description": "ASDF plugin for 'plugin-template-ext'",
+	"version": "1.0.0",
+	"author": "'Vadim Dor' v.dorez@mail.ru",
+	"devDependencies": {
+		"bats": "^1.8.2",
+		"bats-assert": "git+https://github.com/bats-core/bats-assert.git#44913ff",
+		"bats-support": "^0.3.0",
+		"prettier": "3.2.5",
+		"lintball": "^1.6.0"
+	},
+	"scripts": {
+		"test": "bats test --tap",
+		"format": "prettier --write 'template-orig/*.*' 'template-orig/*.'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vadimDor/asdf-plugin-template-ext.git"
+	},
+	"keywords": [
+		"ASDF"
+	],
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vadimDor/asdf-plugin-template-ext/issues"
+	},
+	"homepage": "https://github.com/vadimDor/asdf-plugin-template-ext/"
+}

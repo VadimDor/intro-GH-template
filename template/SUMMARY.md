@@ -3,10 +3,10 @@
 
 [Readme](../README.md)
 
-- [Installation](./docs/installation.md)🟢 
-- [Usage](./docs/usage.md)🟢 
+- [Installation](./docs/installation.md)🟢
+- [Usage](./docs/usage.md)🟢
 - [Usecase](./docs/usecase.md)⚫
-- [Advanced](./docs/advanced.md)🔴 
+- [Advanced](./docs/advanced.md)🔴
 - [Communities](./docs/communities.md)🟠
 - [Change log](CHANGELOG.md)
 - [Review](./docs/review.md)
