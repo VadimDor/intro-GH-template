@@ -13,11 +13,11 @@ asdf_<YOUR TOOL ELC>_init_traps
 # shellcheck disable=SC2001
 BASH_MAJOR_VERSION="$(echo "$BASH_VERSION" | sed 's/\..*//')"
 if [ "$BASH_MAJOR_VERSION" -ge 4 ]; then
-  exec {ASDF_<YOUR TOOL EUC>_STDOUT}<&1 {ASDF_<YOUR TOOL EUC>_STDERR}<&2
-  {
-    asdf_<YOUR TOOL ELC>_download
-  } 1>>"$(asdf_<YOUR TOOL ELC>_log)" 2>>"$(asdf_<YOUR TOOL ELC>_log)"
+	exec {ASDF_<YOUR TOOL EUC>_STDOUT}<&1 {ASDF_<YOUR TOOL EUC>_STDERR}<&2
+	{
+		asdf_<YOUR TOOL ELC>_download
+	} 1>>"$(asdf_<YOUR TOOL ELC>_log)" 2>>"$(asdf_<YOUR TOOL ELC>_log)"
 else
-  touch "$(asdf_<YOUR TOOL ELC>_log)"
-  asdf_<YOUR TOOL ELC>_download
+	touch "$(asdf_<YOUR TOOL ELC>_log)"
+	asdf_<YOUR TOOL ELC>_download
 fi

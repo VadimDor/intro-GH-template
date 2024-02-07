@@ -9,12 +9,12 @@
 # and has Homebrew installed, they want to link to libraries there. To skip this
 # set ASDF_<YOUR TOOL EUC>_MACOS_M1_HOMEBREW_WORKAROUND=no in your environment.
 if [ "${ASDF_<YOUR TOOL EUC>_MACOS_M1_HOMEBREW_WORKAROUND:-yes}" = "yes" ] &&
-  [ "$(uname)" = "Darwin" ] &&
-  [ "$(uname -m)" = "arm64" ] &&
-  [ "${DYLD_LIBRARY_PATH-}" = "" ] &&
-  [ -d /opt/homebrew/lib ]; then
-  export DYLD_LIBRARY_PATH
-  DYLD_LIBRARY_PATH=/opt/homebrew/lib
+	[ "$(uname)" = "Darwin" ] &&
+	[ "$(uname -m)" = "arm64" ] &&
+	[ "${DYLD_LIBRARY_PATH-}" = "" ] &&
+	[ -d /opt/homebrew/lib ]; then
+	export DYLD_LIBRARY_PATH
+	DYLD_LIBRARY_PATH=/opt/homebrew/lib
 fi
 
 # Override PATH so this asdf-<YOUR TOOL LC> is found first
@@ -29,6 +29,6 @@ export ASDF_<YOUR TOOL EUC>_DIR
 # Otherwise, use the asdf-<YOUR TOOL LC> directory within ASDF_INSTALL_PATH.
 # see https://github.com/asdf-<YOUR TOOL LC>-lang/asdf-<YOUR TOOL LC>#asdf-<YOUR TOOL LC>s-folder-structure-and-packages
 if [ "${ASDF_<YOUR TOOL EUC>_DIR-}" = "" ] &&
-  [ ! -d "${PWD}/asdf-<YOUR TOOL LC>deps" ]; then
-  ASDF_<YOUR TOOL EUC>_DIR="${ASDF_INSTALL_PATH}/asdf-<YOUR TOOL LC>"
+	[ ! -d "${PWD}/asdf-<YOUR TOOL LC>deps" ]; then
+	ASDF_<YOUR TOOL EUC>_DIR="${ASDF_INSTALL_PATH}/asdf-<YOUR TOOL LC>"
 fi
