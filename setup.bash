@@ -82,6 +82,9 @@ extract_license() {
 }
 
 test_url() {
+	domain=$(echo "$1"| sed -e 's|^[^/]*//||' -e 's|/.*$||')
+	ping domain
+	ping domain
 	# curl -fqsL -I "$1" | head -n 1 | grep 200 >/dev/null
 	curl -H "Accept: application/json" -H "Prefer: respond-async, wait=200" --connect-timeout 5 --max-time 5 -s -D - "$1" -o /dev/null 2>/dev/null | head -n1 | grep 200 >/dev/null
 }
