@@ -295,7 +295,7 @@ jobs:
           plugin_licenses_legal: yes
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: '<PRIMARY BRANCH>'
 

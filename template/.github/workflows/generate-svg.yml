@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: build-svg
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set node
         uses: actions/setup-node@v4
         with:
@@ -34,7 +34,7 @@ jobs:
           SPONSORKIT_GITHUB_CONTRIBUTOR_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_CONTRIBUTOR_TOKEN }}
       - run: make svghash
       - name: Commit
-        uses: EndBug/add-and-commit@v4
+        uses: EndBug/add-and-commit@v9
         with:
           message: 'chore: update sponsors.svg contributor.svg'
           add: 'docs README.md'
