@@ -24,14 +24,14 @@ jobs:
       - run: cd scripts/sponsorkit && npm i
       - run: make sponsor
         env:
-          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }} #TODO: set token
           SPONSORKIT_GITHUB_LOGIN: <YOUR GIT USERNAME>
-          SPONSORKIT_AFDIAN_USER_ID: 11111111111111
-          SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
-          SPONSORKIT_PATREON_TOKEN: ${{ secrets.SPONSORKIT_PATREON_TOKEN }}
+          SPONSORKIT_AFDIAN_USER_ID: 11111111111111 #TODO: set AFDIAN_USER_ID
+          SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }} #TODO: set AFDIAN_TOKEN
+          SPONSORKIT_PATREON_TOKEN: ${{ secrets.SPONSORKIT_PATREON_TOKEN }} #TODO: set PATREON_TOKEN
       - run: make contributor
         env:
-          SPONSORKIT_GITHUB_CONTRIBUTOR_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_CONTRIBUTOR_TOKEN }}
+          SPONSORKIT_GITHUB_CONTRIBUTOR_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_CONTRIBUTOR_TOKEN }} #TODO: set GITHUB_CONTRIBUTOR_TOKEN
       - run: make svghash
       - name: Commit
         uses: EndBug/add-and-commit@v9

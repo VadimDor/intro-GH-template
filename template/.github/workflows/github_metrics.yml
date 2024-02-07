@@ -30,6 +30,7 @@ jobs:
           echo "Configured Git Credentials"
 
       - name: Base Metrics
+        # prettier-ignore
         uses: <YOUR GIT USERNAME>/GitHubMetrics@<PRIMARY BRANCH>
         with:
           token: ${{ secrets.METRICS_TOKEN }}
