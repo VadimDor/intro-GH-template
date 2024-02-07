@@ -20,4 +20,3 @@ jobs:
         uses: asdf-vm/actions/plugin-test@v3
         with:
           command: <TOOL CHECK>
-

@@ -1,4 +1,4 @@
-labels: ["feature"]
+labels: ['feature']
 body:
   - type: textarea
     attributes:
@@ -23,7 +23,7 @@ body:
   - type: textarea
     attributes:
       label: Proposal
-      description: How should this feature be implemented? 
+      description: How should this feature be implemented?
       placeholder: I propose the following...
     validations:
       required: false

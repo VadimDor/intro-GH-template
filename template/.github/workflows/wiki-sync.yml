@@ -8,17 +8,17 @@ jobs:
   update-wiki:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master        
-    - name: Upload Docs to GH Wiki
-      uses: docker://decathlon/wiki-page-creator-action:latest
-      env:
-        GH_PAT: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
-        ACTION_MAIL: <USER EMAIL>
-        ACTION_NAME: liss-bot
-        OWNER: <YOUR GIT USERNAME>
-        REPO_NAME: asdf-<YOUR TOOL LC>
-        MD_FOLDER: docs/
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Upload Docs to GH Wiki
+        uses: docker://decathlon/wiki-page-creator-action:latest
+        env:
+          GH_PAT: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          ACTION_MAIL: <USER EMAIL>
+          ACTION_NAME: liss-bot
+          OWNER: <YOUR GIT USERNAME>
+          REPO_NAME: asdf-<YOUR TOOL LC>
+          MD_FOLDER: docs/
 #     - name: Sync Wiki
 #       uses: joeizzard/action-wiki-sync@master
 #       with:

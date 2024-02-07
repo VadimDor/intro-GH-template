@@ -1,4 +1,4 @@
-# This is configuration file for yamllint 
+# This is configuration file for yamllint
 # It extends the default conf by adjusting some options.
 # see https://yamllint.readthedocs.io/en/stable/configuration.html
 
@@ -31,6 +31,6 @@ extends: default
 #  trailing-spaces: enable
 #  truthy: enable
 
-  rules:
-    braces: {min-spaces-inside: 1, max-spaces-inside: 3}
-    brackets: {min-spaces-inside: 1, max-spaces-inside: 3}
+rules:
+  braces: { min-spaces-inside: 1, max-spaces-inside: 3 }
+  brackets: { min-spaces-inside: 1, max-spaces-inside: 3 }

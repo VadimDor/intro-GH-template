@@ -8,9 +8,9 @@ name: Lint Code Base
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 jobs:
   run-lint:
     runs-on: ubuntu-latest
@@ -25,5 +25,5 @@ jobs:
         uses: github/super-linter@v5
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: "<PRIMARY BRANCH>"
+          DEFAULT_BRANCH: '<PRIMARY BRANCH>'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

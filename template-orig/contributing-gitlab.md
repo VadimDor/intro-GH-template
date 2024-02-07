@@ -3,6 +3,7 @@
 ## TODO: review and adopt Contributing
 
 # Contributing
+
 It is great to have you here. Here are a few ways you can help make this project better!
 
 Testing Locally:
@@ -62,7 +63,6 @@ Usually, the process of making a translation is quite **similar** to any other c
 ## Other contributions [[↑][index]]
 
 You can even contribute by adding new enhancement and improvement **ideas** to the [ideas discussion][ideas-discussion] or lending someone a hand in the repository!
-
 
 [index]: <TOOL REPO>/blob/master/CONTRIBUTING.md#contributing-index
 [changelog]: ./CHANGELOG.md

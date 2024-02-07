@@ -8,4 +8,5 @@
 🛠️ Build Changes: ['DOCKER/*', 'BUILD/*', 'CI/*', 'ACTIONS/*']
 🌐 Language: ['LANG/*', 'INTERNATIONALIZATION/*', 'I18N/*', 'TEXT-UPDATE/*']
 🤖 Auto: ['AUTO/*', 'BOT/*', 'snyk-upgrade-*', 'snyk-fix-*']
-⛔ Don't Merge: ['WEBSITE/*', 'EXPERIMENT/*', 'DEPLOY/*', 'deploy_*', 'gh-pages', 'dev-demo']
+⛔ Don't Merge:
+  ['WEBSITE/*', 'EXPERIMENT/*', 'DEPLOY/*', 'deploy_*', 'gh-pages', 'dev-demo']

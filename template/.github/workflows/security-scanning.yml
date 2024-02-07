@@ -1,6 +1,6 @@
 # Uses Snyk to check for potential vulnerabilities, then sends results to GH security tab
 name: 💡 Vulnerability Scanning
-on: push  # yamllint disable-line rule:truthy
+on: push # yamllint disable-line rule:truthy
 jobs:
   security:
     runs-on: ubuntu-latest

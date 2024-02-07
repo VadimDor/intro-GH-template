@@ -51,10 +51,10 @@ limitPerRun: 30
 
 # Optionally, specify configuration settings that are specific to just 'issues' or 'pulls':
 pulls:
-   #daysUntilStale: 30
-   markComment: >
-     This pull request has been automatically marked as stale because it has not had
-     any activity in the last 30 days.
+  #daysUntilStale: 30
+  markComment: >
+    This pull request has been automatically marked as stale because it has not had
+    any activity in the last 30 days.
 
 # issues:
 #   exemptLabels:

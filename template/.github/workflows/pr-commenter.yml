@@ -1,6 +1,6 @@
 # Adds comments to PR, based on which files are modified
 name: 💡 PR Commenter
-on: [ pull_request_target ]
+on: [pull_request_target]
 jobs:
   pr-comment:
     runs-on: ubuntu-latest

@@ -37,7 +37,7 @@ labels:
         body: >
           Hello @{{ issue.user.login }}! It looks like all or part of this issue has now been implemented :)
           If you're enjoying this project, please consider supporting the project- for ways to get involved, see [Contributing](<TOOLS REPO>/contributing) 💖
-  
+
   - name: ‼️ High Priority
     labeled:
       issue:
@@ -52,9 +52,9 @@ labels:
         locking: lock
         lock_reason: spam
         body: >
-           This issue has been identified as spam, and is now locked.
-           Users who repeatedly raise spam issues may be blocked or reported.
-          
+          This issue has been identified as spam, and is now locked.
+          Users who repeatedly raise spam issues may be blocked or reported.
+
   - name: ⛔ Don't Merge
     labeled:
       pr:

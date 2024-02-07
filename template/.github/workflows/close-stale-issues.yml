@@ -8,7 +8,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      # Comment on, then close issues that haven't been updated for ages 
+      # Comment on, then close issues that haven't been updated for ages
       - name: Close Stale Issues
         uses: actions/stale@v9
         with:
@@ -18,7 +18,7 @@ jobs:
           operations-per-run: 30
           remove-stale-when-updated: true
           enable-statistics: true
-          stale-issue-message: > 
+          stale-issue-message: >
             This issue has gone 3 months without an update. To keep the ticket open, please indicate that it is still relevant in a comment below.
             Otherwise it will be closed in 5 working days.
           stale-pr-message: >
@@ -35,7 +35,7 @@ jobs:
           exempt-issue-labels: '📌 Keep Open'
           exempt-pr-labels: '📌 Keep Open'
           labels-to-add-when-unstale: '📌 Keep Open'
-          
+
         # Comment on, then close issues that required a response from the user, but didn't get one
       - name: Close Issues without Response
         uses: actions/stale@v9
@@ -55,7 +55,7 @@ jobs:
           close-issue-label: '🕸️ Inactive'
           exempt-issue-labels: '📌 Keep Open'
           exempt-pr-labels: '📌 Keep Open'
-          
+
         # Comment on issues that I should have replied to
       - name: Notify Repo Owner to Respond
         uses: actions/stale@v9

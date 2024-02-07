@@ -13,4 +13,5 @@ otechie: [<YOUR GIT USERNAME>] # Replace with a single Otechie username
 
 buymeacoffee: [<YOUR GIT USERNAME>]
 # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']:
-custom: [<TOOL HOMEPAGE>/donate , "https://www.buymeacoffee.com/<YOUR GIT USERNAME>"]
+custom:
+  [<TOOL HOMEPAGE>/donate, 'https://www.buymeacoffee.com/<YOUR GIT USERNAME>']

@@ -124,33 +124,33 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine:latest
 
-##################################
+    ##################################
 
     strategy:
       fail-fast: false
       matrix:
-       include:
-         # Stable binary
-        - os: ubuntu-latest
-          asdf-<YOUR TOOL LC>-version: 'latest:1.6'
-          platform: linux-glibc
-
+        include:
           # Stable binary
-        - os: ubuntu-latest
-          asdf-<YOUR TOOL LC>-version: 'latest:1.4'
-          platform: linux-glibc
+          - os: ubuntu-latest
+            asdf-<YOUR TOOL LC>-version: 'latest:1.6'
+            platform: linux-glibc
 
-         # Unstable binary
-        - os: ubuntu-latest
-          asdf-<YOUR TOOL LC>-version: 'ref:version-1-6'        
-          platform: linux-glibc
-          
-          # Build from source
-        - os: ubuntu-latest
-          asdf-<YOUR TOOL LC>-version: 'ref:HEAD'
-          platform: linux-glibc
-##################################
-    
+            # Stable binary
+          - os: ubuntu-latest
+            asdf-<YOUR TOOL LC>-version: 'latest:1.4'
+            platform: linux-glibc
+
+            # Unstable binary
+          - os: ubuntu-latest
+            asdf-<YOUR TOOL LC>-version: 'ref:version-1-6'
+            platform: linux-glibc
+
+            # Build from source
+          - os: ubuntu-latest
+            asdf-<YOUR TOOL LC>-version: 'ref:HEAD'
+            platform: linux-glibc
+    ##################################
+
     steps:
       # Optimization: re-use cached <YOUR TOOL ULC>->C compilation
       - name: Restore cache

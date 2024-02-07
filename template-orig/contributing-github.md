@@ -62,7 +62,6 @@ Usually, the process of making a translation is quite **similar** to any other c
 
 You can even contribute by adding new enhancement and improvement **ideas** to the [ideas discussion][ideas-discussion] or lending someone a hand in the repository!
 
-
 [index]: <TOOL REPO>/blob/master/CONTRIBUTING.md#contributing-index
 [changelog]: ./CHANGELOG.md
 [citation]: ./CITATION.cff

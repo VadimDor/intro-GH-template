@@ -1,6 +1,6 @@
 # Generates series of diagrams and visualizations
 name: 📊 Generate Repo Stats
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   workflow_dispatch: # Manual dispatch
   schedule:
     - cron: '0 1 * * 0' # At 01:00 on Sunday.
@@ -71,7 +71,7 @@ jobs:
           plugin_licenses_setup: yarn build
           plugin_licenses_ratio: true
           plugin_licenses_legal: true
-               
+
       - name: Generate Contributor Metrics
         uses: lowlighter/metrics@latest
         with:
@@ -84,9 +84,8 @@ jobs:
           repo: asdf-<YOUR TOOL LC>
           delay: 5
           plugin_contributors: true
-          plugin_contributors_base: ""
+          plugin_contributors_base: ''
           plugin_contributors_head: master
           plugin_contributors_ignored: bot
           plugin_contributors_contributions: true
           plugin_contributors_sections: contributors
-        

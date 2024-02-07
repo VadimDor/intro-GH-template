@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: "metrics"
+  group: 'metrics'
   cancel-in-progress: true
 jobs:
   github-metrics:
@@ -26,9 +26,9 @@ jobs:
           git config --global user.email "$email"
           git config --global init.defaultBranch <PRIMARY BRANCH>
           git config --global --add safe.directory "/__w/$repo_name/$repo_name"
-          
+
           echo "Configured Git Credentials"
-    
+
       - name: Base Metrics
         uses: <YOUR GIT USERNAME>/GitHubMetrics@<PRIMARY BRANCH>
         with:
@@ -99,7 +99,7 @@ jobs:
           #plugin_lines_sections:
           #plugin_lines_repositories_limit:
           plugin_lines_history_limit: 1
-          
+
       - name: Languages Metrics
         uses: <YOUR GIT USERNAME>/GitHubMetrics@<PRIMARY BRANCH>
         with:
@@ -153,7 +153,7 @@ jobs:
           #dryrun:
           experimental_features: --optimize-svg
           #use_mocked_data
-          base: ""
+          base: ''
           plugin_languages: yes
           #plugin_languages_ignored:
           #plugin_languages_skipped:
@@ -172,7 +172,7 @@ jobs:
           #plugin_languages_recent_categories:
           plugin_languages_recent_load: 1000
           plugin_languages_recent_days: 365
-      
+
       - name: Contributors Metrics
         uses: <YOUR GIT USERNAME>/GitHubMetrics@<PRIMARY BRANCH>
         with:
@@ -226,7 +226,7 @@ jobs:
           #dryrun:
           experimental_features: --optimize-svg
           #use_mocked_data
-          base: ""
+          base: ''
           plugin_contributors: yes
           #plugin_contributors_base:
           #plugin_contributors_head:
@@ -288,7 +288,7 @@ jobs:
           #dryrun:
           experimental_features: --optimize-svg
           #use_mocked_data:
-          base: ""
+          base: ''
           plugin_licenses: yes
           plugin_licenses_setup: npm install
           #plugin_licenses_ratio:
@@ -305,7 +305,7 @@ jobs:
           rm -fr ./assets/metrics
           mkdir -p ./assets/metrics
           cp -f /metrics_renders/* ./assets/metrics
-          
+
           echo "Flushed Metrics"
 
       - name: Update Repository
@@ -314,5 +314,5 @@ jobs:
           git add .
           git commit -m "Metrics Update"
           git push
-          
+
           echo "Updated Repository"

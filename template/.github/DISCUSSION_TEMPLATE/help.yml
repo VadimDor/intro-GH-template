@@ -1,4 +1,4 @@
-labels: ["question"]
+labels: ['question']
 body:
   - type: textarea
     attributes:
@@ -9,6 +9,6 @@ body:
   - type: textarea
     attributes:
       label: Additional information
-      description: Any code snippets, error messages, or dependency details that may be related? 
+      description: Any code snippets, error messages, or dependency details that may be related?
     validations:
       required: false

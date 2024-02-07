@@ -2,7 +2,7 @@
 name: 🌈 Spelling Auto-Fix
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
     types: [opened]
   workflow_dispatch:
@@ -10,21 +10,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      if: startsWith(github.head_ref, 'AUTO/') == false
-      uses: actions/checkout@v4
-    - name: Spell Check
-      if: startsWith(github.head_ref, 'AUTO/') == false
-      uses: sobolevn/misspell-fixer-action@master
-    - name: Create PR
-      uses: peter-evans/create-pull-request@v6.0.0
-      if: startsWith(github.head_ref, 'AUTO/') == false
-      with:
-        token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
-        base: master
-        commit-message: ':pencil2: Auto-fix typos in text'
-        title: '[AUTO] Fix spelling and language'
-        branch: 'AUTO/spelling-corrections'
-        committer: 'Liss-Bot <alicia-gh-bot@mail.as93.net>'
-        assignees: <YOUR GIT USERNAME>
-        reviewers: <YOUR GIT USERNAME>
+      - name: Checkout
+        if: startsWith(github.head_ref, 'AUTO/') == false
+        uses: actions/checkout@v4
+      - name: Spell Check
+        if: startsWith(github.head_ref, 'AUTO/') == false
+        uses: sobolevn/misspell-fixer-action@master
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v6.0.0
+        if: startsWith(github.head_ref, 'AUTO/') == false
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          base: master
+          commit-message: ':pencil2: Auto-fix typos in text'
+          title: '[AUTO] Fix spelling and language'
+          branch: 'AUTO/spelling-corrections'
+          committer: 'Liss-Bot <alicia-gh-bot@mail.as93.net>'
+          assignees: <YOUR GIT USERNAME>
+          reviewers: <YOUR GIT USERNAME>

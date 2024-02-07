@@ -1,6 +1,6 @@
 name: Update or Improvement
 description: A request to update or improvement
-labels: ["enhancement"]
+labels: ['enhancement']
 body:
   - type: textarea
     attributes:
@@ -14,4 +14,3 @@ body:
       description: Is there any context that might help us understand?
     validations:
       required: false
- 

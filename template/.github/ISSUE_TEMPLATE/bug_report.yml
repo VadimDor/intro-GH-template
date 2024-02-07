@@ -1,7 +1,7 @@
 name: Bug Report
 description: File a bug report
-title: "[BUG] Title"
-labels: ["bug"]
+title: '[BUG] Title'
+labels: ['bug']
 assignees:
   - <YOUR GIT USERNAME>
 body:
@@ -33,7 +33,7 @@ body:
   - type: dropdown
     id: version
     attributes:
-      label: '<PROJECT NAME>' Version
+      label: <PROJECT NAME> Version
       description: What version of our software are you running?
       options:
         - v1.0.1

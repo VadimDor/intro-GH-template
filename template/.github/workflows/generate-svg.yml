@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: cd scripts/sponsorkit && npm i 
+      - run: cd scripts/sponsorkit && npm i
       - run: make sponsor
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
@@ -36,8 +36,8 @@ jobs:
       - name: Commit
         uses: EndBug/add-and-commit@v4
         with:
-          message: "chore: update sponsors.svg contributor.svg"
-          add: "docs README.md"
+          message: 'chore: update sponsors.svg contributor.svg'
+          add: 'docs README.md'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup mdBook
@@ -53,7 +53,7 @@ jobs:
       #     CLOUDFLARE_ACCOUNT_ID: ${{secrets.CLOUDFLARE_ACCOUNT_ID}}
       #     CLOUDFLARE_API_TOKEN: ${{secrets.CLOUDFLARE_API_TOKEN}}
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1 
+        uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{secrets.CLOUDFLARE_ACCOUNT_ID}}

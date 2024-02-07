@@ -40,4 +40,3 @@ jobs:
             **Priority Notice**
             The SSL Certificate for ${{ matrix.domain }} will expire in ${{ steps.check-domain.outputs.ssl-expire-days-left }} days, on ${{ steps.check-domain.outputs.ssl-expire-date }}.
             @<YOUR GIT USERNAME> - Please take action immediately to prevent any downtime
-
