@@ -12,7 +12,7 @@
 	},
 	"scripts": {
 		"test": "bats test --tap",
-		"format": "prettier --write 'docs/*.*' 'docs/*.'"
+		"format": "prettier --write './**/*.{md,json,yml,py,css,html}' './**/*.{yml,yaml}'"
 	},
 	"repository": {
 		"type": "git",
