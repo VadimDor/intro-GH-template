@@ -82,9 +82,9 @@ extract_license() {
 }
 
 test_url() {
-	domain=$(echo "$1"| sed -e 's|^[^/]*//||' -e 's|/.*$||')
-	ping $domain 2>/dev/null
-	ping $domain 2>/dev/null
+	#domain=$(echo "$1"| sed -e 's|^[^/]*//||' -e 's|/.*$||')
+	#ping $domain 2>/dev/null
+	#ping $domain 2>/dev/null
 	# curl -fqsL -I "$1" | head -n 1 | grep 200 >/dev/null
 	curl -H "Accept: application/json" -H "Prefer: respond-async, wait=200" --connect-timeout 5 --max-time 5 -s -D - "$1" -o /dev/null 2>/dev/null | head -n1 | grep 200 >/dev/null
 }
@@ -92,9 +92,11 @@ test_url() {
 ask_license() {
 	local license keyword
 
+	ping "choosealicense.com"
 	printf "%s\n" "Please choose a LICENSE keyword." >&2
 	printf "%s\n" "See available license keywords at:" >&2
 	printf "%s\n" "  https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#searching-github-by-license-type" >&2
+	ping "choosealicense.com" 2>/dev/null
 
 	while true; do
 		license="$(ask_for "License keyword:" "APACHE-2.0" "MIT/APACHE-2.0/MPL-2.0/AGPL-3.0/GPL-3.0/UNILICENSE/BSL-1.0")"
