@@ -1,0 +1,42 @@
+name: Run the templating
+run-name: Templating ${{ github.event.repository.name }}  repo
+on:
+  workflow_dispatch:
+concurrency:
+  group: 'metrics'
+  cancel-in-progress: true  
+jobs:
+  run-templating:
+    # Don't run this in the template repo or more than once in the forked repo
+    if: ${{ github.repository != 'VadimDor/intro-GH-template' && '[ -d "template" ]' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: repo-metrics    
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - name: Configure Git Credentials
+        shell: bash
+        env:
+          username: ${{ github.repository_owner }}
+          email: V.Dorez@mail.ru
+          repo_name: ${{ github.event.repository.name }}
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}          
+        run: |
+          git config --global user.name "$username"
+          git config --global user.email "$email"
+          git config --global init.defaultBranch main
+          git config --global --add safe.directory "/__w/$repo_name/$repo_name"
+          echo "Configured Git Credentials"
+          # GitHub CLI api see https://cli.github.com/manual/gh_api
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/$username/$repo_name/actions/secrets/METRICS_TOKEN \
+            -f encrypted_value='c2VjcmV0' \
+            -f key_id='012345678912345678'
+          echo "Configured secret METRICS_TOKEN"
+          setup.sh
