@@ -7,14 +7,7 @@ Usage:
 
 bash [--github | --gitlab] $0 PLUGIN_NAME TOOL_TEST GH_USER AUTHOR_NAME TOOL_GH TOOL_PAGE LICENSE TESTS
 
-All arguments are optional and will be interactively prompted when not given.
-
-PLUGIN_NAME.
-   A name for your new plugin always starting with \`asdf-\` prefix.
-
-TOOL_TEST.
-   A shell command used to test correct installation.
-   Normally this command is something taking \`--version\` or \`--help\`.
+All arguments are mandatory and will not be interactively prompted .
 
 GH_USER.
    Your GitHub/GitLab username.
@@ -58,7 +51,7 @@ ask_for() {
 			echo -n "$alternatives " >&2
 		fi
 		echo -n "> " >&2
-		read -r value
+		value="$default_value"
 		echo >&2
 		if [ -z "$value" ] && [ -n "$default_value" ]; then
 			value="$default_value"
